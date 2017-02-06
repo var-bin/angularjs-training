@@ -8,10 +8,10 @@
 <body ng-controller="StoreController as store">
   <div ng-repeat="product in store.product" ng-hide="product.soldOut">
     <h1>
-      {{product.name}}
+      {{product.name | uppercase}}
     </h1>
     <h2>
-      ${{product.price}}
+      {{product.price | currency:"UAH"}}
     </h2>
     <p>
       {{product.description}}
