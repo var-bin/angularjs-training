@@ -1,0 +1,25 @@
+{
+  "name": "angularjs-training",
+  "version": "1.0.0",
+  "description": "Improve skills in Angular.js and other awesome tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://var-bin@github.com/var-bin/angularjs-training.git"
+  },
+  "keywords": [
+    "Angular.js",
+    "HTML5",
+    "CSS3",
+    "ES5"
+  ],
+  "author": "Vitalii Rybka",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/var-bin/angularjs-training/issues"
+  },
+  "homepage": "https://github.com/var-bin/angularjs-training#readme"
+}
