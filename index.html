@@ -5,18 +5,18 @@
   <title>Angular.js training</title>
   <link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css">
 </head>
-<body ng-controller="StoreController as store">
-  <div ng-repeat="product in store.product" ng-hide="product.soldOut">
+<body ng-controller="StoreController as store" class="container">
+  <div ng-repeat="product in store.product" ng-hide="product.soldOut" class="product row">
     <h1>
       {{product.name | uppercase}}
+      <em class="pull-right">
+        {{product.price | currency:"UAH"}}
+      </em>
     </h1>
-    <h2>
-      {{product.price | currency:"UAH"}}
-    </h2>
     <p>
       {{product.description}}
     </p>
-    <button ng-show="product.canPurchase">
+    <button ng-show="product.canPurchase" class="btn btn-primary">
       Button text
     </button>
   </div>
