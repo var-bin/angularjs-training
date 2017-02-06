@@ -1,0 +1,29 @@
+{
+  "name": "angularjs-training",
+  "homepage": "https://github.com/var-bin/angularjs-training",
+  "authors": [
+    "Vitalii Rybka"
+  ],
+  "description": "Improve skills in Angular.js and other awesome tools",
+  "main": "",
+  "keywords": [
+    "Angular.js",
+    "HTML5",
+    "CSS3",
+    "ES5"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests",
+    "vendors"
+  ],
+  "dependencies": {
+    "angular": "1.2.x",
+    "bootstrap": "^3.3.7"
+  }
+}
