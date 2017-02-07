@@ -4,32 +4,33 @@
   <meta charset="UTF-8">
   <title>Angular.js training</title>
   <link rel="stylesheet" type="text/css" href="public/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="public/css/styles.css">
 </head>
 <body ng-controller="StoreController as store" class="container">
   <div class="list-group">
     <div ng-repeat="product in store.product" ng-hide="product.soldOut" class="list-group-item clearfix">
       <h3>
         {{product.name | uppercase}}
-        <div class="gallery" ng-show="{{product.images.length}}">
-          <div class="img-wrap">
-            <img ng-src="{{product.images[0]}}"/>
-          </div>
-          <ul class="img-thumbnails clearfix">
-            <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
-              <img ng-src="{{image}}" />
-            </li>
-          </ul>
-        </div>
         <em class="pull-right">
           {{product.price | currency:"UAH"}}
         </em>
       </h3>
-      <p>
-        {{product.description}}
-      </p>
       <button ng-show="product.canPurchase" class="btn btn-primary pull-right">
         Button text
       </button>
+      <div class="gallery" ng-show="{{product.images.length}}">
+        <div class="img-wrap">
+          <img ng-src="{{product.images[0]}}"/>
+        </div>
+        <p>
+          {{product.description}}
+        </p>
+        <ul class="img-thumbnails clearfix">
+          <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
+            <img ng-src="{{image}}" />
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 
