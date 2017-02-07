@@ -1,0 +1,11 @@
+/*my styles*/
+
+.small-image.thumbnail {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px 0 0;
+}
+
+.gallery .img-thumbnails {
+  padding: 0;
+}
