@@ -9,36 +9,36 @@
   app.controller("TabController", function () {
     this.tab = 1;
 
-    this.setTab = function (value) {
-      this.tab = value;
+    this.setTab = function (setTab) {
+      this.tab = setTab;
     };
 
-    this.isSet = function (value) {
-      return this.tab == value;
+    this.isSet = function (setValue) {
+      return this.tab === setValue;
     };
 
-    this.setActive = function (value) {
-      return this.tab === value;
+    this.setActive = function (activeValue) {
+      return this.tab === activeValue;
     };
   });
 
   app.controller('GalleryController', function(){
-    this.current = 0;
+    this.currentImage = 0;
 
-    this.setCurrent = function (value) {
-      this.current = value || 0;
+    this.setCurrent = function (currentValue) {
+      this.currentImage = currentValue || 0;
     };
 
-    this.toggleCurrent = function (value) {
-      if (value === this.current) {
+    this.toggleCurrent = function (toggleValue) {
+      if (this.currentImage === toggleValue) {
         return false;
       }
 
-      this.current = value || 0;
+      this.currentImage = toggleValue || 0;
     };
 
-    this.setActive = function (value) {
-      return this.current === value;
+    this.setActive = function (activeValue) {
+      return this.currentImage === activeValue;
     };
   });
 
