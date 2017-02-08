@@ -35,7 +35,7 @@
           </li>
         </ul>
       </div>
-      <section class="tab" ng-controller="TabController as navTab" ng-init="navTab.tab = 1">
+      <section class="tab" ng-controller="TabController as navTab">
         <ul class="nav nav-pills">
           <li ng-class="{active: navTab.setActive(1)}">
             <a href ng-click="navTab.setTab(1)">Description</a></li>
