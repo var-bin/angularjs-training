@@ -30,29 +30,29 @@
           {{product.description}}
         </p>
         <ul class="img-thumbnails clearfix">
-          <li class="small-image pull-left thumbnail" ng-repeat="image in product.images">
-            <img ng-src="{{image}}" />
+          <li class="small-image pull-left thumbnail" ng-repeat="image in product.images" ng-class="{active: gallery.setActive({{$index}})}">
+            <img ng-src="{{image}}" ng-click="gallery.toggleCurrent($index)"/>
           </li>
         </ul>
       </div>
-      <section class="tab" ng-controller="TabController as tab">
+      <section class="tab" ng-controller="TabController as navTab" ng-init="navTab.tab = 1">
         <ul class="nav nav-pills">
-          <li ng-class="{active: tab.tab === 1}">
-            <a href ng-click="tab.setTab(1)">Description</a></li>
-          <li ng-class="{active: tab.tab === 2}">
-            <a href ng-click="tab.setTab(2)">Specs</a></li>
-          <li ng-class="{active: tab.tab === 3}">
-            <a href ng-click="tab.setTab(3)">Reviews</a></li>
+          <li ng-class="{active: navTab.setActive(1)}">
+            <a href ng-click="navTab.setTab(1)">Description</a></li>
+          <li ng-class="{active: navTab.setActive(2)}">
+            <a href ng-click="navTab.setTab(2)">Specs</a></li>
+          <li ng-class="{active: navTab.setActive(3)}">
+            <a href ng-click="navTab.setTab(3)">Reviews</a></li>
         </ul>
-        <div ng-show="tab.isSet(1)">
+        <div ng-show="navTab.isSet(1)">
           <h4>Description</h4>
           <blockquote>{{product.description}}</blockquote>
         </div>
-        <div ng-show="tab.isSet(2)">
+        <div ng-show="navTab.isSet(2)">
           <h4>Specs</h4>
           <blockquote>Shine: {{product.shine}}</blockquote>
         </div>
-        <div ng-show="tab.isSet(3)">
+        <div ng-show="navTab.isSet(3)">
           <h4>Reviews</h4>
           <blockquote></blockquote>
         </div>
