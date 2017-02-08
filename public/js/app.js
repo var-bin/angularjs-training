@@ -6,20 +6,124 @@
     this.product = gems;
   });
 
+  app.controller("TabController", function () {
+    this.tab = 1;
+
+    this.setTab = function (setTab) {
+      this.tab = setTab;
+    };
+
+    this.isSet = function (setValue) {
+      return this.tab === setValue;
+    };
+
+    this.setActive = function (activeValue) {
+      return this.tab === activeValue;
+    };
+  });
+
+  app.controller('GalleryController', function(){
+    this.currentImage = 0;
+
+    this.setCurrent = function (currentValue) {
+      this.currentImage = currentValue || 0;
+    };
+
+    this.toggleCurrent = function (toggleValue) {
+      if (this.currentImage === toggleValue) {
+        return false;
+      }
+
+      this.currentImage = toggleValue || 0;
+    };
+
+    this.setActive = function (activeValue) {
+      return this.currentImage === activeValue;
+    };
+  });
+
   var gems = [
     {
-      name: "Test gem",
-      price: 2.89,
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-      canPurchase: false,
-      soldOut: false
+      name: 'Azurite',
+      description: "Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems. Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems. Some gems have hidden qualities beyond their luster, beyond their shine... Azurite is one of those gems.",
+      shine: 8,
+      price: 110.50,
+      rarity: 7,
+      color: '#CCC',
+      faces: 14,
+      images: [
+        "public/images/gem-02.gif",
+        "public/images/gem-05.gif",
+        "public/images/gem-09.gif"
+      ],
+      reviews: [{
+        stars: 5,
+        body: "I love this gem!",
+        author: "joe@example.org",
+        createdOn: 1397490980837
+      }, {
+        stars: 1,
+        body: "This gem sucks.",
+        author: "tim@example.org",
+        createdOn: 1397490980837
+      }],
+      canPurchase: true
     },
     {
-      name: "Test gem 1",
-      price: 2.98,
-      description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum. 1111",
-      canPurchase: true,
-      soldOut: false
-    }
-  ]
+      name: 'Bloodstone',
+      description: "Origin of the Bloodstone is unknown, hence its low value. It has a very high shine and 12 sides, however. Origin of the Bloodstone is unknown, hence its low value. It has a very high shine and 12 sides, however. Origin of the Bloodstone is unknown, hence its low value. It has a very high shine and 12 sides, however.",
+      shine: 9,
+      price: 22.90,
+      rarity: 6,
+      color: '#EEE',
+      faces: 12,
+      images: [
+        "public/images/gem-01.gif",
+        "public/images/gem-03.gif",
+        "public/images/gem-04.gif"
+      ],
+      reviews: [{
+        stars: 3,
+        body: "I think this gem was just OK, could honestly use more shine, IMO.",
+        author: "JimmyDean@example.org",
+        createdOn: 1397490980837
+      }, {
+        stars: 4,
+        body: "Any gem with 12 faces is for me!",
+        author: "gemsRock@example.org",
+        createdOn: 1397490980837
+      }],
+      canPurchase: true
+    },
+    {
+      name: 'Zircon',
+      description: "Zircon is our most coveted and sought after gem. You will pay much to be the proud owner of this gorgeous and high shine gem. Zircon is our most coveted and sought after gem. You will pay much to be the proud owner of this gorgeous and high shine gem. Zircon is our most coveted and sought after gem. You will pay much to be the proud owner of this gorgeous and high shine gem.",
+      shine: 70,
+      price: 1100,
+      rarity: 2,
+      color: '#000',
+      faces: 6,
+      images: [
+        "public/images/gem-06.gif",
+        "public/images/gem-07.gif",
+        "public/images/gem-10.gif"
+      ],
+      reviews: [{
+        stars: 1,
+        body: "This gem is WAY too expensive for its rarity value.",
+        author: "turtleguyy@example.org",
+        createdOn: 1397490980837
+      }, {
+        stars: 1,
+        body: "BBW: High Shine != High Quality.",
+        author: "LouisW407@example.org",
+        createdOn: 1397490980837
+      }, {
+        stars: 1,
+        body: "Don't waste your rubles!",
+        author: "nat@example.org",
+        createdOn: 1397490980837
+      }],
+      canPurchase: true
+    }];
 })();
