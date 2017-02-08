@@ -22,7 +22,7 @@
     };
   });
 
-  app.controller('GalleryController', function(){
+  app.controller("GalleryController", function() {
     this.currentImage = 0;
 
     this.setCurrent = function (currentValue) {
@@ -39,6 +39,20 @@
 
     this.setActive = function (activeValue) {
       return this.currentImage === activeValue;
+    };
+  });
+
+  app.controller("ReviewController", function () {
+    this.review = {};
+
+    this.setDate = function () {
+      return Date.parse(new Date());
+    };
+
+    this.addReview = function(product) {
+      product.reviews.push(this.review);
+
+      this.review = {};
     };
   });
 
