@@ -16,6 +16,10 @@
     this.isSet = function (value) {
       return this.tab == value;
     };
+
+    this.setActive = function (value) {
+      return this.tab === value;
+    };
   });
 
   app.controller('GalleryController', function(){
@@ -23,6 +27,18 @@
 
     this.setCurrent = function (value) {
       this.current = value || 0;
+    };
+
+    this.toggleCurrent = function (value) {
+      if (value === this.current) {
+        return false;
+      }
+
+      this.current = value || 0;
+    };
+
+    this.setActive = function (value) {
+      return this.current === value;
     };
   });
 
