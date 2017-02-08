@@ -6,6 +6,15 @@
   margin: 0 10px 0 0;
 }
 
+.small-image.thumbnail:hover {
+  cursor: pointer;
+  border-color: #337ab7;
+}
+
+.small-image.thumbnail.active {
+  border-color: #337ab7;
+}
+
 .gallery .img-thumbnails {
   padding: 0;
 }
