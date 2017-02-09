@@ -22,7 +22,7 @@
     };
   });
 
-  app.controller('GalleryController', function(){
+  app.controller("GalleryController", function() {
     this.currentImage = 0;
 
     this.setCurrent = function (currentValue) {
@@ -39,6 +39,17 @@
 
     this.setActive = function (activeValue) {
       return this.currentImage === activeValue;
+    };
+  });
+
+  app.controller("ReviewController", function () {
+    this.review = {};
+
+    this.addReview = function(product) {
+      this.review.createdOn = Date.now(); //  returns the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC
+      product.reviews.push(this.review);
+
+      this.review = {};
     };
   });
 

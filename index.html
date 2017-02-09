@@ -54,7 +54,53 @@
         </div>
         <div ng-show="navTab.isSet(3)">
           <h4>Reviews</h4>
-          <blockquote></blockquote>
+          <blockquote ng-repeat="review in product.reviews">
+            <b>
+              Stars: {{review.stars}}
+            </b>
+            <p>
+              {{review.body}}
+            </p>
+            <cite>
+              by: {{review.author}} on {{review.createdOn | date:'MM/dd/yyyy @ h:mma'}}
+            </cite>
+          </blockquote>
+          <form name="reviewForm" class="review-form" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
+            <h3>
+              Submit a Review
+            </h3>
+            <blockquote>
+              <b>
+                <strong>Stars: {{reviewCtrl.review.stars}}</strong>
+              </b>
+              <p>
+                {{reviewCtrl.review.body}}
+              </p>
+              <cite>
+                by: {{reviewCtrl.review.author}}
+              </cite>
+            </blockquote>
+            <fieldset class="form-group">
+              <select name="starsSelect" class="form-control" ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
+                <option value="">Rate the Product</option>
+              </select>
+            </fieldset>
+            <fieldset class="form-group">
+              <textarea name="reviewBody" cols="30" rows="10" class=" form-control" ng-model="reviewCtrl.review.body" placeholder="Write a short review of the product..." title="Review" required></textarea>
+            </fieldset>
+            <fieldset class="form-group">
+              <label>
+                by:
+              </label>
+              <input type="email" name="reviewEmail" class="form-control" ng-model="reviewCtrl.review.author" placeholder="jimmyDean@example.org" title="Email" required/>
+            </fieldset>
+            <!--<div>
+              reviewForm is {{reviewForm.$valid}}
+            </div>-->
+            <button type="submit" name="reviewSubmit" class="btn btn-success">
+              Submit Review
+            </button>
+          </form>
         </div>
       </section>
     </div>
