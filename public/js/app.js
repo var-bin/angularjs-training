@@ -45,11 +45,8 @@
   app.controller("ReviewController", function () {
     this.review = {};
 
-    this.setDate = function () {
-      return Date.parse(new Date());
-    };
-
     this.addReview = function(product) {
+      this.review.createdOn = Date.now(); //  returns the number of milliseconds elapsed since 1 January 1970 00:00:00 UTC
       product.reviews.push(this.review);
 
       this.review = {};
