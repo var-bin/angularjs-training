@@ -13,91 +13,12 @@
   </header>
   <div class="list-group">
     <div ng-repeat="product in store.product" ng-hide="product.soldOut" class="list-group-item clearfix">
-      <h3 ng-include="'product-title.html'"></h3>
+      <h3 data-product-title></h3>
       <button ng-show="product.canPurchase" class="btn btn-primary pull-right">
         Button text
       </button>
-      <div class="gallery" ng-show="{{product.images.length}}" ng-controller="GalleryController as gallery">
-        <div class="img-wrap">
-          <img ng-src="{{product.images[gallery.currentImage]}}"/>
-        </div>
-        <p>
-          {{product.description}}
-        </p>
-        <ul class="img-thumbnails clearfix">
-          <li class="small-image pull-left thumbnail" ng-repeat="image in product.images" ng-class="{active: gallery.setActive({{$index}})}">
-            <img ng-src="{{image}}" ng-click="gallery.toggleCurrent($index)"/>
-          </li>
-        </ul>
-      </div>
-      <section class="tab" ng-controller="TabController as navTab">
-        <ul class="nav nav-pills">
-          <li ng-class="{active: navTab.setActive(1)}">
-            <a href ng-click="navTab.setTab(1)">Description</a></li>
-          <li ng-class="{active: navTab.setActive(2)}">
-            <a href ng-click="navTab.setTab(2)">Specs</a></li>
-          <li ng-class="{active: navTab.setActive(3)}">
-            <a href ng-click="navTab.setTab(3)">Reviews</a></li>
-        </ul>
-        <div ng-show="navTab.isSet(1)">
-          <h4>Description</h4>
-          <blockquote>{{product.description}}</blockquote>
-        </div>
-        <div ng-show="navTab.isSet(2)">
-          <h4>Specs</h4>
-          <blockquote>Shine: {{product.shine}}</blockquote>
-        </div>
-        <div ng-show="navTab.isSet(3)">
-          <h4>Reviews</h4>
-          <blockquote ng-repeat="review in product.reviews">
-            <b>
-              Stars: {{review.stars}}
-            </b>
-            <p>
-              {{review.body}}
-            </p>
-            <cite>
-              by: {{review.author}} on {{review.createdOn | date:'MM/dd/yyyy @ h:mma'}}
-            </cite>
-          </blockquote>
-          <form name="reviewForm" class="review-form" ng-controller="ReviewController as reviewCtrl" ng-submit="reviewForm.$valid && reviewCtrl.addReview(product)" novalidate>
-            <h3>
-              Submit a Review
-            </h3>
-            <blockquote>
-              <b>
-                <strong>Stars: {{reviewCtrl.review.stars}}</strong>
-              </b>
-              <p>
-                {{reviewCtrl.review.body}}
-              </p>
-              <cite>
-                by: {{reviewCtrl.review.author}}
-              </cite>
-            </blockquote>
-            <fieldset class="form-group">
-              <select name="starsSelect" class="form-control" ng-model="reviewCtrl.review.stars" ng-options="stars for stars in [5,4,3,2,1]" title="Stars" required>
-                <option value="">Rate the Product</option>
-              </select>
-            </fieldset>
-            <fieldset class="form-group">
-              <textarea name="reviewBody" cols="30" rows="10" class=" form-control" ng-model="reviewCtrl.review.body" placeholder="Write a short review of the product..." title="Review" required></textarea>
-            </fieldset>
-            <fieldset class="form-group">
-              <label>
-                by:
-              </label>
-              <input type="email" name="reviewEmail" class="form-control" ng-model="reviewCtrl.review.author" placeholder="jimmyDean@example.org" title="Email" required/>
-            </fieldset>
-            <!--<div>
-              reviewForm is {{reviewForm.$valid}}
-            </div>-->
-            <button type="submit" name="reviewSubmit" class="btn btn-success">
-              Submit Review
-            </button>
-          </form>
-        </div>
-      </section>
+      <data-product-gallery></data-product-gallery>
+      <data-product-panels></data-product-panels>
     </div>
   </div>
 
