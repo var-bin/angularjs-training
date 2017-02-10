@@ -14,9 +14,7 @@
   <div class="list-group">
     <div ng-repeat="product in store.product" ng-hide="product.soldOut" class="list-group-item clearfix">
       <h3 data-product-title></h3>
-      <button ng-show="product.canPurchase" class="btn btn-primary pull-right">
-        Button text
-      </button>
+      <data-product-button></data-product-button>
       <data-product-gallery></data-product-gallery>
       <data-product-panels></data-product-panels>
     </div>
