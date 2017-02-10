@@ -6,42 +6,6 @@
     this.product = gems;
   });
 
-  app.controller("TabController", function () {
-    this.tab = 1;
-
-    this.setTab = function (setTab) {
-      this.tab = setTab;
-    };
-
-    this.isSet = function (setValue) {
-      return this.tab === setValue;
-    };
-
-    this.setActive = function (activeValue) {
-      return this.tab === activeValue;
-    };
-  });
-
-  app.controller("GalleryController", function() {
-    this.currentImage = 0;
-
-    this.setCurrent = function (currentValue) {
-      this.currentImage = currentValue || 0;
-    };
-
-    this.toggleCurrent = function (toggleValue) {
-      if (this.currentImage === toggleValue) {
-        return false;
-      }
-
-      this.currentImage = toggleValue || 0;
-    };
-
-    this.setActive = function (activeValue) {
-      return this.currentImage === activeValue;
-    };
-  });
-
   app.controller("ReviewController", function () {
     this.review = {};
 
@@ -50,6 +14,70 @@
       product.reviews.push(this.review);
 
       this.review = {};
+    };
+  });
+
+  app.directive("productTitle", function () {
+    return {
+      restrict: "A",
+      templateUrl: "product-title.html"
+    }
+  });
+
+  app.directive("productPanels", function () {
+    return {
+      restrict: "E",
+      templateUrl: "product-panels.html",
+      controller: function () {
+        this.tab = 1;
+
+        this.setTab = function (setTab) {
+          this.tab = setTab;
+        };
+
+        this.isSet = function (setValue) {
+          return this.tab === setValue;
+        };
+
+        this.setActive = function (activeValue) {
+          return this.tab === activeValue;
+        };
+      },
+      controllerAs: "navTab"
+    }
+  });
+
+  app.directive("productGallery", function () {
+    return {
+      restrict: "E",
+      templateUrl: "product-gallery.html",
+      controller: function () {
+        this.currentImage = 0;
+
+        this.setCurrent = function (currentValue) {
+          this.currentImage = currentValue || 0;
+        };
+
+        this.toggleCurrent = function (toggleValue) {
+          if (this.currentImage === toggleValue) {
+            return false;
+          }
+
+          this.currentImage = toggleValue || 0;
+        };
+
+        this.setActive = function (activeValue) {
+          return this.currentImage === activeValue;
+        };
+      },
+      controllerAs: "gallery"
+    }
+  });
+
+  app.directive("productButton", function () {
+    return {
+      restrict: "E",
+      templateUrl: "product-button.html"
     };
   });
 
@@ -63,9 +91,9 @@
       color: '#CCC',
       faces: 14,
       images: [
-        "public/images/gem-02.gif",
-        "public/images/gem-05.gif",
-        "public/images/gem-09.gif"
+        "images/gem-02.gif",
+        "images/gem-05.gif",
+        "images/gem-09.gif"
       ],
       reviews: [{
         stars: 5,
@@ -89,9 +117,9 @@
       color: '#EEE',
       faces: 12,
       images: [
-        "public/images/gem-01.gif",
-        "public/images/gem-03.gif",
-        "public/images/gem-04.gif"
+        "images/gem-01.gif",
+        "images/gem-03.gif",
+        "images/gem-04.gif"
       ],
       reviews: [{
         stars: 3,
@@ -115,9 +143,9 @@
       color: '#000',
       faces: 6,
       images: [
-        "public/images/gem-06.gif",
-        "public/images/gem-07.gif",
-        "public/images/gem-10.gif"
+        "images/gem-06.gif",
+        "images/gem-07.gif",
+        "images/gem-10.gif"
       ],
       reviews: [{
         stars: 1,
