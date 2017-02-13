@@ -1,0 +1,16 @@
+<!--  Product Reviews List -->
+<div ng-show="navTab.isSet(3)">
+  <h4>Reviews</h4>
+  <blockquote ng-repeat="review in product.reviews">
+    <b>
+      Stars: {{review.stars}}
+    </b>
+    <p>
+      {{review.body}}
+    </p>
+    <cite>
+      by: {{review.author}} on {{review.createdOn | date:'MM/dd/yyyy @ h:mma'}}
+    </cite>
+  </blockquote>
+  <product-reviews-form></product-reviews-form>
+</div>
