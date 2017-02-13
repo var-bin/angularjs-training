@@ -7,15 +7,27 @@
   <link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
 <body ng-controller="StoreController as store" class="container">
+  <!--  Store Header  -->
   <header>
     <h1 class="text-center">Flatlander Crafted Gems</h1>
     <h2 class="text-center">– an Angular store –</h2>
   </header>
+
+  <!--  Products Container  -->
   <div class="list-group">
+    <!--  Product Container  -->
     <div ng-repeat="product in store.product" ng-hide="product.soldOut" class="list-group-item clearfix">
+
+      <!-- Product Title  -->
       <h3 data-product-title></h3>
+
+      <!-- Product Button  -->
       <data-product-button></data-product-button>
+
+      <!-- Image Gallery  -->
       <data-product-gallery></data-product-gallery>
+
+      <!-- Product Tabs  -->
       <data-product-panels></data-product-panels>
     </div>
   </div>
