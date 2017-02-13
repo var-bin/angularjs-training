@@ -3,9 +3,15 @@
 (function() {
   var app = angular.module("gemStore", ["storeProducts"]);
 
-  app.controller("StoreController", function () {
-    this.product = gems;
-  });
+  app.controller("StoreController", ["$http", function ($http) {
+    var store = this;
+
+    store.product = [];
+
+    $http.get("/js/store-products.json").success(function (data) {
+      store.product = data;
+    });
+  }]);
 
   app.controller("ReviewController", function () {
     this.review = {};
