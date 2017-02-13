@@ -10,6 +10,34 @@
     }
   });
 
+  app.directive("productDescription", function () {
+    return {
+      restrict: "E",
+      templateUrl: "product-description.html"
+    }
+  });
+
+  app.directive("productSpecs", function () {
+    return {
+      restrict: "E",
+      templateUrl: "product-specs.html"
+    }
+  });
+
+  app.directive("productReviews", function () {
+    return {
+      restrict: "E",
+      templateUrl: "product-reviews.html"
+    }
+  });
+
+  app.directive("productReviewsForm", function () {
+    return {
+      restrict: "E",
+      templateUrl: "product-reviews-form.html"
+    }
+  });
+
   app.directive("productPanels", function () {
     return {
       restrict: "E",
