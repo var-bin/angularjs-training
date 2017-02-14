@@ -104,35 +104,27 @@ form[name="reviewForm"] {
   overflow: hidden;
 }
 
-label{
-  margin-right: 15px;
-}
-
-.button-from-hell {
-  padding: 0;
-}
-
 .button-from-hell button {
   float: right;
 }
 
-div.genre {
-  float: left;
-  width: 75%;
-  margin: 0;
-  padding: 0 15px;
-  overflow: hidden;
-}
-
 .genre-label {
-  float: left;
-  width: 50%;
   margin: 0;
   cursor: pointer;
   overflow: hidden;
   text-overflow:ellipsis;
   text-transform: capitalize;
   white-space: nowrap;
+}
+
+.genre-label.form-control {
+  display: inline-block;
+  width: auto;
+  margin-right: 5px;
+}
+
+.genre-label.form-control input {
+  vertical-align: top;
 }
 
 .genre-label:hover {
