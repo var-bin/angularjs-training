@@ -3,20 +3,59 @@
 
   var app = angular.module('readingList', []);
 
-  app.controller('ReadingListController', function () {
-    this.books = books;
-    this.genres = genres;
-  });
-
-  app.controller('ReviewFormController', function () {
-    this.genres = genres;
-  });
+  app.controller('ReadingListController', ['$rootScope', function ($rootScope) {
+    $rootScope.books = books;
+    $rootScope.genres = genres;
+    $rootScope.showForm = true;
+  }]);
 
   app.directive('appView', function () {
     return {
       restrict: 'E',
       templateUrl: '../partials/app-view.html'
     }
+  });
+
+  app.directive('reviewForm', function () {
+    return {
+      restrict: 'E',
+      templateUrl: '../partials/review-form.html',
+      controller: function () {
+
+        this.setRating = function (rating) {
+          var rating = rating || 0;
+
+          return rating;
+        };
+
+        this.setTitle = function (title) {
+          var title = title || "Title of Book";
+
+          return title;
+        };
+
+        this.setAuthor = function (author) {
+          var author = author || "Author's Name";
+
+          return author;
+        };
+
+        this.setReview = function (review) {
+          var review = review || "No review yet.";
+
+          return review;
+        };
+
+        /*this.toggleForm = function () {
+          return showForm = !this.showForm;
+        };
+
+        this.toggleButtonText = function (state) {
+          return showForm ? "Cancel" : "Create a Review";
+        };*/
+      },
+      controllerAs: 'reviewFormCtrl'
+    };
   });
 
   var genres = [
