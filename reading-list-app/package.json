@@ -1,9 +1,8 @@
 {
-  "name": "angular-seed",
-  "private": true,
+  "name": "reading-list-app",
   "version": "0.0.0",
-  "description": "A starter project for AngularJS",
-  "repository": "https://github.com/angular/angular-seed",
+  "description": "Reading List web app in AngularJS",
+  "repository": "https://github.com/var-bin/angularjs-training.git",
   "license": "MIT",
   "devDependencies": {
     "bower": "^1.7.7",
