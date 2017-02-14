@@ -8,6 +8,10 @@
     this.genres = genres;
   });
 
+  app.controller('ReviewFormController', function () {
+    this.genres = genres;
+  });
+
   app.directive('appView', function () {
     return {
       restrict: 'E',
@@ -15,7 +19,20 @@
     }
   });
 
-  var genres = [ 'fable', 'fantasy', 'fiction', 'folklore', 'horror', 'humor', 'legend', 'metafiction', 'mystery', 'mythology', 'non-fiction', 'poetry' ];
+  var genres = [
+    'fable',
+    'fantasy',
+    'fiction',
+    'folklore',
+    'horror',
+    'humor',
+    'legend',
+    'metafiction',
+    'mystery',
+    'mythology',
+    'non-fiction',
+    'poetry'
+  ];
 
   var books = [
     {
