@@ -1,11 +1,12 @@
-<form name="reviewForm" class="form-horizontal" ng-submit="reviewForm.$valid && reviewFormCtrl.addReview(reviewForm, reviewFormCtrl.book)" novalidate>
+<!-- /partials/review-form.html -->
+<form name="reviewForm" class="form-horizontal" ng-submit="reviewForm.$valid && reviewFormCtrl.addReview(reviewForm)" novalidate>
   <!--live preview section-->
   <section class="row well live-preview" ng-show="reviewFormCtrl.book.isbn">
     <aside class="col-sm-3">
       <a href="http://www.amazon.com/gp/product/{{reviewFormCtrl.book.isbn}}">
         <img ng-src="http://images.amazon.com/images/P/{{reviewFormCtrl.book.isbn}}.01.ZTZZZZZZ.jpg" alt="Cover of {{reviewFormCtrl.book.title}}" class="full">
       </a>
-      <p class="rating">
+      <p ng-class="{goodRating: reviewFormCtrl.book.rating >= 3}" class="rating">
         {{reviewFormCtrl.setRating(reviewFormCtrl.book.rating)}} / 5
       </p>
     </aside>
@@ -76,7 +77,7 @@
       </label>
       <!--<span class="glyphicon glyphicon-star-empty" aria-hidden="true"></span>-->
       <span class="col-sm-10">
-        <select class="form-control" id="rating" value="5" ng-model="reviewFormCtrl.book.rating" name="bookRating" ng-options="stars for stars in [5,4,3,2,1]" required>
+        <select class="form-control" id="rating" value="5" ng-model="reviewFormCtrl.book.rating" name="bookRating" ng-options="stars for stars in [5, 4, 3, 2, 1]" required>
           <option value="">Rate the Book</option>
         </select>
       </span>
