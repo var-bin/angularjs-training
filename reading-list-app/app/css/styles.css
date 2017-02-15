@@ -45,7 +45,8 @@ li.book > aside p.rating {
   font-size: 1.2em;
 }
 
-.book .rating.goodRating {
+.book .rating.goodRating,
+.live-preview .rating.goodRating {
   color: #499130;
 }
 
