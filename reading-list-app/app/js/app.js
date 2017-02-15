@@ -6,7 +6,15 @@
   app.controller('ReadingListController', ['$rootScope', function ($rootScope) {
     $rootScope.books = books;
     $rootScope.genres = genres;
-    $rootScope.showForm = true;
+    $rootScope.showForm = false;
+
+    $rootScope.toggleForm = function () {
+      return $rootScope.showForm = !$rootScope.showForm;
+    };
+
+    $rootScope.toggleButtonText = function (state) {
+      return $rootScope.showForm ? "Cancel" : "Create a Review";
+    };
   }]);
 
   app.directive('appView', function () {
@@ -21,6 +29,7 @@
       restrict: 'E',
       templateUrl: '../partials/review-form.html',
       controller: function () {
+        this.book = {genres: {}},
 
         this.setRating = function (rating) {
           var rating = rating || 0;
@@ -46,15 +55,21 @@
           return review;
         };
 
-        /*this.toggleForm = function () {
-          return showForm = !this.showForm;
-        };
+        this.addReview = function (form) {
+          books.push(this.book);
+          this.book = {genres: {}};
 
-        this.toggleButtonText = function (state) {
-          return showForm ? "Cancel" : "Create a Review";
-        };*/
+          form.$setPristine();
+        }
       },
       controllerAs: 'reviewFormCtrl'
+    };
+  });
+
+  app.directive('readingListItem', function () {
+    return {
+      restrict: 'E',
+      templateUrl: '../partials/reading-list-item.html'
     };
   });
 
