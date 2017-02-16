@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NoteWrangler">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Note Wrangler</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+  </head>
+  <body>
+    <header>
+      <nav class="nav-list">
+        <ul class="list">
+          <li class="list-item">
+            <a href="#/">
+              Home
+            </a>
+          </li>
+          <li class="list-item">
+            <a href="#/notes">
+              Notes
+            </a>
+          </li>
+          <li class="list-item">
+            <a href="#/users">
+              Users
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <div class="hero-wrapper"></div>
+      <div class="main-wrapper">
+        <div ng-view=""></div>
+      </div>
+    </main>
+    <footer>
+      footer will be here
+    </footer>
+    <!-- Load Js libs -->
+    <script src="js/vendors/jquery.min.js"></script>
+    <script src="js/vendors/angular.min.js"></script>
+    <script src="js/vendors/angular-route.min.js"></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/routes.js"></script>
+
+    <!-- Controllers -->
+    <script src="js/controllers/notes-create-controller.js"></script>
+    <script src="js/controllers/notes-edit-controller.js"></script>
+    <script src="js/controllers/notes-index-controller.js"></script>
+    <script src="js/controllers/notes-show-controller.js"></script>
+    <script src="js/controllers/users-index-controller.js"></script>
+    <script src="js/controllers/users-show-controller.js"></script>
+  </body>
+</html>
