@@ -4,14 +4,22 @@
   "use strict";
 
   angular.module("NoteWrangler")
-    .controller("NotesIndexController", function ($http) {
-      let controller = this;
+    .controller("NotesIndexController", NotesIndexController);
 
+  function NotesIndexController($http) {
+    let vm = this;
+
+    vm.getNotes = getNotes;
+
+    getNotes();
+
+    function getNotes() {
       $http({
         method: "GET",
         url: "/api/notes"
-      }).success( (data) => {
-        controller.notes = data;
+      }).success( (notesData) => {
+        vm.notes = notesData;
       });
-    });
+    }
+  }
 })();
