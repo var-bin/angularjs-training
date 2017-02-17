@@ -4,10 +4,10 @@
       <h1 title="Notes">Notes</h1>
     </div>
     <div class="note-wrapper">
-      <a class="card-notes" ng-repeat="note in notes">
+      <a class="card-notes" ng-repeat="note in notesIndexCtrl.notes">
         <div class="card" title="{{note.title}}">
           <h2 class="h3">{{note.title}}</h2>
-          <p>{{note.description}}</p>
+          <p>{{note.name}}</p>
         </div>
       </a>
     </div>
