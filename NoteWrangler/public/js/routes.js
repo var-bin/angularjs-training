@@ -1,10 +1,17 @@
 // js/routes
 
-angular.module("NoteWrangler")
-  .config(function ($routeProvider) {
+(function() {
+  "use strict";
+
+  angular.module("NoteWrangler")
+    .config(config);
+
+  function config($routeProvider) {
     $routeProvider
       .when("/notes", {
-        templateUrl: "../templates/pages/notes/index.html"
+        templateUrl: "../templates/pages/notes/index.html",
+        controller: "NotesIndexController",
+        controllerAs: "notesIndexCtrl"
       })
       .when("/users", {
         templateUrl: "../templates/pages/users/index.html"
@@ -15,4 +22,6 @@ angular.module("NoteWrangler")
       .otherwise({
         redirectTo: "/"
       });
-  });
+  }
+})();
+
