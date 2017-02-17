@@ -1,18 +1,34 @@
 // js/routes
 
-angular.module("NoteWrangler")
-  .config(function ($routeProvider) {
+(function() {
+  "use strict";
+
+  angular.module("NoteWrangler")
+    .config(config);
+
+  function config($routeProvider) {
     $routeProvider
       .when("/notes", {
-        templateUrl: "../templates/pages/notes/index.html"
+        templateUrl: "../templates/pages/notes/index.html",
+        controller: "NotesIndexController",
+        controllerAs: "notesIndexCtrl"
       })
       .when("/users", {
         templateUrl: "../templates/pages/users/index.html"
       })
       .when("/notes/new", {
-        templateUrl: "templates/pages/notes/edit.html"
+        templateUrl: "templates/pages/notes/new.html",
+        controller: "NotesCreateController",
+        controllerAs: "notesCreateCtrl"
+      })
+      .when("/notes/:id", {
+        templateUrl: "templates/pages/notes/show.html",
+        controller: "NotesShowController",
+        controllerAs: "notesShowCtrl"
       })
       .otherwise({
         redirectTo: "/"
       });
-  });
+  }
+})();
+
