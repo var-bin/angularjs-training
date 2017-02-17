@@ -21,6 +21,11 @@
         controller: "NotesCreateController",
         controllerAs: "notesCreateCtrl"
       })
+      .when("/notes/:id", {
+        templateUrl: "templates/pages/notes/show.html",
+        controller: "NotesShowController",
+        controllerAs: "notesShowCtrl"
+      })
       .otherwise({
         redirectTo: "/"
       });
