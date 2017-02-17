@@ -4,22 +4,24 @@
   "use strict";
 
   angular.module("NoteWrangler")
-    .controller("NotesCreateController", ($http) => {
-      let controller = this;
+    .controller("NotesCreateController", NotesCreateController);
 
-      this.saveNote = saveNote;
+  function NotesCreateController($http) {
+    let vm = this;
 
-      function saveNote(note) {
-        controller.errors = {};
+    vm.saveNote = saveNote;
 
-        return $http({
-          method: "POST",
-          url: "/api/notes",
-          data: note
-        }).catch( (note) => {
-          controller.errors = note.data.error;
-        });
-      }
-    });
+    function saveNote(noteData) {
+      vm.errors = {};
+
+      return $http({
+        method: "POST",
+        url: "/api/notes",
+        data: noteData
+      }).catch( (note) => {
+        vm.errors = note.data.error;
+      });
+    }
+  }
 })();
 
