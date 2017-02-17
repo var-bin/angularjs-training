@@ -17,7 +17,9 @@
         templateUrl: "../templates/pages/users/index.html"
       })
       .when("/notes/new", {
-        templateUrl: "templates/pages/notes/edit.html"
+        templateUrl: "templates/pages/notes/new.html",
+        controller: "NotesCreateController",
+        controllerAs: "notesCreateCtrl"
       })
       .otherwise({
         redirectTo: "/"
