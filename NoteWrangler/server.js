@@ -24,7 +24,7 @@ server.use(middlewares);
 server.use("/api", router);
 
 // Add custom routes before JSON Server router
-server.get('/', function (req, res) {
+server.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, "index.html"));
 })
 
