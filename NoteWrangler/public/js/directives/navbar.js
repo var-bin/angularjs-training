@@ -4,7 +4,7 @@
   "use strict";
 
   angular.module("NoteWrangler")
-    .directive("navbar", [navbarDirective]);
+    .directive("navbar", navbarDirective);
 
   function navbarDirective() {
     return {
