@@ -1,22 +1,24 @@
 <div class="new-note">
   <div class="new-note-container">
     <form class="form">
-      <fieldset>
-        <label for="title">Title</label>
-        <input name="title" ng-model="note.title"/>
+      <fieldset class="form-group">
+        <label for="noteTitle">Title</label>
+        <input name="noteTitle" id="noteTitle" ng-model="note.title" class="form-control" placeholder="Title"/>
       </fieldset>
 
-      <fieldset>
-        <label for="description">Description</label>
-        <textarea name="description" ng-model="note.description"></textarea>
+      <fieldset class="form-group">
+        <label for="noteDescription">Description</label>
+        <textarea name="noteDescription" id="noteDescription" ng-model="note.description" class="form-control" placeholder="Description"></textarea>
       </fieldset>
 
-      <fieldset>
-        <label for="content">Content</label>
-        <textarea name="content" ng-model="note.content"></textarea>
+      <fieldset class="form-group">
+        <label for="noteContent">Content</label>
+        <textarea name="noteContent" id="noteContent" ng-model="note.content" class="form-control" placeholder="Content"></textarea>
       </fieldset>
 
-      <button class="btn" ng-click="notesCreateCtrl.saveNote(note)">Save</button>
+      <button type="submit" class="btn btn-success" ng-click="notesCreateCtrl.saveNote(note)">
+        Save
+      </button>
     </form>
   </div>
 </div>

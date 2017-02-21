@@ -27,7 +27,8 @@
         controllerAs: "notesShowCtrl"
       })
       .otherwise({
-        redirectTo: "/"
+        redirectTo: "/",
+        templateUrl: "templates/pages/index/index.html"
       });
   }
 })();
