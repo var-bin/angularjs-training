@@ -6,18 +6,18 @@
   angular.module("NoteWrangler")
     .controller("NotesIndexController", NotesIndexController);
 
-  function NotesIndexController($http) {
+  NotesIndexController.$inject = ["Note"];
+
+  function NotesIndexController(Note) {
     let vm = this;
 
-    vm.getNotes = getNotes;
+    vm.getAllNotes = getAllNotes;
 
-    getNotes();
+    getAllNotes();
 
-    function getNotes() {
-      $http({
-        method: "GET",
-        url: "/api/notes"
-      }).success( (notesData) => {
+    function getAllNotes() {
+      Note.getAllNotes()
+      .success( (notesData) => {
         vm.notes = notesData;
       });
     }
