@@ -6,18 +6,18 @@
   angular.module("NoteWrangler")
     .controller("NotesShowController", NotesShowController);
 
-  function NotesShowController($http, $routeParams) {
+  NotesShowController.$inject = ["Note"];
+
+  function NotesShowController(Note) {
     let vm = this;
 
-    vm.showNote = showNote;
+    vm.getNoteById = getNoteById;
 
-    showNote();
+    getNoteById();
 
-    function showNote(id) {
-      $http({
-        method: "GET",
-        url: "/api/notes/" + $routeParams.id
-      }).success( (noteData) => {
+    function getNoteById() {
+      Note.getNoteById()
+      .success( (noteData) => {
         vm.note = noteData;
       });
     }
