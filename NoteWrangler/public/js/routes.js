@@ -14,7 +14,9 @@
         controllerAs: "notesIndexCtrl"
       })
       .when("/users", {
-        templateUrl: "../templates/pages/users/index.html"
+        templateUrl: "../templates/pages/users/index.html",
+        controller: "UsersIndexController",
+        controllerAs: "usersIndexCtrl"
       })
       .when("/notes/new", {
         templateUrl: "templates/pages/notes/new.html",
