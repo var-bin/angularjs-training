@@ -5,11 +5,15 @@
   <div class="users-wrapper row">
     <a class="card-users col-md-3" ng-repeat="user in usersIndexCtrl.users">
       <div class="card" title="{{user.name}}">
-        <h2 class="h3">{{user.name}}</h2>
-        <figure>
-          <img ng-src="{{usersIndexCtrl.getAvatar(user.email)}}" alt="">
+        <h2 class="h3">
+          {{user.name}}
+        </h2>
+        <figure class="media-left">
+          <img ng-src="{{usersIndexCtrl.getAvatar(user.email)}}" alt="{{user.name}}" class="media-object">
         </figure>
-        <p>{{user.bio}}</p>
+        <p class="media-body">
+          {{user.bio}}
+        </p>
       </div>
     </a>
   </div>
