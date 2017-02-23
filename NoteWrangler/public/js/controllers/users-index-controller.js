@@ -13,13 +13,10 @@
 
     vm.getAvatar = getAvatar;
 
-    getAllUsers();
+    query();
 
-    function getAllUsers() {
-      User.getAllUsers()
-      .success( (usersData) => {
-        vm.users = usersData;
-      });
+    function query() {
+      vm.users = User.query();
     }
 
     function getAvatar(email) {
