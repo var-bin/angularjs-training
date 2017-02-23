@@ -14,11 +14,7 @@
     vm.setActive = setActive;
 
     function setActive(path) {
-      if (!$routeParams.id) {
-        return $location.path() == path;
-      }
-
-      return $location.path() == path + "/" + $routeParams.id;
+      return $location.path().indexOf(path) !== -1;
     }
   }
 })();
