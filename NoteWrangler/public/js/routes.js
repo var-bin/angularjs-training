@@ -28,6 +28,9 @@
         controller: "NotesShowController",
         controllerAs: "notesShowCtrl"
       })
+      .when("/notes/edit/:id", {
+        templateUrl: "templates/pages/notes/edit.html"
+      })
       .otherwise({
         redirectTo: "/",
         templateUrl: "templates/pages/index/index.html"
