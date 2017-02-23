@@ -6,20 +6,15 @@
   angular.module("NoteWrangler")
     .controller("NotesShowController", NotesShowController);
 
-  NotesShowController.$inject = ["Note"];
+  NotesShowController.$inject = ["Note", "$routeParams"];
 
-  function NotesShowController(Note) {
+  function NotesShowController(Note, $routeParams) {
     let vm = this;
 
-    vm.getNoteById = getNoteById;
+    get();
 
-    getNoteById();
-
-    function getNoteById() {
-      Note.getNoteById()
-      .success( (noteData) => {
-        vm.note = noteData;
-      });
+    function get() {
+      vm.note = Note.get({id: $routeParams.id});
     }
   }
 })();
