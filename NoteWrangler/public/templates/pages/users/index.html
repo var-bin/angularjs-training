@@ -6,6 +6,9 @@
     <a class="card-users col-md-3" ng-repeat="user in usersIndexCtrl.users">
       <div class="card" title="{{user.name}}">
         <h2 class="h3">{{user.name}}</h2>
+        <figure>
+          <img ng-src="{{usersIndexCtrl.getAvatar(user.email)}}" alt="">
+        </figure>
         <p>{{user.bio}}</p>
       </div>
     </a>
