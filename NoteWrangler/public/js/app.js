@@ -3,7 +3,7 @@
 (function() {
   "use strict";
 
-  angular.module("NoteWrangler", ["ngRoute"])
+  angular.module("NoteWrangler", ["ngRoute", "ngResource"])
     .config(config);
 
   config.$inject = ["GravatarProvider"];
