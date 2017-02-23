@@ -6,9 +6,9 @@
   angular.module("NoteWrangler")
     .controller("UsersIndexController", UsersIndexController);
 
-  UsersIndexController.$inject = ["User"];
+  UsersIndexController.$inject = ["User", "Gravatar"];
 
-  function UsersIndexController(User) {
+  function UsersIndexController(User, Gravatar) {
     let vm = this;
 
     vm.getAvatar = getAvatar;
