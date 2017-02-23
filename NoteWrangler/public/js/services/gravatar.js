@@ -57,25 +57,4 @@
 
     vm.$get = _$get;
   }
-
-  //GravatarProvider.$inject = ["$http"];
-
-  /*function GravatarProvider() {
-    const AVATAR_SIZE = 80;
-    const AVATAR_URL = "http://www.gravatar.com/avatar/";
-
-    this.setSize = function (size) {
-      AVATAR_SIZE = size;
-    };
-
-    this.$get = function () {
-      function getAvatar(email) {
-        return AVATAR_URL + CryptoJS.MD5(email) + "?size=" + AVATAR_SIZE.toString();
-      }
-
-      return {
-        getAvatar
-      }
-    };
-  }*/
 })();
