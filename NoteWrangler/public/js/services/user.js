@@ -6,18 +6,9 @@
   angular.module("NoteWrangler")
     .factory("User", UserFactory);
 
-  UserFactory.$inject = ["$http", "$routeParams"];
+  UserFactory.$inject = ["$routeParams", "$resource"];
 
-  function UserFactory($http, $routeParams) {
-    function getAllUsers() {
-      return $http({
-        method: "GET",
-        url: "/api/users"
-      });
-    }
-
-    return {
-      getAllUsers
-    }
+  function UserFactory($routeParams, $resource) {
+    return $resource("/api/users/:id", {id: "@id"});
   }
 })();
