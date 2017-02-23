@@ -11,15 +11,10 @@
   function NotesIndexController(Note) {
     let vm = this;
 
-    vm.getAllNotes = getAllNotes;
+    query();
 
-    getAllNotes();
-
-    function getAllNotes() {
-      Note.getAllNotes()
-      .success( (notesData) => {
-        vm.notes = notesData;
-      });
+    function query() {
+      vm.notes = Note.query();
     }
   }
 })();
