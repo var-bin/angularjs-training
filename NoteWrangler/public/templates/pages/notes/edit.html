@@ -8,38 +8,31 @@
 
     <form class="form">
       <h1>
-        Edit Note.id title
+        Edit "{{notesEditCtrl.note.title}}"
       </h1>
 
       <fieldset class="form-group">
         <label class="control-label" for="title">
           Title
         </label>
-        <input class="form-control" name="title" ng-model="note.header" />
-      </fieldset>
-
-      <fieldset class="form-group">
-        <label class="control-label" for="category">
-          Category
-        </label>
-        <input class="form-control" name="category" ng-model="note.categoryId" />
+        <input class="form-control" name="title" ng-model="notesEditCtrl.note.title" />
       </fieldset>
 
       <fieldset class="form-group">
         <label class="control-label" for="description">
           Description
         </label>
-        <textarea class="form-control" name="description" ng-model="note.description" placeholder="A short description of this note"></textarea>
+        <textarea class="form-control" name="description" ng-model="notesEditCtrl.note.description" placeholder="A short description of this note"></textarea>
       </fieldset>
 
       <fieldset class="form-group">
         <label class="control-label" for="content">
           Content
         </label>
-        <textarea class="form-control" name="Content" ng-model="note.content" placeholder="The meat of your note"></textarea>
+        <textarea class="form-control" name="Content" ng-model="notesEditCtrl.note.content" placeholder="The meat of your note"></textarea>
       </fieldset>
 
-      <button type="submit" class="btn btn-success" ng-click="updateNote(note)" ng-disabled="updating">
+      <button type="submit" class="btn btn-success" ng-click="updateNote(notesEditCtrl.note)" ng-disabled="updating">
         save
       </button>
     </form>
