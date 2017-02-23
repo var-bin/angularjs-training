@@ -1,7 +1,19 @@
 <div>
-  <h1>{{notesShowCtrl.note.title}}</h1>
-  <h3>Description:</h3>
-  <p>{{notesShowCtrl.note.description}}</p>
-  <h3>Contents:</h3>
-  <p>{{notesShowCtrl.note.content}}</p>
+  <h1>
+    {{notesShowCtrl.note.title}}
+    <a class="btn btn-default glyphicon glyphicon-pencil" href="#/notes/edit/{{notesShowCtrl.note.id}}" role="button" title='Edit "{{notesShowCtrl.note.title}}"'></a>
+    <button class="btn btn-danger glyphicon glyphicon-remove" title='Delete "{{notesShowCtrl.note.title}}"'></button>
+  </h1>
+  <h3>
+    Description:
+  </h3>
+  <p>
+    {{notesShowCtrl.note.description}}
+  </p>
+  <h3>
+    Contents:
+  </h3>
+  <p>
+    {{notesShowCtrl.note.content}}
+  </p>
 </div>
