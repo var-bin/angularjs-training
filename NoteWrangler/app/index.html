@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Note Wrangler</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- inject:css -->
     <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/styles.css">
+    <!-- endinject -->
   </head>
   <body>
     <header>
@@ -21,12 +23,12 @@
       </footer>
     </main>
 
-    <!-- Load Js libs -->
-    <script src="js/vendors/jquery.js"></script>
-    <script src="js/vendors/angular.js"></script>
-    <script src="js/vendors/angular-route.js"></script>
+    <!-- inject:vendors-libs -->
     <script src="js/vendors/angular-resource.js"></script>
-    <script src="js/vendors/crypto-js.js"></script>
+    <script src="js/vendors/angular-route.js"></script>
+    <script src="js/vendors/angular.js"></script>
+    <script src="js/vendors/jquery.js"></script>
+    <!-- endinject -->
 
     <script src="js/app.module.js"></script>
     <script src="js/routes.config.js"></script>
