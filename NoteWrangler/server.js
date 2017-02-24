@@ -6,7 +6,7 @@ const path = require("path");
 
 const jsonServer = require('json-server');
 const server = jsonServer.create();
-const router = jsonServer.router('db.json');
+const router = jsonServer.router('app/db.json');
 const middlewares = jsonServer.defaults({
   static: path.join(__dirname, "app")
 });
@@ -18,8 +18,8 @@ const HOST = `${HOST_NAME}:${PORT}`;
 const NODE_ENV_DEVELOPMENT = "development";
 const NODE_ENV_PRODUCTION = "production";
 
-const INDEX_DEV = path.join(__dirname, "index.html");
-const INDEX_PROD = path.join(__dirname, "index.min.html");
+const INDEX_DEV = path.join(__dirname, "app/index.html");
+const INDEX_PROD = path.join(__dirname, "app/index.min.html");
 
 let indexHtml = INDEX_DEV;
 
