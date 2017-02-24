@@ -2,11 +2,18 @@
   <div class="page-header">
     <h1 title="Users">Users</h1>
   </div>
-  <div class="users-wrapper">
-    <a class="card-users" ng-repeat="user in users">
+  <div class="users-wrapper row">
+    <a class="card-users col-md-3" ng-repeat="user in usersIndexCtrl.users">
       <div class="card" title="{{user.name}}">
-        <h2 class="h3">{{user.name}}</h2>
-        <p>{{user.bio}}</p>
+        <h2 class="h3">
+          {{user.name}}
+        </h2>
+        <figure class="media-left">
+          <img ng-src="{{usersIndexCtrl.getAvatar(user.email)}}" alt="{{user.name}}" class="media-object">
+        </figure>
+        <p class="media-body">
+          {{user.bio}}
+        </p>
       </div>
     </a>
   </div>

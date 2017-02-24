@@ -6,20 +6,24 @@
   angular.module("NoteWrangler")
     .controller("NotesCreateController", NotesCreateController);
 
-  function NotesCreateController($http) {
+  NotesCreateController.$inject = ["Note"];
+
+  function NotesCreateController(Note) {
     let vm = this;
 
+    vm.note = new Note();
     vm.saveNote = saveNote;
 
     function saveNote(noteData) {
       vm.errors = {};
+      vm.updating = true;
 
-      return $http({
-        method: "POST",
-        url: "/api/notes",
-        data: noteData
-      }).catch( (note) => {
-        vm.errors = note.data.error;
+      note.save(noteData)
+      .catch( (noteError) => {
+        vm.errors = [noteError.data.error];
+      })
+      .finaly( () => {
+        vm.updating = false;
       });
     }
   }

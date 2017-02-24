@@ -1,31 +1,40 @@
 <div class="new-note">
   <div class="new-note-container">
     <ul class='errors' ng-if="errors">
-      <li ng-repeat="error in errors">{{error}}</li>
+      <li ng-repeat="error in errors">
+        {{error}}
+      </li>
     </ul>
 
     <form class="form">
-      <fieldset class="form-field">
-        <label class="form-label" for="title">Title</label>
-        <input class="form-input" name="title" ng-model="note.header" />
+      <h1>
+        Edit "{{notesEditCtrl.note.title}}"
+      </h1>
+
+      <fieldset class="form-group">
+        <label class="control-label" for="title">
+          Title
+        </label>
+        <input class="form-control" name="title" ng-model="notesEditCtrl.note.title" />
       </fieldset>
 
-      <fieldset class="form-field">
-        <label class="form-label" for="category">Category</label>
-        <select name='category' ng-model='note.CategoryId' ng-options='category.id as category.name for category in categories'></select>
+      <fieldset class="form-group">
+        <label class="control-label" for="description">
+          Description
+        </label>
+        <textarea class="form-control" name="description" ng-model="notesEditCtrl.note.description" placeholder="A short description of this note"></textarea>
       </fieldset>
 
-      <fieldset class="form-field">
-        <label class="form-label" for="description">Description</label>
-        <textarea class="form-input" name="description" ng-model="note.description" placeholder="A short description of this note"></textarea>
+      <fieldset class="form-group">
+        <label class="control-label" for="content">
+          Content
+        </label>
+        <textarea class="form-control" name="Content" ng-model="notesEditCtrl.note.content" placeholder="The meat of your note"></textarea>
       </fieldset>
 
-      <fieldset class="form-field">
-        <label class="form-label" for="content">Content</label>
-        <textarea class="form-input" name="Content"  ng-model="note.content" placeholder="The meat of your note"></textarea>
-      </fieldset>
-
-      <button class="btn" ng-click="updateNote(note)" ng-disabled="updating">{{updating ? 'Saving...' : 'Save'}}</button>
+      <button type="submit" class="btn btn-success" ng-click="updateNote(notesEditCtrl.note)" ng-disabled="updating">
+        save
+      </button>
     </form>
   </div>
 </div>

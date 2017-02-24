@@ -14,7 +14,9 @@
         controllerAs: "notesIndexCtrl"
       })
       .when("/users", {
-        templateUrl: "../templates/pages/users/index.html"
+        templateUrl: "../templates/pages/users/index.html",
+        controller: "UsersIndexController",
+        controllerAs: "usersIndexCtrl"
       })
       .when("/notes/new", {
         templateUrl: "templates/pages/notes/new.html",
@@ -25,6 +27,11 @@
         templateUrl: "templates/pages/notes/show.html",
         controller: "NotesShowController",
         controllerAs: "notesShowCtrl"
+      })
+      .when("/notes/edit/:id", {
+        templateUrl: "templates/pages/notes/edit.html",
+        controller: "NotesEditController",
+        controllerAs: "notesEditCtrl"
       })
       .otherwise({
         redirectTo: "/",
