@@ -2,12 +2,14 @@
 
 "use strict";
 
+const path = require("path");
+
 const jsonServer = require('json-server');
 const server = jsonServer.create();
 const router = jsonServer.router('db.json')
-const middlewares = jsonServer.defaults();
-
-const path = require("path");
+const middlewares = jsonServer.defaults({
+  static: path.join(__dirname, "app")
+});
 
 const PORT = 3000;
 const HOST_NAME = "localhost";
