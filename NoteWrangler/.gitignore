@@ -9,3 +9,10 @@ db.json
 
 # public
 public
+
+# *.min*
+
+*.min*
+
+# vendors
+vendors
