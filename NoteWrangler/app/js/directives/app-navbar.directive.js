@@ -9,7 +9,7 @@
   function navbarDirective() {
     return {
       restrict: 'E',
-      templateUrl: '../templates/directives/navbar.html',
+      templateUrl: '../templates/directives/app-navbar.directive.html',
       controller: "NavbarController",
       controllerAs: "NavbarCtrl"
     }
