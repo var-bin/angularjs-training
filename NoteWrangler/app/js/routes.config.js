@@ -35,7 +35,7 @@
       })
       .otherwise({
         redirectTo: "/",
-        templateUrl: "templates/pages/index/index.html"
+        templateUrl: "templates/pages/index/app-index.html"
       });
   }
 })();
