@@ -4,7 +4,7 @@
 
 const jsonServer = require('json-server');
 const server = jsonServer.create();
-const router = jsonServer.router('db.json')
+const router = jsonServer.router('app/db.json')
 const middlewares = jsonServer.defaults();
 
 const path = require("path");
@@ -25,7 +25,7 @@ server.use("/api", router);
 
 // Add custom routes before JSON Server router
 server.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, "index.html"));
+  res.sendFile(path.join(__dirname, "app/index.html"));
 })
 
 server.listen(PORT, () => {
