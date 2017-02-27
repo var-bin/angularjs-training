@@ -1,4 +1,4 @@
-// js/directives/navbar
+// js/directives/app-navbar.directive
 
 (function() {
   "use strict";
