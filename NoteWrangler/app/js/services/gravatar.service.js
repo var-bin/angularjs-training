@@ -1,4 +1,4 @@
-// js/services/gravatar.js
+// js/services/gravatar.service
 
 (function() {
   "use strict";
