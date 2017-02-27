@@ -1,4 +1,4 @@
-// js/controllers/app-navbar-controller
+// js/controllers/app-navbar.controller
 
 (function() {
   "use strict";
