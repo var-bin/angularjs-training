@@ -10,3 +10,6 @@ db.json
 
 # bower_components
 bower_components
+
+# *.template.html
+*.template.html
