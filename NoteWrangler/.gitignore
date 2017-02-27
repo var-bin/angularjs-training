@@ -3,7 +3,6 @@ node_modules
 
 # vendors
 vendors
-!/public/js/vendors
 
 # db.json
 db.json
@@ -13,3 +12,9 @@ bower_components
 
 # *.template.html
 *.template.html
+
+# *.map.*
+*.map.*
+
+# *.min.*
+*.min.*
