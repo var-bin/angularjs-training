@@ -1,4 +1,4 @@
-// js/routes
+// js/routes.config
 
 (function() {
   "use strict";

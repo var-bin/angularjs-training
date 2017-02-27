@@ -1,4 +1,4 @@
-// js/app.js
+// js/app.module
 
 (function() {
   "use strict";
