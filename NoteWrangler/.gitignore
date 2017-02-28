@@ -13,8 +13,5 @@ bower_components
 # *.template.html
 *.template.html
 
-# *.map.*
-*.map.*
-
-# *.min.*
-*.min.*
+# assets
+assets
