@@ -13,8 +13,14 @@
 
     get();
 
+    vm.deleteNote = _deleteNote;
+
     function get() {
       vm.note = Note.get({id: $routeParams.id});
+    }
+
+    function _deleteNote(note) {
+      Note.delete(note);
     }
   }
 })();
