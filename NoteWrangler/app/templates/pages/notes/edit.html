@@ -32,7 +32,7 @@
         <textarea class="form-control" name="Content" ng-model="notesEditCtrl.note.content" placeholder="The meat of your note"></textarea>
       </fieldset>
 
-      <button type="submit" class="btn btn-success" ng-click="updateNote(notesEditCtrl.note)" ng-disabled="updating">
+      <button type="submit" class="btn btn-success" ng-click="notesEditCtrl.updateNote(notesEditCtrl.note)" ng-disabled="updating">
         save
       </button>
     </form>
