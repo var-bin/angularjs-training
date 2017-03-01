@@ -28,13 +28,13 @@ const APP_CSS_PATH = path.join(APP_PATH, "css");
 const APP_JS_PATH = path.join(APP_PATH, "js");
 const INDEX_TEMPLATE_PATH = path.join(APP_PATH, "index.template.html");
 const DEST_PATH = path.join(APP_PATH, "assets");
+const DEST_PATH_JS = path.join(DEST_PATH, "js");
+const DEST_PATH_CSS = path.join(DEST_PATH, "css");
 
 gulp.task("inject-html", (cb) => {
-  let srcCss = gulp.src(APP_CSS_PATH + "/*.css", {read: false});
+  let srcCss = gulp.src([DEST_PATH_CSS + "/*.css", "!" + DEST_PATH_CSS + "/*.min.css"], {read: false});
   let appJs = gulp.src(APP_JS_PATH + "/*.js", {read: false});
-  let allJS = gulp.src(DEST_PATH + "/*.js", {read: false});
-  let directivesJs = gulp.src(APP_JS_PATH + "/directives/*.js", {read: false});
-  let servicesJs = gulp.src(APP_JS_PATH + "/services/*.js", {read: false});
+  let allJS = gulp.src(DEST_PATH_JS + "/*.js", {read: false});
 
   gulp.src(INDEX_TEMPLATE_PATH)
     .pipe(inject(srcCss, {
@@ -70,14 +70,14 @@ gulp.task("concat-js", (cb) => {
       // concat into dirName.bundle.js
       .pipe(concat(dirName + ".bundle.js"))
       // write to output
-      .pipe(gulp.dest(DEST_PATH));
+      .pipe(gulp.dest(DEST_PATH_JS));
   });
 
   cb();
 });
 
 gulp.task("transpile",  (cb) => {
-  let assetsJS = gulp.src(path.join(DEST_PATH, "/*.bundle.js"), {read: false});
+  let assetsJS = gulp.src(path.join(DEST_PATH_JS, "/*.bundle.js"), {read: false});
 
   assetsJS
     .pipe(tap( (file) => {
@@ -93,7 +93,7 @@ gulp.task("transpile",  (cb) => {
     }))
     // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
     .pipe(buffer())
-    .pipe(gulp.dest(DEST_PATH));
+    .pipe(gulp.dest(DEST_PATH_JS));
   cb();
 });
 
@@ -102,6 +102,22 @@ gulp.task("copy-css", (cb) => {
 
   return gulp.src(bootstrapCss)
     .pipe(gulp.dest(APP_CSS_PATH));
+  cb();
+});
+
+gulp.task("minify-css", (cb) => {
+  let allCss = gulp.src(path.join(APP_CSS_PATH, "/*.css"));
+
+  allCss
+    .pipe(concatCss("styles.css"))
+    .pipe(gulp.dest(DEST_PATH_CSS))
+    .pipe(csso({
+      restructure: false,
+      sourceMap: true,
+      debug: true
+    }))
+    .pipe(rename("styles.min.css"))
+    .pipe(gulp.dest(DEST_PATH_CSS));
 
   cb();
 });
