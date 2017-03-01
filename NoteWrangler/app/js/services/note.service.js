@@ -9,6 +9,10 @@
   NoteFactory.$inject = ["$routeParams", "$resource"];
 
   function NoteFactory($routeParams, $resource) {
-    return $resource("/api/notes/:id", {id: "@id"});
+    return $resource("/api/notes/:id", {id: "@id"}, {
+      update: {
+        method: "PUT"
+      }
+    });
   }
 })();
