@@ -8,10 +8,11 @@
 
   function appNavbarDirective() {
     return {
+      replace: true,
       restrict: "E",
       templateUrl: "../templates/directives/app-navbar.directive.html",
       controller: "appNavbarController",
       controllerAs: "appNavbarCtrl"
-    }
+    };
   }
 })();
