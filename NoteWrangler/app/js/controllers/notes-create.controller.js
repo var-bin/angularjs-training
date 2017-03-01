@@ -12,19 +12,17 @@
     let vm = this;
 
     vm.note = new Note();
-    vm.saveNote = saveNote;
 
-    function saveNote(noteData) {
-      vm.errors = {};
-      vm.updating = true;
+    vm.saveNote = _saveNote;
 
-      note.save(noteData)
-      .catch( (noteError) => {
-        vm.errors = [noteError.data.error];
-      })
-      .finaly( () => {
-        vm.updating = false;
-      });
+    function _saveNote(newNote) {
+      vm.note.link = "path-to-note";
+      vm.note.icon = "question";
+      vm.note.description = newNote.description;
+      vm.note.title = newNote.title;
+      vm.note.content = newNote.content;
+
+      vm.note.$save(newNote);
     }
   }
 })();

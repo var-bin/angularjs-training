@@ -3,20 +3,20 @@
     <form class="form">
       <fieldset class="form-group">
         <label for="noteTitle">Title</label>
-        <input name="noteTitle" id="noteTitle" ng-model="note.title" class="form-control" placeholder="Title"/>
+        <input name="noteTitle" id="noteTitle" ng-model="notesCreateCtrl.newNote.title" class="form-control" placeholder="Title"/>
       </fieldset>
 
       <fieldset class="form-group">
         <label for="noteDescription">Description</label>
-        <textarea name="noteDescription" id="noteDescription" ng-model="note.description" class="form-control" placeholder="Description"></textarea>
+        <textarea name="noteDescription" id="noteDescription" ng-model="notesCreateCtrl.newNote.description" class="form-control" placeholder="Description"></textarea>
       </fieldset>
 
       <fieldset class="form-group">
         <label for="noteContent">Content</label>
-        <textarea name="noteContent" id="noteContent" ng-model="note.content" class="form-control" placeholder="Content"></textarea>
+        <textarea name="noteContent" id="noteContent" ng-model="notesCreateCtrl.newNote.content" class="form-control" placeholder="Content"></textarea>
       </fieldset>
 
-      <button type="submit" class="btn btn-success" ng-click="notesCreateCtrl.saveNote(note)">
+      <button type="submit" class="btn btn-success" ng-click="notesCreateCtrl.saveNote(notesCreateCtrl.newNote)">
         Save
       </button>
     </form>
