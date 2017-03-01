@@ -1,4 +1,4 @@
-// js/controllers/users-index-controller
+// js/controllers/users-index.controller
 
 (function() {
   "use strict";

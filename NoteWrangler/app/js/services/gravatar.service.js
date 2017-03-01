@@ -1,7 +1,9 @@
-// js/services/gravatar.js
+// js/services/gravatar.service
 
 (function() {
   "use strict";
+
+  let MD5 = require("crypto-js/md5");
 
   angular.module("NoteWrangler")
     .provider("Gravatar", GravatarProvider);
@@ -46,7 +48,7 @@
     }
 
     function _getAvatar(email) {
-      return `${AVATAR_URL}${CryptoJS.MD5(email)}?size=${avatarSize.toString()}&d=${defaultImage}`;
+      return `${AVATAR_URL}${MD5(email)}?size=${avatarSize.toString()}&d=${defaultImage}`;
     }
 
     function _$get() {

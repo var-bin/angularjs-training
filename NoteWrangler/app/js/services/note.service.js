@@ -1,4 +1,4 @@
-// js/services/note.js
+// js/services/note.service
 
 (function() {
   "use strict";

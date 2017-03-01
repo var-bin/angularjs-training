@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NoteWrangler">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Note Wrangler</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/styles.css">
+  </head>
+  <body>
+    <header>
+      <app-navbar></app-navbar>
+    </header>
+    <main class="container">
+      <div class="main-wrapper">
+        <div ng-view=""></div>
+      </div>
+      <footer>
+        <p>© 2016 Company, Inc.</p>
+      </footer>
+    </main>
+    <!-- Load Js libs -->
+    <script src="js/vendors/angular.js"></script>
+    <!-- Load app -->
+    <script src="js/app.module.js"></script>
+    <script src="js/routes.config.js"></script>
+    <!-- Controllers -->
+    <script src="assets/js/controllers.bundle.js"></script>
+    <script src="assets/js/directives.bundle.js"></script>
+    <script src="assets/js/services.bundle.js"></script>
+    <script src="assets/js/vendors.bundle.js"></script>
+  </body>
+</html>

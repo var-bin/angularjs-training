@@ -1,4 +1,4 @@
-// js/controllers/notes-index-controller
+// js/controllers/notes-index.controller
 
 (function() {
   "use strict";

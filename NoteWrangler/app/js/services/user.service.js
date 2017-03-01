@@ -1,4 +1,4 @@
-// js/services/user.js
+// js/services/user.service
 
 (function() {
   "use strict";

@@ -1,4 +1,4 @@
-// js/controllers/notes-show-controller
+// js/controllers/notes-show.controller
 
 (function() {
   "use strict";
