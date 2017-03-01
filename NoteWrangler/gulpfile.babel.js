@@ -30,11 +30,19 @@ const INDEX_TEMPLATE_PATH = path.join(APP_PATH, "index.template.html");
 const DEST_PATH = path.join(APP_PATH, "assets");
 const DEST_PATH_JS = path.join(DEST_PATH, "js");
 const DEST_PATH_CSS = path.join(DEST_PATH, "css");
+const DEST_PATH_FONTS = path.join(DEST_PATH, "fonts");
+
+function getDirectories(dir) {
+  return fs.readdirSync(dir)
+    .filter(function(file) {
+      return fs.statSync(path.join(dir, file)).isDirectory();
+    });
+}
 
 gulp.task("inject-html", (cb) => {
   let srcCss = gulp.src([DEST_PATH_CSS + "/*.css", "!" + DEST_PATH_CSS + "/*.min.css"], {read: false});
-  let appJs = gulp.src(APP_JS_PATH + "/*.js", {read: false});
-  let allJS = gulp.src(DEST_PATH_JS + "/*.js", {read: false});
+  let appJs = gulp.src([APP_JS_PATH + "/*.js", APP_JS_PATH + "/*.min.js"], {read: false});
+  let allJS = gulp.src([DEST_PATH_JS + "/*.js", "!" + DEST_PATH_CSS + "/*.min.js"], {read: false});
 
   gulp.src(INDEX_TEMPLATE_PATH)
     .pipe(inject(srcCss, {
@@ -54,14 +62,6 @@ gulp.task("inject-html", (cb) => {
   cb();
 });
 
-
-function getDirectories(dir) {
-  return fs.readdirSync(dir)
-    .filter(function(file) {
-      return fs.statSync(path.join(dir, file)).isDirectory();
-    });
-}
-
 gulp.task("concat-js", (cb) => {
   let directories = getDirectories(APP_JS_PATH);
 
@@ -71,13 +71,13 @@ gulp.task("concat-js", (cb) => {
       .pipe(concat(dirName + ".bundle.js"))
       // write to output
       .pipe(gulp.dest(DEST_PATH_JS));
-  });
+  })
 
   cb();
 });
 
-gulp.task("transpile",  (cb) => {
-  let assetsJS = gulp.src(path.join(DEST_PATH_JS, "/*.bundle.js"), {read: false});
+gulp.task("transpile", (cb) => {
+  let assetsJS = gulp.src(path.join(DEST_PATH_JS, "/*.bundle.js"));
 
   assetsJS
     .pipe(tap( (file) => {
@@ -94,6 +94,7 @@ gulp.task("transpile",  (cb) => {
     // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
     .pipe(buffer())
     .pipe(gulp.dest(DEST_PATH_JS));
+
   cb();
 });
 
@@ -121,5 +122,15 @@ gulp.task("minify-css", (cb) => {
 
   cb();
 });
+
+gulp.task("copy-fonts", (cb) => {
+  let bootstrapFonts = gulp.src(path.normalize("bower_components/bootstrap/fonts/glyphicons*"));
+
+  bootstrapFonts
+    .pipe(gulp.dest(DEST_PATH_FONTS));
+  cb();
+});
+
+gulp.task("assets", ["copy-css", "copy-fonts", "minify-css", "transpile", "inject-html"]);
 
 gulp.task("default", ["concat-js", "transpile"]);
