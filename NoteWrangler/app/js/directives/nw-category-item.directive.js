@@ -17,13 +17,13 @@
         category: "="
       },
       require: "^nwCategorySelect",
-      link: (scope, element, attrs, nwCategorySelectCtrl) => {
-        scope.makeActive = () => {
+      link: function (scope, element, attrs, nwCategorySelectCtrl) {
+        scope.makeActive = function () {
           nwCategorySelectCtrl.setActiveCategory(scope.category);
         };
 
-        scope.categoryActive = () => {
-          return nwCategorySelectCtrl.setActiveCategory(scope.category) === scope.category.name;
+        scope.categoryActive = function () {
+          return nwCategorySelectCtrl.getActiveCategory() === scope.category.name;
         };
       }
     }
