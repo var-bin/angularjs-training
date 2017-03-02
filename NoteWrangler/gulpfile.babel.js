@@ -58,7 +58,7 @@ gulp.task("inject-html", (cb) => {
     }))
     .pipe(replace("/app/", ""))
     .pipe(rename("index.html"))
-    .pipe(gulp.dest(APP_PATH));
+    .pipe(gulp.dest(DEST_PATH));
   cb();
 });
 
