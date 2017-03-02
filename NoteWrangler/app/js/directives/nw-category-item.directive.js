@@ -6,16 +6,26 @@
   angular.module("NoteWrangler")
     .directive("nwCategoryItem", nwCategoryItemDirective);
 
-  //nwCategoryItemDirective.$inject = ["Category"];
+  nwCategoryItemDirective.$inject = ["Category"];
 
   function nwCategoryItemDirective() {
     return {
       replace: true,
       restrict: "E",
-      templateUrl: "/templates/directives/nw-category-item.directive.html",
+      templateUrl: "../templates/directives/nw-category-item.directive.html",
       scope: {
         category: "="
+      },
+      require: "^nwCategorySelect",
+      link: (scope, element, attrs, nwCategorySelectCtrl) => {
+        scope.makeActive = () => {
+          nwCategorySelectCtrl.setActiveCategory(scope.category);
+        };
+
+        scope.categoryActive = () => {
+          return nwCategorySelectCtrl.setActiveCategory(scope.category) === scope.category.name;
+        };
       }
     }
   }
-});
+})();
