@@ -13,23 +13,23 @@
       replace: true,
       restrict: "E",
       templateUrl: "../templates/directives/nw-category-select.directive.html",
-      link: (scope, element, attrs) => {
+      link: function (scope, element, attrs) {
         scope.categories = Category.query();
       },
       // need refactoring
-      /*controller: ($scope) => {
-        this.activeCategory = () => {
+      controller: function ($scope) {
+        this.getActiveCategory = function() {
           return $scope.activeCategory;
         };
 
-        this.setActiveCategory = (category) => {
-          $scope.activeCategory = category;
+        this.setActiveCategory = function(newCategory) {
+          $scope.activeCategory = newCategory.name;
         };
 
         return this;
-      },*/
-      controller: "nwCategorySelectController",
-      controllerAs: "nwCategorySelectCtrl"
+      }
+      /*controller: "nwCategorySelectController",
+      controllerAs: "nwCategorySelectCtrl"*/
     };
   }
 })();
