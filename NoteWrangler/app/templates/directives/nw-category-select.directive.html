@@ -1,7 +1,9 @@
-<div class="sort-menu">
-  <h2>Categories</h2>
-  <div class="card">
-    <!--child select items go here-->
-    <nw-category-item ng-repeat="category in categories" category="category"></nw-category-item>
-  </div>
-</div>
+<aside class="l-nav-categories col-xs-2 col-md-2">
+  <nav class="nav-categories">
+    <h3>Categories</h3>
+      <ul class="nav nav-pills nav-stacked">
+        <!--child select items go here-->
+        <nw-category-item ng-repeat="category in categories" data-category="category"></nw-category-item>
+      </ul>
+  </nav>
+</aside>
