@@ -3,3 +3,22 @@
 body {
   padding-top: 70px;
 }
+
+.l-nav-categories h3 {
+  border-bottom: 2px solid #369;
+  padding: 0 .2em .2em;
+  margin-bottom: 0;
+  margin-top: .2em;
+}
+
+.l-nav-categories .nav {
+  padding: 0 1em 1em;
+}
+
+.l-nav-categories .nav-categories {
+  border: 2px solid #369;
+}
+
+.l-nav-categories .nav-categories__item {
+  border-bottom: 2px dotted #369;
+}
