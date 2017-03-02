@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="NoteWrangler">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Note Wrangler</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- inject:css -->
+    <!-- endinject -->
+  </head>
+  <body class="container">
+    <header>
+      <app-navbar></app-navbar>
+    </header>
+    <main class="row">
+      <div class="main-wrapper col-xs-10 col-md-10">
+        <div ng-view=""></div>
+      </div>
+      <nw-category-select></nw-category-select>
+    </main>
+    <footer>
+      <p>© 2016 Company, Inc.</p>
+    </footer>
+    <!-- Load Js libs -->
+    <script src="js/vendors/angular.js"></script>
+    <!-- Load app -->
+    <!-- inject:js-app -->
+    <!-- endinject -->
+    <!-- Controllers -->
+    <!-- inject:all-js -->
+    <!-- endinject -->
+  </body>
+</html>
