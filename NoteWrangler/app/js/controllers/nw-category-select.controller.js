@@ -11,15 +11,20 @@
   function nwCategorySelectController(Category) {
     let vm = this;
 
-    vm.activeCategory = _activeCategory;
+    vm.query = _query;
+    vm.getActiveCategory = _getActiveCategory;
     vm.setActiveCategory = _setActiveCategory;
 
-    function _activeCategory() {
+    function _query() {
+      return Category.query();
+    }
+
+    function _getActiveCategory() {
       return vm.activeCategory;
     }
 
-    function _setActiveCategory(category) {
-      vm.activeCategory = category;
+    function _setActiveCategory(newCategory) {
+      vm.activeCategory = newCategory.name;
     }
   }
 })();
