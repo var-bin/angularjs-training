@@ -27,7 +27,7 @@ server.use("/api", router);
 
 // Add custom routes before JSON Server router
 server.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, "app/index.html"));
+  res.sendFile(path.join(__dirname, "app/assets/index.html"));
 })
 
 server.listen(PORT, () => {

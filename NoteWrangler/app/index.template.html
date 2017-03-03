@@ -5,29 +5,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Note Wrangler</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- inject:css -->
+    <!-- endinject -->
   </head>
-  <body>
+  <body class="container">
     <header>
       <app-navbar></app-navbar>
     </header>
-    <main class="container">
-      <div class="main-wrapper">
+    <main>
+      <div class="main-wrapper row">
         <div ng-view=""></div>
       </div>
-      <footer>
-        <p>© 2016 Company, Inc.</p>
-      </footer>
     </main>
+    <footer>
+      <p>© 2016 Company, Inc.</p>
+    </footer>
     <!-- Load Js libs -->
     <script src="js/vendors/angular.js"></script>
     <!-- Load app -->
-    <script src="js/app.module.js"></script>
-    <script src="js/routes.config.js"></script>
+    <!-- inject:js-app -->
+    <!-- endinject -->
     <!-- Controllers -->
-    <script src="assets/js/controllers.bundle.js"></script>
-    <script src="assets/js/directives.bundle.js"></script>
-    <script src="assets/js/services.bundle.js"></script>
-    <script src="assets/js/vendors.bundle.js"></script>
+    <!-- inject:all-js -->
+    <!-- endinject -->
   </body>
 </html>
