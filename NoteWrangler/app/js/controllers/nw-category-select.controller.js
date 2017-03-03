@@ -6,9 +6,9 @@
   angular.module("NoteWrangler")
     .controller("nwCategorySelectController", nwCategorySelectController);
 
-  nwCategorySelectController.$inject = ["Category"];
+  nwCategorySelectController.$inject = ["Category", "$scope"];
 
-  function nwCategorySelectController(Category) {
+  function nwCategorySelectController(Category, $scope) {
     let vm = this;
 
     vm.query = _query;
@@ -26,6 +26,9 @@
 
     function _setActiveCategory(newCategory) {
       vm.activeCategory = newCategory.name;
+
+      // need refactoring
+      $scope.activeCategory = newCategory.name;
     }
 
     function _getCategoryCount(notes, category) {

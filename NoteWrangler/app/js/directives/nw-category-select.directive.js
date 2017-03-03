@@ -12,7 +12,8 @@
       restrict: "E",
       templateUrl: "../templates/directives/nw-category-select.directive.html",
       scope: {
-        notes: "="
+        notes: "=",
+        activeCategory: "="
       },
       link: (scope, element, attrs, nwCategorySelectCtrl) => {
         scope.categories = nwCategorySelectCtrl.query();
