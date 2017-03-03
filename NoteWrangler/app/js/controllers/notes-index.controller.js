@@ -11,10 +11,6 @@
   function NotesIndexController(Note) {
     let vm = this;
 
-    query();
-
-    function query() {
-      vm.notes = Note.query();
-    }
+    vm.notes = Note.query();
   }
 })();
