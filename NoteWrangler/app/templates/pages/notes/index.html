@@ -4,13 +4,13 @@
       <h1 title="Notes">Notes <a class="btn btn-success" href="#/notes/new" role="button" title="Add a new note">+</a></h1>
     </div>
     <div class="note-wrapper row">
-      <a class="card-notes col-md-4" ng-repeat="note in notesIndexCtrl.notes" ng-href="#/notes/{{note.id}}">
+      <a class="card-notes col-md-4" ng-repeat="note in notesIndexCtrl.notes | filter: {category: {name: activeCategory}}" ng-href="#/notes/{{note.id}}">
         <div class="card" title="{{note.title}}">
-          <h2 class="h3">{{note.title}}</h2>
+          <h2 class="h3">{{note.title}} {{activeCategory}}</h2>
           <p>{{note.description}}</p>
         </div>
       </a>
     </div>
   </div>
 </div>
-<nw-category-select data-notes="notesIndexCtrl.notes"></nw-category-select>
+<nw-category-select data-notes="notesIndexCtrl.notes" data-active-category="activeCategory"></nw-category-select>
