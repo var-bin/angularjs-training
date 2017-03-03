@@ -8,7 +8,7 @@
       <h1 title="Notes">Notes <a class="btn btn-success" href="#/notes/new" role="button" title="Add a new note">+</a></h1>
     </div>
     <div class="note-wrapper row">
-      <a class="card-notes col-md-4" ng-repeat="note in notesIndexCtrl.notes | filter: search" ng-href="#/notes/{{note.id}}">
+      <a class="card-notes col-md-4" ng-repeat="note in notesIndexCtrl.notes | filter: {category: {name: activeCategory}} | filter: search" ng-href="#/notes/{{note.id}}">
         <div class="card" title="{{note.title}}">
           <h2 class="h3">{{note.title}}</h2>
           <p>{{note.description}}</p>
