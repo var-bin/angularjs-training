@@ -14,17 +14,22 @@
       restrict: "E",
       templateUrl: "../templates/directives/nw-category-item.directive.html",
       scope: {
-        category: "="
+        category: "=",
+        notes: "="
       },
       require: "^nwCategorySelect",
       link: (scope, element, attrs, nwCategorySelectCtrl) => {
-        scope.makeActive = function () {
+        scope.makeActive = () => {
           nwCategorySelectCtrl.setActiveCategory(scope.category);
         };
 
-        scope.categoryActive = function () {
+        scope.categoryActive = () => {
           return nwCategorySelectCtrl.getActiveCategory() === scope.category.name;
         };
+
+        scope.countCategories = () => {
+          return nwCategorySelectCtrl.getCategoryCount(scope.notes, scope.category);
+        }
       }
     }
   }

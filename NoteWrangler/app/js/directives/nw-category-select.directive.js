@@ -11,6 +11,9 @@
       replace: true,
       restrict: "E",
       templateUrl: "../templates/directives/nw-category-select.directive.html",
+      scope: {
+        notes: "="
+      },
       link: (scope, element, attrs, nwCategorySelectCtrl) => {
         scope.categories = nwCategorySelectCtrl.query();
       },
