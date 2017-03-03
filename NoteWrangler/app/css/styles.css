@@ -12,7 +12,7 @@ body {
 }
 
 .l-nav-categories .nav {
-  padding: 0 1em 1em;
+  padding: 1em;
 }
 
 .l-nav-categories .nav-categories {
@@ -20,5 +20,5 @@ body {
 }
 
 .l-nav-categories .nav-categories__item {
-  border-bottom: 2px dotted #369;
+  cursor: pointer;
 }
