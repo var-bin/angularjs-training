@@ -17,7 +17,7 @@
         category: "="
       },
       require: "^nwCategorySelect",
-      link: function (scope, element, attrs, nwCategorySelectCtrl) {
+      link: (scope, element, attrs, nwCategorySelectCtrl) => {
         scope.makeActive = function () {
           nwCategorySelectCtrl.setActiveCategory(scope.category);
         };
