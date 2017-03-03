@@ -1,0 +1,160 @@
+{
+  "notes": [
+    {
+      "id": 0,
+      "link": "path-to-note",
+      "description": "Clarify the confusion between Service the term and `service` the angular method and to explain the 5 different Service recipes in Angular.\nClarify the confusion between Service the term and `service` the angular method and to explain the 5 different Service recipes in Angular.",
+      "title": "Service Service? Really Angular?",
+      "content": "There are 5 Recipes used to create a Service. One of those *was* unfortunately named, Service. So yes, amongst its fellow peers such as Provider Service and Factory Service, there is in fact a Service Service.",
+      "category": {
+        "name": "Question",
+        "icon": "question"
+      }
+    },
+    {
+      "id": 1,
+      "link": "path-to-note",
+      "description": "Define Service\nClarify the confusion between Service the term and `service` the angular method and to explain the 5 different Service recipes in Angular.\nClarify the confusion between Service the term and `service` the angular method and to explain the 5 different Service recipes in Angular.\nClarify the confusion between Service the term and `service` the angular method and to explain the 5 different Service recipes in Angular.\nClarify the confusion between Service the term and `service` the angular method and to explain the 5 different Service recipes in Angular.",
+      "title": "What is a Service",
+      "content": "Service: Angular services are objects that are wired together using dependency injection (DI). You can use services to organize and share code across your app.",
+      "category": {
+        "name": "Question",
+        "icon": "question"
+      }
+    },
+    {
+      "id": 2,
+      "link": "path-to-note",
+      "description": "Steps for Creating a Service\n\nLorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "title": "How do you create a Service?",
+      "content": "You can register a service to our Angular module `app` with a one of the following 5 recipes:\\n - **factory** \\n - **provider** \\n - **service** \\n - **value** \\n - **constant**",
+      "category": {
+        "name": "Best Practice",
+        "icon": "thumbs up"
+      }
+    },
+    {
+      "link": "path-to-note",
+      "description": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+      "title": "Test edit Note",
+      "content": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+      "id": 3,
+      "category": {
+        "name": "Best Practice",
+        "icon": "thumbs up"
+      }
+    },
+    {
+      "link": "path-to-note",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+      "title": "Test create Note",
+      "content": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      "id": 4,
+      "category": {
+        "name": "Best Practice",
+        "icon": "thumbs up"
+      }
+    },
+    {
+      "link": "path-to-note",
+      "description": "People are starting to ask: where can I learn about CSS Grid?\n\nThere are a lot of fantastic resources out there. When it comes to the technical how-to, most of what’s out there was written by Rachel Andrew. If you don’t know her work, take some time to get to know her and follow her.\n\nSo here are the links to resources I recommend. I will keep updating this list:",
+      "title": "Create new Note v2",
+      "content": "People are starting to ask: where can I learn about CSS Grid?\n\nThere are a lot of fantastic resources out there. When it comes to the technical how-to, most of what’s out there was written by Rachel Andrew. If you don’t know her work, take some time to get to know her and follow her.\n\nSo here are the links to resources I recommend. I will keep updating this list:\nPeople are starting to ask: where can I learn about CSS Grid?\n\nThere are a lot of fantastic resources out there. When it comes to the technical how-to, most of what’s out there was written by Rachel Andrew. If you don’t know her work, take some time to get to know her and follow her.\n\nSo here are the links to resources I recommend. I will keep updating this list:",
+      "id": 5,
+      "category": {
+        "name": "Best Practice",
+        "icon": "thumbs up"
+      }
+    },
+    {
+      "link": "path-to-note",
+      "icon": "question",
+      "description": "Welcome to the world of Brooke!",
+      "title": "Create Note v3",
+      "content": "Welcome to the world of Brooke! Here you'll find a shotgun shooting, dance shoe wearing, big weight moving, country girl that resides in Santa Cruz, CA, with my husband Marston T. Sawyers and fur baby named Riggs.\n\nMy website is designed to bring you amazing products and pure entertainment. It's my goal to motivate you to always be courageous and DIFFERENT.\n\nAttack life without fear of failure and always remember: “Lions Never Lose Sleep Over The Opinions Of Sheep!”",
+      "id": 6,
+      "category": {
+        "name": "Testing",
+        "icon": "t"
+      }
+    },
+    {
+      "link": "path-to-note",
+      "description": "Responsible for: • Developing and implementing programs that ensure all products and services meet client requirements, in addition to company standards",
+      "title": "Create another one Note",
+      "content": "Job Purpose\nResponsible for: • Developing and implementing programs that ensure all products and services meet client requirements, in addition to company standards. • Ensuring that quality assurance and control (QA, QC) process meet organization standards in assigned department (all projects). • Managing QA team in assigned department.",
+      "id": 7,
+      "category": {
+        "name": "Ideas",
+        "icon": "lamp"
+      }
+    },
+    {
+      "link": "path-to-note",
+      "description": "You may create your own question using this action. It takes a JSON object containing a question and a collection of answers in the form of choices.",
+      "title": "Create another Note v55",
+      "content": "You may create your own question using this action. It takes a JSON object containing a question and a collection of answers in the form of choices.You may create your own question using this action. It takes a JSON object containing a question and a collection of answers in the form of choices.You may create your own question using this action. It takes a JSON object containing a question and a collection of answers in the form of choices.",
+      "id": 8,
+      "category": {
+        "name": "Ideas",
+        "icon": "lamp"
+      }
+    }
+  ],
+  "users": [
+    {
+      "username": "ItsThrillhouse",
+      "name": "Jason Millhouse",
+      "bio": "Course builder. Aspiring writer. Comp Sci guy. Teacher. Sweetfiend. Corgi lover. Gamer who doesn't. Pro Series host. Voice of the UCF Marching Knights. Dork.",
+      "twitter_handle": "@ItsThrillhouse",
+      "site": "",
+      "email": "email@mail.com"
+    },
+    {
+      "username": "OlivierLacan",
+      "name": "Olivier Lacan",
+      "bio": "Software bricoleur at @codeschool, word wrangler, scientific skeptic, and logic lumberjack.",
+      "twitter_handle": "@olivierlacan",
+      "site": "olivierlacan.com",
+      "email": "email1@mail.com"
+    },
+    {
+      "username": "theSmith",
+      "name": "Andrew Smith",
+      "bio": "iOS & Web Developer at @intelity. @fullsail graduate.",
+      "twitter_handle": "@fullsailor",
+      "site": "fullsailor.com",
+      "email": "email2@mail.com"
+    },
+    {
+      "username": "DrewBarontini",
+      "name": "Drew Barontini",
+      "bio": "Front-end developer @codeschool, descendant of @envylabs, real-life extrovert, internet introvert.",
+      "twitter_handle": "@drewbarontini",
+      "site": "drewbarontini.com",
+      "email": "email3@mail.com"
+    }
+  ],
+  "categories": [
+    {
+      "id": 0,
+      "name": "Question",
+      "icon": "question"
+    },
+    {
+      "id": 1,
+      "name": "Best Practice",
+      "icon": "thumbs up"
+    },
+    {
+      "id": 2,
+      "name": "Testing",
+      "icon": "t"
+    },
+    {
+      "id": 3,
+      "name": "Ideas",
+      "icon": "lamp"
+    }
+  ]
+}
