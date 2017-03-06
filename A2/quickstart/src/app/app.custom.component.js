@@ -32,10 +32,13 @@ var AppCustomComponent = (function () {
                 "entryFee": 0
             }];
     }
+    AppCustomComponent.prototype.getDate = function (currentDate) {
+        return currentDate;
+    };
     AppCustomComponent = __decorate([
         core_1.Component({
-            selector: 'my-app-custom-component',
-            template: "<h2>{{title}}</h2>\n    <ul>\n      <li *ngFor=\"let race of races\" class=\"item\">\n        <h4>\n          {{race.name}}\n          <time>\n            {{race.date}}\n          </time>\n        </h4>\n        <p>\n          {{race.about}}\n          <em *ngIf=\"race.entryFee\">\n            $ {{race.entryFee}}\n          </em>\n        </p>\n      </li >\n    </ul>\n  ",
+            selector: "my-app-custom-component",
+            template: "<h2>{{title}}</h2>\n    <ul>\n      <li *ngFor=\"let race of races\" class=\"item\">\n        <h4>\n          {{race.name}}\n          <time>\n            {{getDate(race.date) | date: \"MMM d, y, h:mm a\"}}\n          </time>\n        </h4>\n        <p>\n          {{race.about}}\n          <em *ngIf=\"race.entryFee\">\n            {{race.entryFee | currency: \"EUR\":true}}\n          </em>\n        </p>\n      </li >\n    </ul>"
         }), 
         __metadata('design:paramtypes', [])
     ], AppCustomComponent);
