@@ -8,13 +8,13 @@ import { Component } from '@angular/core';
         <h4>
           {{race.name}}
           <time>
-            {{race.date}}
+            {{getDate(race.date) | date: "MMM d, y, h:mm a"}}
           </time>
         </h4>
         <p>
           {{race.about}}
           <em *ngIf="race.entryFee">
-            $ {{race.entryFee}}
+            {{race.entryFee | currency: "EUR":true}}
           </em>
         </p>
       </li >
@@ -43,4 +43,7 @@ export class AppCustomComponent {
     "about": "Fly between buildings in the electronic sky.",
     "entryFee": 0
   }];
+  getDate(currentDate: Date) {
+    return currentDate;
+  }
 };
