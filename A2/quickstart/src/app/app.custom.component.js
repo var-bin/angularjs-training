@@ -38,7 +38,8 @@ var AppCustomComponent = (function () {
     AppCustomComponent = __decorate([
         core_1.Component({
             selector: "my-app-custom-component",
-            template: "<h2>{{title}}</h2>\n    <ul>\n      <li *ngFor=\"let race of races\" class=\"item\">\n        <h4>\n          {{race.name}}\n          <time>\n            {{getDate(race.date) | date: \"MMM d, y, h:mm a\"}}\n          </time>\n        </h4>\n        <p>\n          {{race.about}}\n          <em *ngIf=\"race.entryFee\">\n            {{race.entryFee | currency: \"EUR\":true}}\n          </em>\n        </p>\n      </li >\n    </ul>"
+            template: "<h2>{{title}}</h2>\n    <ul>\n      <li *ngFor=\"let race of races\" class=\"item\">\n        <h4 class=\"race-title\">\n          {{race.name}}\n          <time class=\"race-time\">\n            {{getDate(race.date) | date: \"MMM d, y, h:mm a\"}}\n          </time>\n        </h4>\n        <p class=\"race-description\">\n          {{race.about}}\n          <em *ngIf=\"race.entryFee\">\n            {{race.entryFee | currency: \"EUR\":true}}\n          </em>\n        </p>\n      </li >\n    </ul>",
+            styles: ["\n    .race-title {\n      color: #444;\n      font-size: x-large;\n    },\n    .race-time {\n      color: #333;\n      font-weight: bold;\n    },\n    .race-description {\n      font-size: 2em;\n    }\n  "]
         }), 
         __metadata('design:paramtypes', [])
     ], AppCustomComponent);
