@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'my-app-custom-component',
+  selector: "my-app-custom-component",
   template: `<h2>{{title}}</h2>
     <ul>
       <li *ngFor="let race of races" class="item">
@@ -18,8 +18,7 @@ import { Component } from '@angular/core';
           </em>
         </p>
       </li >
-    </ul>
-  `,
+    </ul>`
 })
 
 export class AppCustomComponent {
