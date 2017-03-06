@@ -9,4 +9,5 @@ import { AppCustomComponent }  from './app.custom.component';
   declarations: [ AppComponent, AppCustomComponent ],
   bootstrap:    [ AppComponent ]
 })
+
 export class AppModule { }
