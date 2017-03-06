@@ -2,36 +2,8 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: "my-app-custom-component",
-  template: `<h2>{{title}}</h2>
-    <ul>
-      <li *ngFor="let race of races" class="item">
-        <h4 class="race-title">
-          {{race.name}}
-          <time class="race-time">
-            {{getDate(race.date) | date: "MMM d, y, h:mm a"}}
-          </time>
-        </h4>
-        <p class="race-description">
-          {{race.about}}
-          <em *ngIf="race.entryFee">
-            {{race.entryFee | currency: "EUR":true}}
-          </em>
-        </p>
-      </li >
-    </ul>`,
-  styles: [`
-    .race-title {
-      color: #444;
-      font-size: x-large;
-    },
-    .race-time {
-      color: #333;
-      font-weight: bold;
-    },
-    .race-description {
-      font-size: 2em;
-    }
-  `]
+  templateUrl: "app/app.custom.component.html",
+  styleUrls: [ "app/app.custom.component.css" ]
 })
 
 export class AppCustomComponent {

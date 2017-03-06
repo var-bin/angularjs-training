@@ -1,0 +1,13 @@
+.race-title {
+  color: #444;
+  font-size: x-large;
+}
+
+.race-time {
+  color: #333;
+  font-weight: bold;
+}
+
+.race-description {
+  font-size: 2em;
+}
