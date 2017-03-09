@@ -1,0 +1,19 @@
+{
+  "name": "ng-you-tube-app",
+  "description": "Play your youtube playlists without pain",
+  "main": "index.js",
+  "authors": [
+    "Vitalii Rybka"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/var-bin/angularjs-training",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "vendors/",
+    "test",
+    "tests"
+  ]
+}
