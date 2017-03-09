@@ -7,6 +7,7 @@ import { AppCustomComponent }  from './app.custom.component';
 @NgModule({
   imports:      [ BrowserModule ],
   declarations: [ AppComponent, AppCustomComponent ],
-  bootstrap:    [ AppComponent, AppCustomComponent ]
+  bootstrap:    [ AppComponent ]
 })
+
 export class AppModule { }

@@ -1,0 +1,17 @@
+<h2>{{title}}</h2>
+<ul>
+  <li *ngFor="let race of races" class="item">
+    <h4 class="race-title">
+      {{race.name}}
+      <time class="race-time">
+        {{getDate(race.date) | date: "MMM d, y, h:mm a"}}
+      </time>
+    </h4>
+    <p class="race-description">
+      {{race.about}}
+      <em *ngIf="race.entryFee">
+        {{race.entryFee | currency: "EUR":true}}
+      </em>
+    </p>
+  </li >
+</ul>
