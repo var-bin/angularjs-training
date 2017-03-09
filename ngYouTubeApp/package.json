@@ -1,0 +1,11 @@
+{
+  "name": "ng-you-tube-app",
+  "version": "1.0.0",
+  "description": "Play your youtube playlists without pain",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Vitalii Rybka",
+  "license": "ISC"
+}
