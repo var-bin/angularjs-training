@@ -14,9 +14,9 @@ export class AppCustomComponent {
 
   getDate(currentDate: Date) {
     return currentDate;
-  }
+  };
 
   ngOnInit() {
     this.races = RACE_PARTS;
-  }
+  };
 };
