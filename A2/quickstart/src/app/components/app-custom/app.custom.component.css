@@ -49,6 +49,10 @@ li:last-child {
   background: #24262c;
 }
 
+.card.racing {
+  background: #24287c;
+}
+
 .date, .price {
   color: #9397d8;
 }
