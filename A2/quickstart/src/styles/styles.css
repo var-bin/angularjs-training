@@ -13,3 +13,7 @@ body {
 h1 {
   color: #66d9f7;
 }
+
+img {
+  vertical-align: top;
+}
