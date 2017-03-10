@@ -1,9 +1,9 @@
-// race-part.ts
+// race-part.model.ts
 
 export class RacePart {
-  id: Number;
-  name: String;
+  id: number;
+  name: string;
   date: Date;
-  about: String;
-  entryFee: Number;
+  about: string;
+  entryFee: number;
 };
