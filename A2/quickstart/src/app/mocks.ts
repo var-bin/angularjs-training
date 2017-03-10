@@ -1,6 +1,6 @@
 // mocks.ts
 
-import { RacePart } from "./race-part";
+import { RacePart } from "./race-part.model";
 
 export const RACE_PARTS: RacePart[] = [{
   "id": 1,

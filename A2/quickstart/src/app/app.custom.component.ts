@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import { RacePart } from "./race-part";
+import { RacePart } from "./race-part.model";
 import { RACE_PARTS } from "./mocks";
 
 @Component({
@@ -14,9 +14,9 @@ export class AppCustomComponent {
 
   getDate(currentDate: Date) {
     return currentDate;
-  }
+  };
 
   ngOnInit() {
     this.races = RACE_PARTS;
-  }
+  };
 };

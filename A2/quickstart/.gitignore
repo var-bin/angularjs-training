@@ -1,0 +1,5 @@
+# src/app/*.map
+src/app/*.map
+
+# src/app/*.js
+src/app/*.js
