@@ -1,17 +1,35 @@
-<h2>{{title}}</h2>
+<main class="container" role="main">
+<h2>Cash left to enter races: <span>{{cashLeft() | currency:'USD':true}}</span> </h2>
 <ul>
-  <li *ngFor="let race of races" class="item">
-    <h4 class="race-title">
-      {{race.name}}
-      <time class="race-time">
-        {{getDate(race.date) | date: "MMM d, y, h:mm a"}}
-      </time>
-    </h4>
-    <p class="race-description">
-      {{race.about}}
-      <em *ngIf="race.entryFee">
-        {{race.entryFee | currency: "EUR":true}}
-      </em>
-    </p>
-  </li >
+  <li class="card" *ngFor="let race of races"   >
+    <div class="panel-body">
+      <div class="photo">
+        <img   >
+      </div>
+      <table class="race-info">
+        <tr>
+          <td>
+            <h3>{{race.name}}</h3>
+            <p class="date">{{race.date | date:'MMM d, y, h:MM a'}}</p>
+            <p class="description">{{race.about}}</p>
+          </td>
+          <td>
+            <p class="price">{{race.entryFee | currency:'USD':true}}</p>
+          </td>
+          <td>
+            <button class="button" *ngIf="!race.isRacing">Enter Race</button>
+            <div *ngIf="race.isRacing">
+              <p class="status">Racing</p>
+              <button class="button-cancel">Cancel Race</button>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </li>
 </ul>
+<div class="price-total">
+  <h3>Total cost:</h3>
+  <p>{{totalCost() | currency:'USD':true}}</p>
+</div>
+</main>
