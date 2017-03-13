@@ -37,7 +37,7 @@ export class AppCustomComponent {
     return this.cash - this.totalCost();
   };
 
-  upQuantity(race) {
+  upQuantity(race: { inStock: number; quantity: number; }): {} {
     if (race.inStock > race.quantity) {
       return race.quantity++;
     }
@@ -45,7 +45,7 @@ export class AppCustomComponent {
     return false;
   };
 
-  downQuantity(race) {
+  downQuantity(race: { quantity: number; }): {} {
     if (race.quantity > 0) {
       return race.quantity--;
     }
@@ -53,11 +53,11 @@ export class AppCustomComponent {
     return false;
   };
 
-  cancelRace(race) {
+  cancelRace(race: { isRacing: boolean; }): {} {
     return race.isRacing = false;
   };
 
-  enterRace(race) {
+  enterRace(race: { isRacing: boolean; entryFee: number; }): {} {
     if (this.cashLeft() > race.entryFee) {
       return race.isRacing = true;
     }
