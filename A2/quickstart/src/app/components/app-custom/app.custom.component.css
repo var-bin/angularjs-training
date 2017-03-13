@@ -25,10 +25,6 @@ li:last-child {
   margin-bottom: 0;
 }
 
-.container {
-  max-width: 900px;
-}
-
 .button {
   background: #fd79fc;
   border-radius: 3px;
@@ -67,8 +63,9 @@ li:last-child {
 }
 
 .photo {
-  float: left;
-  margin-right: 30px;
+  display: table-cell;
+  padding-right: 30px;
+  vertical-align: middle;
 }
 
 .price {
@@ -131,4 +128,16 @@ li:last-child {
 .unavailble .button {
   background: #707070;
   color: #aeaeae;
+}
+
+.select-quantity {
+  min-width: 5em;
+  text-align: center;
+}
+
+.select-quantity .derease-button,
+.select-quantity .increase-button,
+.select-quantity .quantity-value {
+  display: inline-block;
+  vertical-align: middle;
 }

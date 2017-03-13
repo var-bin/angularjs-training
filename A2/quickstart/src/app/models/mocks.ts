@@ -10,7 +10,9 @@ export const RACE_PARTS: RacePart[] = [{
   "entryFee": 3200,
   "isRacing": false,
   "image": "/images/daytona_thunderdome.jpg",
-  "imageDescription": "Race track with laser lanes"
+  "imageDescription": "Race track with laser lanes",
+  "quantity": 0,
+  "inStock": 5
 }, {
   "id": 2,
   "name": "San Francisco Ruins",
@@ -19,7 +21,9 @@ export const RACE_PARTS: RacePart[] = [{
   "entryFee": 4700,
   "isRacing": true,
   "image": "/images/san_francisco_ruins.jpg",
-  "imageDescription": "Golden Gate Bridge with lasers"
+  "imageDescription": "Golden Gate Bridge with lasers",
+  "quantity": 0,
+  "inStock": 0
 }, {
   "id": 3,
   "name": "New York City Skyline",
@@ -28,5 +32,7 @@ export const RACE_PARTS: RacePart[] = [{
   "entryFee": 4300,
   "isRacing": true,
   "image": "/images/new_york_city_skyline.jpg",
-  "imageDescription": "Bridge overlooking New York City"
+  "imageDescription": "Bridge overlooking New York City",
+  "quantity": 0,
+  "inStock": 8
 }];

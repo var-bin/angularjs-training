@@ -9,4 +9,6 @@ export class RacePart {
   isRacing: boolean;
   image: string;
   imageDescription: string;
+  quantity: number;
+  inStock: number;
 };

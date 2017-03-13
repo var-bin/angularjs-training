@@ -31,9 +31,37 @@ export class AppCustomComponent {
     }
 
     return sum;
-  }
+  };
 
   cashLeft() {
     return this.cash - this.totalCost();
-  }
+  };
+
+  upQuantity(race: { inStock: number; quantity: number; }): {} {
+    if (race.inStock > race.quantity) {
+      return race.quantity++;
+    }
+
+    return false;
+  };
+
+  downQuantity(race: { quantity: number; }): {} {
+    if (race.quantity > 0) {
+      return race.quantity--;
+    }
+
+    return false;
+  };
+
+  cancelRace(race: { isRacing: boolean; }): {} {
+    return race.isRacing = false;
+  };
+
+  enterRace(race: { isRacing: boolean; entryFee: number; }): {} {
+    if (this.cashLeft() > race.entryFee) {
+      return race.isRacing = true;
+    }
+
+    alert("You don't have enough cash");
+  };
 };

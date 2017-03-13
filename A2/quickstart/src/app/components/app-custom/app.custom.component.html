@@ -12,15 +12,30 @@
             <h3>{{race.name}}</h3>
             <p class="date">{{race.date | date:'MMM d, y, h:MM a'}}</p>
             <p class="description">{{race.about}}</p>
+            <p class="quantity-in-stock" *ngIf="!race.inStock">
+              <em>Out of Stock</em>
+            </p>
+            <p class="quantity-in-stock" *ngIf="race.inStock">
+              {{race.inStock}} In stock
+            </p>
           </td>
           <td>
             <p class="price">{{race.entryFee | currency:'USD':true}}</p>
           </td>
           <td>
-            <button class="button" *ngIf="!race.isRacing">Enter Race</button>
+            <div class="select-quantity">
+              <button class="derease-button" (click)="downQuantity(race)">-</button>
+              <span class="quantity-value">
+                {{race.quantity}}
+              </span>
+              <button class="increase-button" (click)="upQuantity(race)">+</button>
+            </div>
+          </td>
+          <td>
+            <button class="button" *ngIf="!race.isRacing" (click)=" enterRace(race)">Enter Race</button>
             <div *ngIf="race.isRacing">
               <p class="status">Racing</p>
-              <button class="button-cancel">Cancel Race</button>
+              <button class="button-cancel" (click)="cancelRace(race)">Cancel Race</button>
             </div>
           </td>
         </tr>
