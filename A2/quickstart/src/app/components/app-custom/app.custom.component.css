@@ -135,9 +135,14 @@ li:last-child {
   text-align: center;
 }
 
+.select-quantity .quantity-value,
 .select-quantity .derease-button,
-.select-quantity .increase-button,
-.select-quantity .quantity-value {
+.select-quantity .increase-button {
+  text-align: center;
+  min-width: 1.5em;
+  width: auto;
+  max-width: 1.5em;
+  padding: 0;
   display: inline-block;
   vertical-align: middle;
 }
