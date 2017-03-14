@@ -37,7 +37,7 @@ export class AppCustomComponent {
     return this.cash - this.totalCost();
   };
 
-  upQuantity(race: { inStock: number, quantity: number; }): number | boolean {
+  upQuantity(race: { inStock: number, quantity: number }): number | boolean {
     if (race.inStock > race.quantity) {
       return race.quantity++;
     }
@@ -63,5 +63,15 @@ export class AppCustomComponent {
     }
 
     alert("You don't have enough cash");
+  };
+
+  checkValue(race: { inStock: number, quantity: number }, value: number): number | boolean {
+    if (value > race.inStock || value < 0) {
+      alert("Wrong value");
+
+      return race.quantity = 0;
+    }
+
+
   };
 };
