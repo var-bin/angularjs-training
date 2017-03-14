@@ -25,9 +25,7 @@
           <td>
             <div class="select-quantity">
               <button class="derease-button" (click)="downQuantity(race)">-</button>
-              <span class="quantity-value">
-                {{race.quantity}}
-              </span>
+              <input type="text" class="quantity-value" [(ngModel)]="race.quantity" min="0" max="{{race.inStock}}">
               <button class="increase-button" (click)="upQuantity(race)">+</button>
             </div>
           </td>
