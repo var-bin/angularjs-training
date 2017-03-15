@@ -1,12 +1,18 @@
 // racing-data.service.ts
 
-import { RACE_PARTS } from "../models/mocks";
 import { Injectable } from "@angular/core";
+import { RacePart } from "../models/race-part.model";
+import { Http } from "@angular/http";
+import "rxjs/add/operator/map";
+
 
 @Injectable()
 
 export class RacingDataService {
+  constructor(private http: Http) {}
+
   getRacingData() {
-    return RACE_PARTS;
+    return this.http.get("app/models/racing-data.json")
+              .map(response => <RacePart[]>response.json().data);
   }
 }
