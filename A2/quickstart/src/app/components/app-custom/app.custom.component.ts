@@ -20,15 +20,17 @@ export class AppCustomComponent {
   };
 
   ngOnInit() {
-    this.races = this.racingDataService.getRacingData();
+    this.racingDataService.getRacingData()
+      .subscribe(RacePart => this.races = RacePart);
   };
 
   totalCost() {
     let sum = 0;
-
-    for (let race of this.races) {
-      if (race.isRacing) {
-        sum += race.entryFee;
+    if (Array.isArray(this.races)) {
+      for (let race of this.races) {
+        if (race.isRacing) {
+          sum += race.entryFee;
+        }
       }
     }
 
