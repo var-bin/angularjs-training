@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 import { RacePart } from "../../models/race-part.model";
-import { RACE_PARTS } from "../../models/mocks";
+import { RacingDataService } from "../../services/racing-data.service";
 
 @Component({
   selector: "my-app-custom-component",
@@ -13,20 +13,24 @@ export class AppCustomComponent {
   races: RacePart[];
   cash = 10000;
 
+  constructor(private racingDataService: RacingDataService) {}
+
   getDate(currentDate: Date) {
     return currentDate;
   };
 
   ngOnInit() {
-    this.races = RACE_PARTS;
+    this.racingDataService.getRacingData()
+      .subscribe(RacePart => this.races = RacePart);
   };
 
   totalCost() {
     let sum = 0;
-
-    for (let race of this.races) {
-      if (race.isRacing) {
-        sum += race.entryFee;
+    if (Array.isArray(this.races)) {
+      for (let race of this.races) {
+        if (race.isRacing) {
+          sum += race.entryFee;
+        }
       }
     }
 
