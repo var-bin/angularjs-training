@@ -10,7 +10,6 @@ import htmlmin from "gulp-htmlmin";
 import uglify from "gulp-uglify";
 import rename from "gulp-rename";
 import babel from "gulp-babel";
-import flatten from "gulp-flatten";
 import concatCss from "gulp-concat-css";
 import csso from "gulp-csso";
 import inject from "gulp-inject";
@@ -23,7 +22,8 @@ import buffer from "gulp-buffer";
 import sourcemaps from "gulp-sourcemaps";
 import concat from "gulp-concat";
 import uncss from "gulp-uncss";
-import eslint from 'gulp-eslint';
+import eslint from "gulp-eslint";
+import del from "del";
 
 const APP_PATH = path.join(__dirname, "app");
 const APP_CSS_PATH = path.join(APP_PATH, "css");
@@ -61,8 +61,15 @@ gulp.task("inject-html", (cb) => {
     }))
     .pipe(replace("/app/", ""))
     .pipe(rename("index.html"))
+    .pipe(htmlmin({
+      collapseWhitespace: true
+    }))
     .pipe(gulp.dest(DEST_PATH));
   cb();
+});
+
+gulp.task("clean:js", () => {
+  return del(DEST_PATH_JS);
 });
 
 gulp.task("concat-js", (cb) => {
@@ -80,7 +87,7 @@ gulp.task("concat-js", (cb) => {
 });
 
 gulp.task("eslint", (cb) => {
-  let allJS = gulp.src([path.join(APP_JS_PATH, "**/*.js"), "!" + path.join(APP_JS_PATH, "vendors/*.js")]);
+  let allJS = gulp.src([path.join(APP_JS_PATH, "**/*.js"), "!" + path.join(APP_JS_PATH, "vendors/*.js"), path.join(__dirname, "gulpfile.babel.js")]);
 
   allJS
     // eslint() attaches the lint output to the "eslint" property
@@ -152,6 +159,6 @@ gulp.task("copy-fonts", (cb) => {
   cb();
 });
 
-gulp.task("assets", ["copy-css", "copy-fonts", "minify-css", "transpile", "inject-html"]);
+gulp.task("assets", ["copy-css", "copy-fonts", "minify-css", "concat-js", "transpile", "inject-html"]);
 
-gulp.task("default", ["concat-js", "transpile"]);
+gulp.task("default", ["clean:js", "concat-js", "transpile"]);
