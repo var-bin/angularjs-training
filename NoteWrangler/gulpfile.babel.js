@@ -147,7 +147,8 @@ gulp.task("minify-css", (cb) => {
     .pipe(csso({
       restructure: false,
       sourceMap: true,
-      debug: true
+      debug: true,
+      comments: false
     }))
     .pipe(rename("styles.min.css"))
     .pipe(gulp.dest(DEST_PATH_CSS));
