@@ -22,6 +22,8 @@ import tap from "gulp-tap";
 import buffer from "gulp-buffer";
 import sourcemaps from "gulp-sourcemaps";
 import concat from "gulp-concat";
+import uncss from "gulp-uncss";
+import eslint from 'gulp-eslint';
 
 const APP_PATH = path.join(__dirname, "app");
 const APP_CSS_PATH = path.join(APP_PATH, "css");
@@ -31,6 +33,7 @@ const DEST_PATH = path.join(APP_PATH, "assets");
 const DEST_PATH_JS = path.join(DEST_PATH, "js");
 const DEST_PATH_CSS = path.join(DEST_PATH, "css");
 const DEST_PATH_FONTS = path.join(DEST_PATH, "fonts");
+const TEMPLATES_PATH = path.join(APP_PATH, "templates/**/*.html");
 
 function getDirectories(dir) {
   return fs.readdirSync(dir)
@@ -76,6 +79,23 @@ gulp.task("concat-js", (cb) => {
   cb();
 });
 
+gulp.task("eslint", (cb) => {
+  let allJS = gulp.src([path.join(APP_JS_PATH, "**/*.js"), "!" + path.join(APP_JS_PATH, "vendors/*.js")]);
+
+  allJS
+    // eslint() attaches the lint output to the "eslint" property
+    // of the file object so it can be used by other modules.
+    .pipe(eslint())
+    // eslint.format() outputs the lint results to the console.
+    // Alternatively use eslint.formatEach() (see Docs).
+    .pipe(eslint.format())
+    // To have the process exit with an error code (1) on
+    // lint error, return the stream and pipe to failAfterError last.
+    .pipe(eslint.failAfterError());
+
+  cb();
+});
+
 gulp.task("transpile", (cb) => {
   let assetsJS = gulp.src(path.join(DEST_PATH_JS, "/*.bundle.js"));
 
@@ -86,9 +106,7 @@ gulp.task("transpile", (cb) => {
       file.contents = browserify(file.path, {
         debug: true
       })
-      .transform("babelify", {
-        presets: ["env", "es2015"]
-      })
+      .transform("babelify")
       .bundle();
     }))
     // transform streaming contents into buffer contents (because gulp-sourcemaps does not support streaming contents)
@@ -112,6 +130,9 @@ gulp.task("minify-css", (cb) => {
   allCss
     .pipe(concatCss("styles.css"))
     .pipe(gulp.dest(DEST_PATH_CSS))
+    .pipe(uncss({
+      html: [INDEX_TEMPLATE_PATH, TEMPLATES_PATH]
+    }))
     .pipe(csso({
       restructure: false,
       sourceMap: true,
