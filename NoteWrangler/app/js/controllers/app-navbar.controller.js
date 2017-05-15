@@ -6,9 +6,9 @@
   angular.module("NoteWrangler")
     .controller("appNavbarController", appNavbarController);
 
-  appNavbarController.$inject = ["$location", "$routeParams"];
+  appNavbarController.$inject = ["$location"];
 
-  function appNavbarController($location, $routeParams) {
+  function appNavbarController($location) {
     let vm = this;
 
     vm.setActive = setActive;
