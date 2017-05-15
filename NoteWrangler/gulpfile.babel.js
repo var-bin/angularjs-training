@@ -108,6 +108,19 @@ gulp.task("eslint", (cb) => {
   cb();
 });
 
+gulp.task("uglify-js", (cb) => {
+  let allJS = gulp.src(path.join(DEST_PATH_JS, "/*.js"));
+
+  allJS
+    .pipe(uglify())
+    .pipe(rename({
+      extname: ".min.js"
+    }))
+    .pipe(gulp.dest(DEST_PATH_JS));
+
+  cb();
+});
+
 gulp.task("transpile", (cb) => {
   let assetsJS = gulp.src(path.join(DEST_PATH_JS, "/*.bundle.js"));
 
