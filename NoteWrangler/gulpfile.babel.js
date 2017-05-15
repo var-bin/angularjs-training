@@ -177,6 +177,6 @@ gulp.task("copy-fonts", (cb) => {
   cb();
 });
 
-gulp.task("assets", ["copy-css", "copy-fonts", "minify-css", "transpile", "inject-html"]);
+gulp.task("assets", ["copy-css", "copy-fonts", "minify-css", "transpile", "uglify-js", "inject-html"]);
 
 gulp.task("default", ["clean:js", "concat-js", "transpile"]);
