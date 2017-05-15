@@ -9,7 +9,6 @@ import fs from "fs";
 import htmlmin from "gulp-htmlmin";
 import uglify from "gulp-uglify";
 import rename from "gulp-rename";
-import babel from "gulp-babel";
 import concatCss from "gulp-concat-css";
 import csso from "gulp-csso";
 import inject from "gulp-inject";
@@ -24,6 +23,7 @@ import concat from "gulp-concat";
 import uncss from "gulp-uncss";
 import eslint from "gulp-eslint";
 import del from "del";
+import gulpIf from "gulp-if";
 
 const APP_PATH = path.join(__dirname, "app");
 const APP_CSS_PATH = path.join(APP_PATH, "css");
@@ -34,6 +34,8 @@ const DEST_PATH_JS = path.join(DEST_PATH, "js");
 const DEST_PATH_CSS = path.join(DEST_PATH, "css");
 const DEST_PATH_FONTS = path.join(DEST_PATH, "fonts");
 const TEMPLATES_PATH = path.join(APP_PATH, "templates/**/*.html");
+
+const IS_PRODUCTION = !process.env.NODE_ENV || process.env.NODE_ENV == "production";
 
 function getDirectories(dir) {
   return fs.readdirSync(dir)
@@ -61,9 +63,12 @@ gulp.task("inject-html", (cb) => {
     }))
     .pipe(replace("/app/", ""))
     .pipe(rename("index.html"))
-    .pipe(htmlmin({
-      collapseWhitespace: true
-    }))
+    .pipe(gulpIf(IS_PRODUCTION, htmlmin({
+      collapseWhitespace: true,
+      removeComments: true,
+      quoteCharacter: "\""
+    })))
+    .pipe(gulpIf(IS_PRODUCTION, rename("index.min.html")))
     .pipe(gulp.dest(DEST_PATH));
   cb();
 });
@@ -123,12 +128,11 @@ gulp.task("transpile", (cb) => {
   cb();
 });
 
-gulp.task("copy-css", (cb) => {
+gulp.task("copy-css", () => {
   let bootstrapCss = path.normalize("bower_components/bootstrap/dist/css/bootstrap.css");
 
   return gulp.src(bootstrapCss)
     .pipe(gulp.dest(APP_CSS_PATH));
-  cb();
 });
 
 gulp.task("minify-css", (cb) => {
