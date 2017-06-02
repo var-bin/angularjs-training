@@ -3,3 +3,6 @@ node_modules
 
 # bower components
 vendors
+
+# sublime project settings
+*.sublime-*
