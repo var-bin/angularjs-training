@@ -13,5 +13,9 @@
     "ES5/6"
   ],
   "author": "Vitalii Rybka",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.10.0",
+    "typescript": "^2.3.4"
+  }
 }
