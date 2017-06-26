@@ -1,6 +1,10 @@
 # AngularJS Training
 Improve skills in Angular.js and other awesome tools
 
+[![codebeat badge](https://codebeat.co/badges/f6969124-c07f-41b8-adc0-28ad36d71165)](https://codebeat.co/projects/github-com-var-bin-angularjs-training-master)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://github.com/var-bin/angularjs-training)
+[![npm](https://img.shields.io/npm/v/npm.svg)](https://github.com/var-bin/angularjs-training)
+
 List of content:
 * A2 - a simple project that was written in AngularJS v2.4.0
   * Technology stack:
