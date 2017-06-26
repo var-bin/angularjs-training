@@ -1,0 +1,21 @@
+{
+  "name": "angularjs-with-typescript",
+  "version": "1.0.0",
+  "description": "AngularJS + TypeScript and other awesome tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Angular",
+    "TypeScript",
+    "JavaScript",
+    "ES5/6"
+  ],
+  "author": "Vitalii Rybka",
+  "license": "ISC",
+  "devDependencies": {
+    "http-server": "^0.10.0",
+    "typescript": "^2.3.4"
+  }
+}
