@@ -26,5 +26,19 @@ List of content:
     8. Gulp
     9. ESLint
     10. json-server
-* reading-list-app - a simple project that was written in AngularJS v1.5.0. This project works with Reading List. You can create new lists. All covers are getting from Amazon. 
+* reading-list-app - a simple project that was written in AngularJS v1.5.0. This project works with Reading List. You can create new lists. All covers are getting from Amazon.
+  * Technology stack:
+    1. Angular v1.5.0
+    3. Angular Route
+    4. Angular Resource
+    5. Bower
+    6. Karma
+    7. Jasmine
+    8. Protractor
+    9. http-server
 * FlatlanderCraftedGems - a simple project that was written in AngularJS v1.2.x. This is a simple online store with Gems.
+  * Technology stack:
+    1. Angular v1.2.x
+    2. Bower
+    3. Gulp
+    4. http-server
