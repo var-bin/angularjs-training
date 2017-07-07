@@ -1,3 +1,3 @@
 // app.ts
 
-angular.module("productManager", []);
+angular.module("productManagement", []);
