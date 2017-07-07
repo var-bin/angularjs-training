@@ -3,3 +3,6 @@ public/*.js
 
 # APM/**/*.js
 APM/**/*.js
+
+# .vscode
+.vscode
