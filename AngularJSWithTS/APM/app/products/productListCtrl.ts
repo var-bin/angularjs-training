@@ -51,7 +51,7 @@ module app.productList {
       let newProduct = new app.domain.Product(3,
                                               "Saw",
                                               "TBX-002",
-                                              new Date(2017, 7, 10),
+                                              new Date(2017, 6, 10),
                                               17.50,
                                               "15-inch steel blade hand saw",
                                               "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png");
