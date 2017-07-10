@@ -15,7 +15,10 @@
   "author": "Vitalii Rybka",
   "license": "ISC",
   "devDependencies": {
+    "@types/angular": "^1.6.25",
     "http-server": "^0.10.0",
+    "npm-check": "^5.4.4",
+    "npm-check-updates": "^2.12.1",
     "typescript": "^2.3.4"
   }
 }
