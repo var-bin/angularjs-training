@@ -1,5 +1,7 @@
 // productListCtrl.ts
 
+"use strict";
+
 module app.productList {
   interface IProductListModel {
     title: string;
