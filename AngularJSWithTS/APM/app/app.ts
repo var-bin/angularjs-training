@@ -1,3 +1,7 @@
 // app.ts
 
-angular.module("productManagement", []);
+"use strict";
+
+module app {
+  angular.module("productManagement", []);
+}

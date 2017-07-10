@@ -4,7 +4,7 @@
   "description": "AngularJS + TypeScript and other awesome tools",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./node_modules/http-server/bin/http-server ./public/APM"
   },
   "keywords": [
     "Angular",
