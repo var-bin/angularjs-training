@@ -10,7 +10,7 @@ module app.common {
 
   }
 
-  class DataAccessService implements IDataAccessService {
+  export class DataAccessService implements IDataAccessService {
 
     static $inject = ["$resource"];
     constructor(private $resource: ng.resource.IResourceService) {
