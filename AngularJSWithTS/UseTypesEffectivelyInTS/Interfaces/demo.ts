@@ -1,0 +1,3 @@
+// demo.ts
+
+"use strict";
