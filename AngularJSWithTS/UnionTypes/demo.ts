@@ -36,7 +36,7 @@ let gimmeStuff = (stuff: stuff) => {
   typeof stuff.name === "string";
 };
 
-// if union type objects with different types
+// if union type objects with different types then
 // the compiler will get mad
 
 type coolThings = { name: string; } | { id: number; };
@@ -50,4 +50,15 @@ let gimmeCollStuff = (thing: coolThings) => {
   if (typeof thing.id === "number") {
     return thing.id;
   }
+};
+
+// if union type objects with same types then
+// the compiler will get access to same types
+
+type stuffAndThings = { cool: string; meh: string; } |
+                      { cool: string; lame: string; };
+
+let gimmeStuffAndThings = (sat: stuffAndThings) => {
+                    // error
+  return sat.cool || sat.name;
 };
