@@ -17,6 +17,17 @@ let superVillain: {
   health: number;
 }; */
 
+interface AttackFunction {
+  // types for AttackFunction arguments and return type
+  (opponent: {
+    alias: string;
+    health: number;
+  },
+
+  attackWith: number
+  ): number;
+}
+
 interface ComicBookCharacter {
   secretIdentity?: string;
   alias: string;
