@@ -53,13 +53,17 @@ function attackFunc(opponent, attackWith) {
 
 let superHero: ComicBookCharacter = {
   alias: "She-Hulk",
-  health: 5000
+  health: 5000,
+  strength: 5000,
+  attack: attackFunc
 };
 
 let superVillain: ComicBookCharacter = {
   secretIdentity: "Jack Napier",
   alias: "Joker",
-  health: 75
+  health: 75,
+  insanity: 145,
+  attack: attackFunc
 };
 
 function getSecretIdentity(character: ComicBookCharacter) {
@@ -71,3 +75,5 @@ function getSecretIdentity(character: ComicBookCharacter) {
 }
 
 getSecretIdentity(superHero);
+
+superHero.attack(superVillain, superHero.strength);
