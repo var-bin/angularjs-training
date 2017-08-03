@@ -29,6 +29,13 @@ class ComicBookCharacter {
   getSecretIdentity() {
     console.log(`${this.alias} is ${this.secretIdentity}`);
   }
+
+  static createTeam(teamName: string, members: ComicBookCharacter[]) {
+    return {
+      name: teamName,
+      members
+    };
+  }
 }
 
 let storm = new ComicBookCharacter("Storm", 100, 100, "Ororo Munroe");
@@ -37,3 +44,7 @@ let theBlob = new ComicBookCharacter("The Blob", 1000, 5000, "Fred J. Dukes");
 
 storm.attackFunc(theBlob, storm.strength);
 storm.getSecretIdentity();
+
+let team = ComicBookCharacter.createTeam("oddCouple", [storm, theBlob]);
+
+console.dir(team);
