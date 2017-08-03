@@ -10,3 +10,5 @@ class ComicBookCharacterDefault {
     private secretIdentity: string
   ) {}
 }
+
+export { ComicBookCharacterDefault };
