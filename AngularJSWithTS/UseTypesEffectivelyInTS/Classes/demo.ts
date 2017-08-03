@@ -9,10 +9,14 @@ interface Opponent {
 
 class ComicBookCharacter {
   // by default all class properties have public access
-  alias: string;
-  health: number;
-  strength: number;
-  secretIdentity: string;
+
+  constructor(
+    // without access level we will get wrong behavior
+    public alias: string,
+    public health: number,
+    public strength: number,
+    private secretIdentity: string
+  ) {}
 
   attackFunc(opponent: Opponent, attackWith: number) {
     opponent.health -= attackWith;
@@ -21,18 +25,15 @@ class ComicBookCharacter {
 
     return opponent.health;
   }
+
+  getSecretIdentity() {
+    console.log(`${this.alias} is ${this.secretIdentity}`);
+  }
 }
 
-let storm = new ComicBookCharacter();
-storm.alias = "Storm";
-storm.health = 100;
-storm.strength = 100;
-storm.secretIdentity = "Ororo Munroe";
+let storm = new ComicBookCharacter("Storm", 100, 100, "Ororo Munroe");
 
-let theBlob = new ComicBookCharacter();
-theBlob.alias = "The Blob";
-theBlob.health = 1000;
-theBlob.strength = 5000;
-theBlob.secretIdentity = "Fred J. Dukes";
+let theBlob = new ComicBookCharacter("The Blob", 1000, 5000, "Fred J. Dukes");
 
 storm.attackFunc(theBlob, storm.strength);
+storm.getSecretIdentity();
