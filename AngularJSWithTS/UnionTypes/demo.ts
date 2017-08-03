@@ -54,6 +54,7 @@ let gimmeCollStuff = (thing: coolThings) => {
 
 // if union type objects with common properties then
 // the compiler will get access to the common properties
+// cool is common property
 
 type stuffAndThings = { cool: string; meh: string; } |
                       { cool: string; lame: string; };
