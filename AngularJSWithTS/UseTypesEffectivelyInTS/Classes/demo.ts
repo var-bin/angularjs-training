@@ -9,6 +9,10 @@ interface Opponent {
 
 class ComicBookCharacter {
   // by default all class properties have public access
+  private team: {
+    name: string,
+    members: ComicBookCharacter[]
+  };
 
   constructor(
     // without access level we will get wrong behavior
@@ -30,11 +34,19 @@ class ComicBookCharacter {
     console.log(`${this.alias} is ${this.secretIdentity}`);
   }
 
-  static createTeam(teamName: string, members: ComicBookCharacter[]) {
-    return {
+  static createAndAssignTeam(teamName: string, members: ComicBookCharacter[]) {
+    let team = {
       name: teamName,
       members
     };
+
+    members.forEach(member => {
+      member.team = team;
+    });
+  }
+
+  getTeamName() {
+    console.log(`${this.alias} is on Team ${this.team.name}`);
   }
 }
 
@@ -45,6 +57,6 @@ let theBlob = new ComicBookCharacter("The Blob", 1000, 5000, "Fred J. Dukes");
 storm.attackFunc(theBlob, storm.strength);
 storm.getSecretIdentity();
 
-let team = ComicBookCharacter.createTeam("oddCouple", [storm, theBlob]);
+ComicBookCharacter.createAndAssignTeam("oddCouple", [storm, theBlob]);
 
-console.dir(team);
+theBlob.getTeamName();
