@@ -19,12 +19,13 @@ let superVillain: {
 
 interface AttackFunction {
   // types for AttackFunction arguments and return type
-  (opponent: {
-    alias: string;
-    health: number;
-  },
+  (
+    opponent: {
+      alias: string;
+      health: number;
+    },
 
-  attackWith: number
+    attackWith: number
   ): number;
 }
 
