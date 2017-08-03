@@ -8,6 +8,7 @@ interface Opponent {
 }
 
 class ComicBookCharacter {
+  // by default all class properties have public access
   alias: string;
   health: number;
   strength: number;
@@ -21,3 +22,17 @@ class ComicBookCharacter {
     return opponent.health;
   }
 }
+
+let storm = new ComicBookCharacter();
+storm.alias = "Storm";
+storm.health = 100;
+storm.strength = 100;
+storm.secretIdentity = "Ororo Munroe";
+
+let theBlob = new ComicBookCharacter();
+theBlob.alias = "The Blob";
+theBlob.health = 1000;
+theBlob.strength = 5000;
+theBlob.secretIdentity = "Fred J. Dukes";
+
+storm.attackFunc(theBlob, storm.strength);
