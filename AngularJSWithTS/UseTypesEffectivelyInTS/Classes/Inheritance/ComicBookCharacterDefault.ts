@@ -7,7 +7,7 @@ class ComicBookCharacterDefault {
     public alias: string,
     public health: number,
     public strength: number,
-    private secretIdentity: string
+    protected secretIdentity: string
   ) {}
 }
 
