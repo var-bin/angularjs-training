@@ -40,6 +40,15 @@ interface ComicBookCharacter {
   secretIdentity?: string;
   alias: string;
   health: number;
+  attack: AttackFunction;
+}
+
+function attackFunc(opponent, attackWith) {
+  opponent.health -= attackWith;
+
+  console.log(`${this.alias} attacked ${opponent.alias}, who's health = ${opponent.health}`);
+
+  return opponent.health;
 }
 
 let superHero: ComicBookCharacter = {
