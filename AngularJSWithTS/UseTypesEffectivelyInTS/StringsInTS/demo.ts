@@ -24,4 +24,5 @@ function moveCharacter(distance: number, value: distanceMetric) {
   console.log(`You moved ${distance} ${value}`);
 }
 
+// moveCharacter(3, "dragon"); // error TS2345: Argument of type '"dragon"' is not assignable to parameter of type 'distanceMetric'.
 moveCharacter(3, "MILES");
