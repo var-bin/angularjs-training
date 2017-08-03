@@ -29,6 +29,13 @@ interface AttackFunction {
   ): number;
 }
 
+interface KrustyTheClown {
+  alias: string;
+  health: number;
+  inebriationLevel: number;
+  attack: AttackFunction;
+}
+
 interface ComicBookCharacter {
   secretIdentity?: string;
   alias: string;
