@@ -6,3 +6,6 @@ APM/**/*.js
 
 # .vscode
 .vscode
+
+# public
+public
