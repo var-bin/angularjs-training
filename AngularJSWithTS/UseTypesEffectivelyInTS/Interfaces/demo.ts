@@ -18,10 +18,18 @@ let superVillain: {
 }; */
 
 interface ComicBookCharacter {
-  secretIdentity: string;
+  secretIdentity?: string;
   alias: string;
   health: number;
 }
 
-let superHero: ComicBookCharacter;
-let superVillain: ComicBookCharacter;
+let superHero: ComicBookCharacter = {
+  alias: "She-Hulk",
+  health: 5000
+};
+
+let superVillain: ComicBookCharacter = {
+  secretIdentity: "Jack Napier",
+  alias: "Joker",
+  health: 75
+};
