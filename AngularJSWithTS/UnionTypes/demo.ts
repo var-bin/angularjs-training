@@ -52,8 +52,8 @@ let gimmeCollStuff = (thing: coolThings) => {
   }
 };
 
-// if union type objects with same types then
-// the compiler will get access to same types
+// if union type objects with common properties then
+// the compiler will get access to the common properties
 
 type stuffAndThings = { cool: string; meh: string; } |
                       { cool: string; lame: string; };
