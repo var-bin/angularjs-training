@@ -36,7 +36,7 @@ let gimmeStuff = (stuff: stuff) => {
   typeof stuff.name === "string";
 };
 
-// if union type objects with different types then
+// if union type objects without common properties then
 // the compiler will get mad
 
 type coolThings = { name: string; } | { id: number; };
