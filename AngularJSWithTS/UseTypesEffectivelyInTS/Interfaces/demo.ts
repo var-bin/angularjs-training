@@ -33,3 +33,13 @@ let superVillain: ComicBookCharacter = {
   alias: "Joker",
   health: 75
 };
+
+function getSecretIdentity(character: ComicBookCharacter) {
+  if (character.secretIdentity) {
+    console.log(`${character.alias} is ${character.secretIdentity}`);
+  } else {
+    console.log(`${character.alias} has no secret identity`);
+  }
+}
+
+getSecretIdentity(superHero);
