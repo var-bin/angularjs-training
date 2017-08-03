@@ -36,7 +36,14 @@ interface KrustyTheClown {
   attack: AttackFunction;
 }
 
-interface ComicBookCharacter {
+interface OptionalAttributes {
+  strength?: number;
+  insanity?: number;
+  dexterity?: number;
+  healingFactor?: number;
+}
+
+interface ComicBookCharacter extends OptionalAttributes {
   secretIdentity?: string;
   alias: string;
   health: number;
