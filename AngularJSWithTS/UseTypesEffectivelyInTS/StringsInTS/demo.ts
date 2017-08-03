@@ -12,3 +12,9 @@ miles = null; // no error
 miles = undefined; // no error
 // miles = "awesome"; // error TS2322: Type '"awesome"' is not assignable to type '"MILES"'.
 miles = "MILES"; // OK
+
+function moveCharacter(distance: number, value: string) {
+  console.log(`You moved ${distance} ${value}`);
+}
+
+moveCharacter(3, "dragon");
