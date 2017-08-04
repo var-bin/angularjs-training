@@ -37,11 +37,30 @@ let badGuy: BadGuy = {
 function saveDayOrBadDeed(something: SuperHero | BadGuy) {
   /**
    * Something doesn't have powers. This is because the compiler is evaluating
-   * both types of the union-type argument. Since the bad guy doesn't have powers,
-   * something doesn't have powers. We can get a hold of the superhero's
-   * power's property by asserting that something is a superhero.
+   * both types of the union-type argument. Since the BadGuy doesn't have powers,
+   * something doesn't have powers. We can get a hold of the SuperHero's
+   * power's property by asserting that something is a SuperHero.
    */
   /* if (something.powers) {
 
   } */
+
+  /**
+   * We can get a hold of the SuperHero's power's property by asserting that
+   * something is a SuperHero.
+   *
+   * An assertion is how we told the compiler, "We have some information about
+   * something's type that it doesn't."
+   */
+  if ((something as SuperHero).powers) {
+
+  }
+
+  /**
+   * We can get a hold of the BadGuy's badDeeds's property by asserting that
+   * something is a BadGuy.
+   */
+  if ((something as BadGuy).badDeeds) {
+
+  }
 }
