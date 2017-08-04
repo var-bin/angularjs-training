@@ -2,7 +2,18 @@
 
 "use strict";
 
-function pushSomethingIntoCollection(something, collection) {
+/**
+ * We can use a generic to tell the compiler, we're going to be using a specific type,
+ * but we're not going to tell you what that type is until the function is called.
+ * This is what a generic looks like. It doesn't matter what's between the angle brackets,
+ * as long as it makes sense to you.
+ *
+ * T which is short for type, is just the convention.
+ * Now that the generic has been declared, we can use it to type our arguments.
+ * Everything looks OK. Let's see what happens when we make an error.
+ * They type argument for type parameter T, cannot be inferred from the usage.
+ */
+function pushSomethingIntoCollection<T>(something, collection) {
   collection.push(something);
 
   console.log(collection);
@@ -19,3 +30,6 @@ let wolverine = {
 
 let superHeroes = [jeanGrey];
 let powers = ["telekinesis", "esp"];
+
+pushSomethingIntoCollection("cool", superHeroes);
+pushSomethingIntoCollection("adamantium claws", []);
