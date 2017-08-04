@@ -32,4 +32,16 @@ let badGuy: BadGuy = {
   commitBadDeed() {
     console.log(`BadGuy ${this.getRandomBadDeed()}`);
   }
+};
+
+function saveDayOrBadDeed(something: SuperHero | BadGuy) {
+  /**
+   * Something doesn't have powers. This is because the compiler is evaluating
+   * both types of the union-type argument. Since the bad guy doesn't have powers,
+   * something doesn't have powers. We can get a hold of the superhero's
+   * power's property by asserting that something is a superhero.
+   */
+  /* if (something.powers) {
+
+  } */
 }
