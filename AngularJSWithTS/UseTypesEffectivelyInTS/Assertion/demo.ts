@@ -53,7 +53,9 @@ function saveDayOrBadDeed(something: SuperHero | BadGuy) {
    * something's type that it doesn't."
    */
   if ((something as SuperHero).powers) {
-
+    (something as SuperHero).savesTheDay();
+  } else {
+    (something as BadGuy).commitBadDeed();
   }
 
   /**
@@ -61,6 +63,11 @@ function saveDayOrBadDeed(something: SuperHero | BadGuy) {
    * something is a BadGuy.
    */
   if ((something as BadGuy).badDeeds) {
-
+    (something as BadGuy).commitBadDeed();
+  } else {
+    (something as SuperHero).savesTheDay();
   }
 }
+
+saveDayOrBadDeed(dazzler);
+saveDayOrBadDeed(badGuy);
