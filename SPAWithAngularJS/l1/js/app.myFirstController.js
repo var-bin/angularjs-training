@@ -3,7 +3,7 @@
 (function() {
   "use strict";
 
-  angular.module("myFirstApp", [])
+  angular.module("myFirstApp")
     .controller("MyFirstController", MyFirstController);
 
   function MyFirstController() {
