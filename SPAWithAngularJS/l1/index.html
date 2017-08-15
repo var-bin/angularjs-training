@@ -6,16 +6,15 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>L1 SPA with AngularJS</title>
   <script src="js/angular.min.js"></script>
-  <script src="js/app.js"></script>
+  <script src="js/app.module.js"></script>
+  <script src="js/app.myFirstController.js"></script>
 </head>
 <body data-ng-app="myFirstApp">
   <h1>L1 SPA with AngularJS</h1>
   <div data-ng-controller="MyFirstController as MyFirstCtrl">
     {{MyFirstCtrl.name}}
-    {{sayHello()}}
-    <input type="text" data-ng-model="inputValue">
+    <input type="text" data-ng-model="MyFirstCtrl.inputValue">
     Inside my input is: {{inputValue}}
-    <span data-ng-bind="'sfsdfdsf ' + '{{1 + 2}}'"></span>
   </div>
 
   <script id="__bs_script__">//<![CDATA[
