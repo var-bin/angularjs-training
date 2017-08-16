@@ -1,0 +1,22 @@
+{
+  "name": "spa-with-angularjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "angularjs",
+    "spa",
+    "es5",
+    "es6",
+    "html5",
+    "css3"
+  ],
+  "author": "Vitalii Rybka",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.13"
+  }
+}
