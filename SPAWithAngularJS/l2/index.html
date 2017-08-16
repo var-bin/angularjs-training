@@ -5,22 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Name Calculator</title>
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.module.js"></script>
+  <script src="js/app.nameCalculatorController.js"></script>
 </head>
-<body>
+<body data-ng-app="NameCalculator">
   <main>
     <section>
       <header>
         <h1>Name Calculator</h1>
       </header>
 
-      <form action="#">
+      <form action="#" data-ng-controller="NameCalculatorController as NameCalculatorCtrl">
         <div class="form-control">
           <label for="name">Your name:</label>
-          <input type="text" id="name">
+          <input type="text" id="name" data-ng-model="NameCalculatorCtrl.name">
         </div>
         <div class="result">
           <p>
-            Total Numeric value of person's name is:
+            Total Numeric value of person's name is: <strong ng-bind="NameCalculatorCtrl.name"></strong>
           </p>
         </div>
       </form>
