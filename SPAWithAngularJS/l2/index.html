@@ -19,15 +19,20 @@
       <form action="#" data-ng-controller="NameCalculatorController as NameCalculatorCtrl">
         <div class="form-control">
           <label for="name">Your name:</label>
-          <input type="text" id="name" data-ng-model="NameCalculatorCtrl.name">
+          <input type="text" id="name"
+            data-ng-model="NameCalculatorCtrl.name"
+            data-ng-keyup="NameCalculatorCtrl.displayNumeric();">
         </div>
         <div class="result">
           <p>
-            Total Numeric value of person's name is: <strong ng-bind="NameCalculatorCtrl.name"></strong>
+            Total Numeric value of person's name is: <strong ng-bind="NameCalculatorCtrl.totalValue"></strong>
           </p>
         </div>
       </form>
     </section>
   </main>
+  <script id="__bs_script__">//<![CDATA[
+    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.js?v=2.18.13'><\/script>".replace("HOST", location.hostname));
+//]]></script>
 </body>
 </html>
