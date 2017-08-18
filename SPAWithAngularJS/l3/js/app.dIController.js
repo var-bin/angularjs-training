@@ -6,6 +6,8 @@
   angular.module("DIApp")
     .controller("DIController", DIController);
 
+  DIController.$inject = ["$filter"];
+
   function DIController($filter) {
     let vm = this;
 
