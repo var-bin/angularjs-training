@@ -3,5 +3,5 @@
 (function() {
   "use strict";
 
-  angular.module("myFirstApp", []);
+  angular.module("NameCalculator", []);
 })();
