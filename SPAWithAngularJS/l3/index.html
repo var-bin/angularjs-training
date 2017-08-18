@@ -5,13 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Dependency Injection in JavaScript (and AngularJS)</title>
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.module.js"></script>
+  <script src="js/app.dIController.js"></script>
 </head>
 <body data-ng-app="DIApp">
   <h1>
     Dependency Injection in JavaScript (and AngularJS)
   </h1>
 
-  <div data-ng-controller>
+  <div data-ng-controller="DIController as DICtrl">
     <input type="text">
   </div>
 </body>
