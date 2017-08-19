@@ -1,21 +1,21 @@
 // app.lunchCheckController.js
 
 /**
- * If the number of items in the textbox is less than or equal to 3
+ * 1. If the number of items in the textbox is less than or equal to 3
  * (e.g., 1, 2, or 3), a message should show up under to the textbox
  * saying "Enjoy!". If the number of items is greater than 3
  * (4, 5, and above), the message "Too much!" should show up under
  * the textbox.
  *
- * If the textbox is empty and the user clicks the "Check If Too Much" button,
+ * 2. If the textbox is empty and the user clicks the "Check If Too Much" button,
  * the message "Please enter data first" should show up. 'Empty' here means
  * either "" (empty string) or a string with just spaces in it.
  *
- * Only 1 message should be shown at any given time. In other words,
+ * 3. Only 1 message should be shown at any given time. In other words,
  * if you have both messages "Enjoy!" and "Too much!" showing up at the same time,
  * it's an error.
  *
- * You are not required to handle a case where there is no item between some commas.
+ * 4. You are not required to handle a case where there is no item between some commas.
  * For example, you are free to consider this case item 1, item2,,item3 or this case
  * item 1, item2, ,item3 as 4 items in the list. However, you can implement checking for
  * an 'empty' item as a bonus feature (ungraded). Please make sure to put a comment
@@ -44,6 +44,7 @@
     vm.infoMessage = "";
 
     function checkData() {
+      // 2
       if (!vm.lunchMenu) {
         vm.infoMessage = ENTER_DATA_MESSAGE;
 
@@ -56,8 +57,6 @@
     function checkCount() {
       const check = checkDataItems(vm.lunchMenu.split(","));
 
-      console.log("checkCount", check);
-
       if (!!check) {
         return;
       }
@@ -65,8 +64,7 @@
       const data = vm.lunchMenu.split(",");
       const dataSize = data.length;
 
-      console.log(data);
-
+      // 1, 3
       if (dataSize <= ACCEPTABLE_COUNT) {
         vm.infoMessage = ENJOY_MESSAGE;
       } else {
@@ -76,16 +74,24 @@
       return;
     }
 
+    /**
+     *
+     * @param {*} item - array item, comes from ng-model
+     */
     function checItemLength(item) {
       return item.length === 0;
     }
 
+    /**
+     *
+     * @param {*} arr - ng-model data
+     */
+
+    // 4
     function checkDataItems(arr) {
       const check = arr.some(checItemLength);
 
       if (check) {
-        console.log("checkkkkk");
-
         vm.infoMessage = EMPTY_ITEMS_MESSAGE;
 
         return -1;
