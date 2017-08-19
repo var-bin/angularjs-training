@@ -10,8 +10,10 @@
       font-size: 1.3em;
       font-weight: bold;
     }
-
   </style>
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.module.js"></script>
+  <script src="js/app.lunchCheckController.js"></script>
 </head>
 
 <body data-ng-app="LunchCheck">
@@ -19,13 +21,13 @@
     <h1>Lunch Checker</h1>
 
     <div class="form-group">
-      <input id="lunch-menu" type="text" placeholder="list comma separated dishes you usually have for lunch" class="form-control">
+      <input id="lunch-menu" type="text" placeholder="list comma separated dishes you usually have for lunch" class="form-control" data-ng-model="LunchCheckCtrl.lunchMenu">
     </div>
     <div class="form-group">
-      <button class="btn btn-default">Check If Too Much</button>
+      <button class="btn btn-default" data-ng-click="LunchCheckCtrl.onLunchMenuCheck()">Check If Too Much</button>
     </div>
     <div class="form-group message">
-      <!-- Your message can go here. -->
+      {{LunchCheckCtrl.infoMessage}}
     </div>
   </div>
 
