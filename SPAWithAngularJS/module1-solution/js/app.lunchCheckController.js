@@ -21,6 +21,8 @@
  * an 'empty' item as a bonus feature (ungraded). Please make sure to put a comment
  * somewhere next to the input textbox stating that you do NOT consider and empty item,
  * i.e., , , as an item towards to the count.
+ *
+ * item1, item2, item3
  */
 
 (function() {
@@ -30,9 +32,68 @@
     .controller("LunchCheckController", LunchCheckController);
 
   function LunchCheckController() {
+    let vm = this;
+
     const ENJOY_MESSAGE = "Enjoy!";
     const TOO_MUCH_MESSAGE = "Too much!";
     const ENTER_DATA_MESSAGE = "Please enter data first!";
+    const EMPTY_ITEMS_MESSAGE = "Empty items. Please try again!";
+    const ACCEPTABLE_COUNT = 3;
 
+    vm.onLunchMenuCheck = onLunchMenuCheck;
+    vm.infoMessage = "";
+
+    function checkData() {
+      if (!vm.lunchMenu) {
+        vm.infoMessage = ENTER_DATA_MESSAGE;
+
+        return;
+      }
+
+      checkCount();
+    }
+
+    function checkCount() {
+      const check = checkDataItems(vm.lunchMenu.split(","));
+
+      console.log("checkCount", check);
+
+      if (!!check) {
+        return;
+      }
+
+      const data = vm.lunchMenu.split(",");
+      const dataSize = data.length;
+
+      console.log(data);
+
+      if (dataSize <= ACCEPTABLE_COUNT) {
+        vm.infoMessage = ENJOY_MESSAGE;
+      } else {
+        vm.infoMessage = TOO_MUCH_MESSAGE;
+      }
+
+      return;
+    }
+
+    function checItemLength(item) {
+      return item.length === 0;
+    }
+
+    function checkDataItems(arr) {
+      const check = arr.some(checItemLength);
+
+      if (check) {
+        console.log("checkkkkk");
+
+        vm.infoMessage = EMPTY_ITEMS_MESSAGE;
+
+        return -1;
+      }
+    }
+
+    function onLunchMenuCheck() {
+      checkData();
+    }
   }
 })();
