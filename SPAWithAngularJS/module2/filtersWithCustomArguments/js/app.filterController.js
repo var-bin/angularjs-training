@@ -6,7 +6,7 @@
   angular.module("myApp")
     .controller("filterController", FilterController);
 
-  FilterController.$inject = ["lovesFilter"];
+  FilterController.$inject = ["lovesFilter", "truthFilter"];
 
   function FilterController(lovesFilter) {
     let vm = this;
