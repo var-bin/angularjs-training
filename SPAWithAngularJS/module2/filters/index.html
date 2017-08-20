@@ -8,11 +8,19 @@
   <script src="js/angular.min.js"></script>
   <script src="js/app.module.js"></script>
   <script src="js/app.filterController.js"></script>
+  <script src="js/app.lovesFilter.js"></script>
 </head>
 <body data-ng-app="myApp">
   <h1>
     Custom Filter
   </h1>
-  <div>Vitalii loves cookies</div>
+  <div data-ng-controller="filterController as FilterCtrl">
+    <div>
+      <strong>Original: </strong>{{FilterCtrl.sayMessage()}}
+    </div>
+    <div>
+      <strong>Filtered: </strong>{{FilterCtrl.sayLovesMessage()}}
+    </div>
+  </div>
 </body>
 </html>
