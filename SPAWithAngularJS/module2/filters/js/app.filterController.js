@@ -4,9 +4,26 @@
   "use strict";
 
   angular.module("myApp")
-    .controller("filterController", filterController);
+    .controller("filterController", FilterController);
 
-  function filterController() {
+  FilterController.$inject = ["lovesFilter"];
 
+  function FilterController(lovesFilter) {
+    let vm = this;
+
+    const originalMessage = "Vitalii loves cookies";
+
+    vm.sayLovesMessage = sayLovesMessage;
+    vm.sayMessage = sayMessage;
+
+    function sayMessage() {
+      return originalMessage;
+    }
+
+    function sayLovesMessage() {
+      let message = lovesFilter(originalMessage);
+
+      return message;
+    }
   }
 })();
