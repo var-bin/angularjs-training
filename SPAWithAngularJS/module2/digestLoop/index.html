@@ -4,23 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Custom Filter</title>
+  <title>The Digest Cycle</title>
   <script src="js/angular.min.js"></script>
   <script src="js/app.module.js"></script>
-  <script src="js/app.filterController.js"></script>
-  <script src="js/app.lovesFilter.js"></script>
+  <script src="js/app.counterController.js"></script>
 </head>
-<body data-ng-app="myApp">
+<body data-ng-app="CounterApp">
   <h1>
-    Custom Filter
+    The Digest Cycle
   </h1>
-  <div data-ng-controller="filterController as FilterCtrl">
-    <div>
-      <strong>Original: </strong>{{FilterCtrl.sayMessage()}}
-    </div>
-    <div>
-      <strong>Filtered: </strong>{{FilterCtrl.sayLovesMessage()}}
-    </div>
+  <div data-ng-controller="CounterController as CounterCtrl">
+    <button type="button" data-ng-click="CounterCtrl.showNumberOfWatchers()">
+      Log # of Watchers
+    </button>
   </div>
 </body>
 </html>
