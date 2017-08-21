@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Digest Cycle</title>
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.module.js"></script>
+  <script src="js/app.counterController.js"></script>
+</head>
+<body data-ng-app="CounterApp">
+  <h1>
+    The Digest Cycle
+  </h1>
+  <div data-ng-controller="CounterController">
+    <button type="button" data-ng-click="showNumberOfWatchers()">
+      Log # of Watchers
+    </button>
+
+    <div>
+      <button type="button"data-ng-click="countOnce()">Up Once Counter (once)</button>
+    </div>
+
+    <div>
+        <button type="button"data-ng-click="increment()">Increment</button>
+      </div>
+  </div>
+</body>
+</html>
