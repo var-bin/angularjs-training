@@ -6,7 +6,7 @@
   angular.module("CounterApp")
     .controller("CounterController", CounterController);
 
-  CounterController.$inject = ["$scope"];
+  /* CounterController.$inject = ["$scope"];
 
   function CounterController($scope) {
     $scope.onceCount = 0;
@@ -27,15 +27,35 @@
     function increment() {
       $scope.counter++;
     }
+  } */
 
-    $scope.$watch("onceCount", (newValue, oldValue) => {
-      console.log("onceCount newValue: ", newValue);
-      console.log("onceCount oldValue: ", oldValue);
-    });
+  CounterController.$inject = ["$scope"];
 
-    $scope.$watch("counter", (newValue, oldValue) => {
-      console.log("counter newValue: ", newValue);
-      console.log("counter oldValue: ", oldValue);
+  function CounterController($scope) {
+    let vm = this;
+
+    vm.onceCount = 0;
+    vm.counter = 0;
+    vm.name = "Vitalii";
+
+    vm.showNumberOfWatchers = showNumberOfWatchers;
+    vm.countOnce = countOnce;
+    vm.increment = increment;
+
+    function showNumberOfWatchers() {
+      console.log("# of Watchers", $scope.$$watchersCount);
+    }
+
+    function countOnce() {
+      vm.onceCount = 1;
+    }
+
+    function increment() {
+      vm.counter++;
+    }
+
+    $scope.$watch(() => {
+      console.log("Digest Loop Fired!!!");
     });
   }
 })();
