@@ -13,18 +13,22 @@
   <h1>
     The Digest Cycle
   </h1>
-  <div data-ng-controller="CounterController">
-    <button type="button" data-ng-click="showNumberOfWatchers()">
+  <div data-ng-controller="CounterController as CounterCtrl">
+    <button type="button" data-ng-click="CounterCtrl.showNumberOfWatchers()">
       Log # of Watchers
     </button>
 
+    <input type="text" data-ng-model="CounterCtrl.name">
+
     <div>
-      <button type="button"data-ng-click="countOnce()">Up Once Counter (once)</button>
+      <button type="button"data-ng-click="CounterCtrl.countOnce()">Up Once Counter (once)</button>
     </div>
 
     <div>
-        <button type="button"data-ng-click="increment()">Increment</button>
-      </div>
+      <button type="button"data-ng-click="CounterCtrl.increment()">Increment</button>
+    </div>
+    <div data-ng-bind="'onceCount:' + CounterCtrl.onceCount"></div>
+    <div data-ng-bind="'increment: ' + CounterCtrl.counter"></div>
   </div>
 </body>
 </html>
