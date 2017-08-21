@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>The Digest Cycle: automatically set up the watchers</title>
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.module.js"></script>
+  <script src="js/app.counterController.js"></script>
+</head>
+<body data-ng-app="CounterApp">
+  <h1>
+    The Digest Cycle: automatically set up the watchers
+  </h1>
+  <div data-ng-controller="CounterController as CounterCtrl">
+    <button type="button" data-ng-click="CounterCtrl.showNumberOfWatchers()">
+      Log # of Watchers
+    </button>
+
+    <input type="text" data-ng-model="CounterCtrl.name">
+    {{CounterCtrl.name + '!'}}
+    <div>
+      <button type="button"data-ng-click="CounterCtrl.countOnce()">Up Once Counter (once)</button>
+    </div>
+
+    <div>
+      <button type="button"data-ng-click="CounterCtrl.increment()">Increment</button>
+    </div>
+    <div data-ng-bind="'onceCount:' + CounterCtrl.onceCount"></div>
+    <div data-ng-bind="'increment: ' + CounterCtrl.counter"></div>
+  </div>
+</body>
+</html>
