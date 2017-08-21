@@ -14,7 +14,29 @@
       2-way, 1-way, 1-time binding
   </h1>
   <div data-ng-controller="BindingController as BindingCtrl">
+    <button type="button" data-ng-click="BindingCtrl.showNumberOfWatchers()">
+      Log # of Watchers
+    </button>
 
+    <button type="button" data-ng-click="BindingCtrl.setFullName()">
+      Set Full Name
+    </button>
+
+    <div>
+      <!-- 1-time binding -->
+      Full Name is: {{ :: BindingCtrl.fullName }}
+    </div>
+    <button type="button" data-ng-click="BindingCtrl.logFirstName()">
+      Log First Name
+    </button>
+    <button type="button" data-ng-click="BindingCtrl.logFullName()">
+      Log Full Name
+    </button>
+
+    <div>
+      <!-- 2-way binding -->
+      <input type="text" data-ng-model="BindingCtrl.firstName">
+    </div>
   </div>
 </body>
 </html>
