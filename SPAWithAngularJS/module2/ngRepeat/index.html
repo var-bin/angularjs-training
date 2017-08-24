@@ -16,12 +16,13 @@
   <div data-ng-controller="NgRepeatController as NgRepeatCtrl">
     <h3>Shopping list</h3>
     <ul>
-      <li data-ng-repeat="item in NgRepeatCtrl.shoppingList | filter:'Bismol' track by $index" data-ng-bind="item"></li>
+      <li data-ng-repeat="item in NgRepeatCtrl.shoppingList | filter : 'Bismol' track by $index" data-ng-bind="item"></li>
     </ul>
 
     <h3>Shopping list2</h3>
+    <input type="text" data-ng-model="NgRepeatCtrl.searchValue" placeholder="Enter search value">
     <ul>
-      <li data-ng-repeat="item in NgRepeatCtrl.shoppingList1 track by $index">
+      <li data-ng-repeat="item in NgRepeatCtrl.shoppingList1 | filter : NgRepeatCtrl.searchValue track by $index">
         Buy {{ item.quantity }} of {{ item.name }}(s)
       </li>
     </ul>
