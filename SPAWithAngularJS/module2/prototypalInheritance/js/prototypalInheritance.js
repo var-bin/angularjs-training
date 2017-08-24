@@ -1,0 +1,3 @@
+// prototypalInheritance.js
+
+"use strict";
