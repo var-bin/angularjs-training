@@ -43,7 +43,15 @@
         quantity: 3
       },
       {
+        name: "Peanut Butter (1)",
+        quantity: 3
+      },
+      {
         name: "Pepto Bismol",
+        quantity: 7
+      },
+      {
+        name: "Pepto Bismol (1)",
         quantity: 7
       }
     ];
