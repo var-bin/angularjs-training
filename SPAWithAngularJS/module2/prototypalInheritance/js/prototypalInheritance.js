@@ -31,3 +31,22 @@ console.log("PARENT - parent.value: ", parent.value);
 console.log("PARENT - parent.obj.objValue: ", parent.obj.objValue);
 console.log("parent: ", parent);
 console.log("child: ", child);
+
+console.log("child.obj === parent.obj ? ", child.obj === parent.obj);
+
+let grandChild = Object.create(child);
+console.log("Grandchild: ", grandChild);
+grandChild.walk();
+
+// Function cunstructor
+function Dog(name) {
+  this.name = name;
+
+  console.log("'this' is: ", this);
+}
+
+let myDog = new Dog("Max");
+
+console.log("myDog: ", myDog);
+
+Dog("Max2");
