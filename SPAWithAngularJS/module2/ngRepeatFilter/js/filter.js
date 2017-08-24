@@ -11,3 +11,27 @@ function filterFive(value) {
 let filteredNumberArray = numberArray.filter(filterFive);
 
 console.log("filteredNumberArray: ", filteredNumberArray);
+
+let shoppingList = [
+  "Milk",
+  "Milk",
+  "Donuts",
+  "Cookies",
+  "Chocolate",
+  "Peanut Butter",
+  "Pepto Bismol",
+  "Pepto Bismol (1)",
+  "Pepto Bismol (2)"
+];
+
+const searchedValue = "Bismol";
+
+function searchedValueList(value) {
+  return value.indexOf(searchedValue) !== -1;
+}
+
+console.log("shoppingList: ", shoppingList);
+
+let filteredShoppingList = shoppingList.filter(searchedValueList);
+
+console.log("filteredShoppingList: ", filteredShoppingList);
