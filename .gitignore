@@ -6,3 +6,6 @@ vendors
 
 # sublime project settings
 *.sublime-*
+
+# *.map
+*.map
