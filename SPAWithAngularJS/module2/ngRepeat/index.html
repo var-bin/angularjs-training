@@ -14,6 +14,21 @@
     ngRepeat
   </h1>
   <div data-ng-controller="NgRepeatController as NgRepeatCtrl">
+    <h3>Shopping list</h3>
+    <ul>
+      <li data-ng-repeat="item in NgRepeatCtrl.shoppingList track by $index" data-ng-bind="item"></li>
+    </ul>
+
+    <h3>Shopping list2</h3>
+    <ul>
+      <li data-ng-repeat="item in NgRepeatCtrl.shoppingList1 track by $index">
+        Buy {{ item.quantity }} of {{ item.name }}(s)
+      </li>
+    </ul>
+
+    <input type="text" data-ng-model="NgRepeatCtrl.newItemName" placeholder="new item name">
+    <input type="text" data-ng-model="NgRepeatCtrl.newItemQuantity" placeholder="new item quantity">
+    <button data-ng-click="NgRepeatCtrl.addNewItem()">Add new item to list</button>
   </div>
 </body>
 </html>
