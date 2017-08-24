@@ -16,7 +16,9 @@
       "Cookies",
       "Chocolate",
       "Peanut Butter",
-      "Pepto Bismol"
+      "Pepto Bismol",
+      "Pepto Bismol (1)",
+      "Pepto Bismol (2)"
     ];
 
     vm.shoppingList1 = [
