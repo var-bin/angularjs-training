@@ -36,8 +36,7 @@
   }
 
   // Controller As Syntax
-  ParentController2.$inject = ["$scope"];
-  function ParentController2($scope) {
+  function ParentController2() {
     let parent = this;
 
     parent.value = 1;
