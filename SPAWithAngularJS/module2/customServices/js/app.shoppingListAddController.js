@@ -6,7 +6,18 @@
   angular.module("MyApp")
     .controller("ShoppingListAddController", ShoppingListAddController);
 
-  function ShoppingListAddController() {
-    let vm = this;
+  ShoppingListAddController.$inject = ["ShoppingListService"];
+
+  function ShoppingListAddController(ShoppingListService) {
+    let AddCtrl = this;
+
+    AddCtrl.itemName = "";
+    AddCtrl.itemQuantity = 0;
+
+    AddCtrl.addItem = addItem();
+
+    function addItem() {
+      ShoppingListService.addItem(AddCtrl.itemName, AddCtrl.itemQuantity);
+    }
   }
 })();
