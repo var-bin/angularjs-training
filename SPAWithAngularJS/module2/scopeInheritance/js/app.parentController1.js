@@ -22,6 +22,17 @@
   function ChildController1($scope) {
     console.log("$scope.parentValue: ", $scope.parentValue);
     console.log("CHILD $scope: ", $scope);
+
+    $scope.parentValue = 5;
+    console.log("*** CHANGED: $scope.parentValue = 5 ***");
+    console.log("$scope.parentValue: ", $scope.parentValue);
+    console.log("$scope: ", $scope);
+
+    console.log("$scope.pc.parentValue: ", $scope.pc.parentValue);
+    $scope.pc.parentValue = 5;
+    console.log("*** CHANGED: $scope.pc.parentValue = 5 ***");
+    console.log("$scope.parentValue: ", $scope.pc.parentValue);
+    console.log("$scope: ", $scope);
   }
 
   function ParentController2() {}
