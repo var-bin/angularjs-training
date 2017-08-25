@@ -12,12 +12,15 @@
     let AddCtrl = this;
 
     AddCtrl.itemName = "";
-    AddCtrl.itemQuantity = 0;
+    AddCtrl.itemQuantity = "";
 
-    AddCtrl.addItem = addItem();
+    AddCtrl.addItem = addItem;
 
     function addItem() {
       ShoppingListService.addItem(AddCtrl.itemName, AddCtrl.itemQuantity);
+
+      AddCtrl.itemName = "";
+      AddCtrl.itemQuantity = "";
     }
   }
 })();
