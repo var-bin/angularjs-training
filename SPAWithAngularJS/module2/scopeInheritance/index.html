@@ -16,5 +16,13 @@
   <div data-ng-controller="ParentController1">
     <div data-ng-controller="ChildController1"></div>
   </div>
+
+  <div data-ng-controller="ParentController2 as parent">
+    Parent value: {{ parent.value }}
+    <div data-ng-controller="ChildController2 as child">
+      Child value: {{ child.value }}
+      Parent value: {{ parent.value }}
+    </div>
+  </div>
 </body>
 </html>
