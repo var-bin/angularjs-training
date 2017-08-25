@@ -20,9 +20,6 @@
     <input type="text" data-ng-model="AddCtrl.itemName" placeholder="Enter item name">
     <input type="text" data-ng-model="AddCtrl.itemQuantity" placeholder="Enter item quantity">
 
-    {{AddCtrl.itemName}}
-    {{AddCtrl.itemQuantity}}
-
     <button type="button" data-ng-click="AddCtrl.addItem()">
       Add item to Shopping List
     </button>
@@ -32,10 +29,8 @@
     <ol>
       <li data-ng-repeat="item in ShowCtrl.items">
         {{ item.quantity }} of {{ item.name }}
+        <button type="button" data-ng-click="ShowCtrl.removeItem($index)" title="Remove {{ item.name }}">x</button>
       </li>
-      <!-- <li data-ng-show="!items">
-        <strong>There aren't any items in the Shopping List</strong>
-      </li> -->
     </ol>
   </div>
 </body>
