@@ -6,7 +6,11 @@
   angular.module("MyApp")
     .controller("ShoppingListShowController", ShoppingListShowController);
 
-  function ShoppingListShowController() {
-    let vm = this;
+  ShoppingListShowController.$inject = ["ShoppingListService"];
+
+  function ShoppingListShowController(ShoppingListService) {
+    let ShowCtrl = this;
+
+    ShowCtrl.items = ShoppingListService.getItems();
   }
 })();
