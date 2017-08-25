@@ -7,11 +7,28 @@
   <title>Custom Services</title>
   <script src="js/angular.min.js"></script>
   <script src="js/app.module.js"></script>
-  <script src="js/app.myController.js"></script>
+  <script src="js/app.ShoppingListAddController.js"></script>
 </head>
 <body data-ng-app="MyApp">
   <h1>
-      Custom Services
+    Custom Services
   </h1>
+
+  <div data-ng-controller="ShoppingListAddController as AddCtrl">
+    <input type="text" data-ng-model="AddCtrl.itemName" placeholder="Ente item name">
+    <input type="text" data-ng-model="AddCtrl.itemQuantity" placeholder="Ente item quantity">
+
+    <button type="button" data-ng-click="AddCtrl.addItem()">
+      Add item to Shopping List
+    </button>
+  </div>
+
+  <div data-ng-controller="ShoppingListShowController as ShowCtrl">
+    <ol>
+      <li data-ng-repeat="item in ShowCtrl.items">
+        {{ item }} of {{ item.name }}
+      </li>
+    </ol>
+  </div>
 </body>
 </html>
