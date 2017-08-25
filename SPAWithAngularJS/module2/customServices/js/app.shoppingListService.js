@@ -13,10 +13,10 @@
     let items = [];
 
     service.addItem = addItem;
+    service.getItems = getItems;
+    service.removeItem = removeItem;
 
     function addItem(itemName, itemQuantity) {
-      console.log("ShoppingListService", itemName, itemQuantity);
-
       let item = {
         name: itemName,
         quantity: itemQuantity
@@ -25,10 +25,12 @@
       items.push(item);
     }
 
-    service.getItems = getItems;
-
     function getItems() {
       return items;
+    }
+
+    function removeItem(itemIndex) {
+      items.splice(itemIndex, 1);
     }
   }
 })();
