@@ -17,8 +17,11 @@
   </h1>
 
   <div data-ng-controller="ShoppingListAddController as AddCtrl">
-    <input type="text" data-ng-model="AddCtrl.itemName" placeholder="Ente item name">
-    <input type="text" data-ng-model="AddCtrl.itemQuantity" placeholder="Ente item quantity">
+    <input type="text" data-ng-model="AddCtrl.itemName" placeholder="Enter item name">
+    <input type="text" data-ng-model="AddCtrl.itemQuantity" placeholder="Enter item quantity">
+
+    {{AddCtrl.itemName}}
+    {{AddCtrl.itemQuantity}}
 
     <button type="button" data-ng-click="AddCtrl.addItem()">
       Add item to Shopping List
@@ -28,8 +31,11 @@
   <div data-ng-controller="ShoppingListShowController as ShowCtrl">
     <ol>
       <li data-ng-repeat="item in ShowCtrl.items">
-        {{ item }} of {{ item.name }}
+        {{ item.quantity }} of {{ item.name }}
       </li>
+      <!-- <li data-ng-show="!items">
+        <strong>There aren't any items in the Shopping List</strong>
+      </li> -->
     </ol>
   </div>
 </body>
