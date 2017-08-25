@@ -12,5 +12,10 @@
     let ShowCtrl = this;
 
     ShowCtrl.items = ShoppingListService.getItems();
+    ShowCtrl.removeItem = removeItem;
+
+    function removeItem(itemIndex) {
+      ShoppingListService.removeItem(itemIndex);
+    }
   }
 })();
