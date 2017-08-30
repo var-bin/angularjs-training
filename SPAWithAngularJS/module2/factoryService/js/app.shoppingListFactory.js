@@ -6,15 +6,15 @@
   angular.module("MyApp")
     .factory("ShoppingListFactory", ShoppingListFactory);
 
-  function ShoppingListFactory(maxItems) {
-    let factory = this;
+  function ShoppingListService(maxItems) {
+    let service = this;
 
     // List of Shopping items
     let items = [];
 
-    factory.addItem = addItem;
-    factory.getItems = getItems;
-    factory.removeItem = removeItem;
+    service.addItem = addItem;
+    service.getItems = getItems;
+    service.removeItem = removeItem;
 
     function addItem(itemName, itemQuantity) {
       if (maxItems === undefined ||
@@ -38,4 +38,12 @@
       items.splice(itemIndex, 1);
     }
   }
-});
+
+  function ShoppingListFactory() {
+    const factory = maxItems => {
+      return new ShoppingListService(maxItems);
+    };
+
+    return factory;
+  }
+})();
