@@ -10,6 +10,13 @@
   <script src="js/app.shoppingList1Controller.js"></script>
   <script src="js/app.shoppingList2Controller.js"></script>
   <script src="js/app.shoppingListFactory.js"></script>
+
+  <style>
+    .error {
+      color: red;
+      font-weight: 900;
+    }
+  </style>
 </head>
 <body data-ng-app="MyApp">
   <h1>
@@ -32,7 +39,7 @@
       </li>
     </ol>
 
-    <div class="error">Error: {{ list1.errorMessage }}</div>
+    <div class="error">{{ list1.errorMessage }}</div>
   </div>
 
   <!-- LIST #2 - (limited to 3 items) -->
@@ -51,7 +58,7 @@
       </li>
     </ol>
 
-    <div class="error">Error: {{ list2.errorMessage }}</div>
+    <div class="error">{{ list2.errorMessage }}</div>
   </div>
 </body>
 </html>
