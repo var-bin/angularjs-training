@@ -1,20 +1,20 @@
-// app.shoppingListService.js
+// app.shoppingListFactory.js
 
 (function() {
   "use strict";
 
   angular.module("MyApp")
-    .service("ShoppingListService", ShoppingListService);
+    .factory("ShoppingListFactory", ShoppingListFactory);
 
-  function ShoppingListService(maxItems) {
-    let service = this;
+  function ShoppingListFactory(maxItems) {
+    let factory = this;
 
     // List of Shopping items
     let items = [];
 
-    service.addItem = addItem;
-    service.getItems = getItems;
-    service.removeItem = removeItem;
+    factory.addItem = addItem;
+    factory.getItems = getItems;
+    factory.removeItem = removeItem;
 
     function addItem(itemName, itemQuantity) {
       if (maxItems === undefined ||
