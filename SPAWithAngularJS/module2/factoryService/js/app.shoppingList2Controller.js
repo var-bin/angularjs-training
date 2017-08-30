@@ -20,13 +20,21 @@
     list2.removeItem = removeItem;
 
     function addItem() {
-      shoppingList.addItem(list2.itemName, list2.itemQuantity);
+      try {
+        shoppingList.addItem(list2.itemName, list2.itemQuantity);
 
-      list2.itemName = "";
-      list2.itemQuantity = "";
+        list2.itemName = "";
+        list2.itemQuantity = "";
+      } catch (error) {
+        list2.errorMessage = error;
+      }
     }
 
     function removeItem(index) {
+      if (index < 3) {
+        list2.errorMessage = "";
+      }
+
       shoppingList.removeItem(index);
     }
   }
