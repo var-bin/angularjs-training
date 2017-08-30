@@ -7,6 +7,9 @@
   <title>Factory Services</title>
   <script src="js/angular.min.js"></script>
   <script src="js/app.module.js"></script>
+  <script src="js/app.shoppingList1Controller.js"></script>
+  <script src="js/app.shoppingList2Controller.js"></script>
+  <script src="js/app.shoppingListFactory.js"></script>
 </head>
 <body data-ng-app="MyApp">
   <h1>
@@ -14,7 +17,7 @@
   </h1>
 
   <!-- LIST #1 - unlimited items -->
-  <div id="list1" data-ng-controller="ShoppingListController1 as list1">
+  <div id="list1" data-ng-controller="ShoppingList1Controller as list1">
     <h3>Shopping List #1</h3>
 
     <input type="text" data-ng-model="list1.itemName" placeholder="Enter item name">
@@ -33,7 +36,7 @@
   </div>
 
   <!-- LIST #2 - (limited to 3 items) -->
-  <div id="list2" data-ng-controller="ShoppingListController2 as list2">
+  <div id="list2" data-ng-controller="ShoppingList2Controller as list2">
     <h3>Shopping List #2 (limited to 3 items)</h3>
 
     <input type="text" data-ng-model="list2.itemName" placeholder="Enter item name">
