@@ -17,8 +17,12 @@
     service.removeItem = removeItem;
 
     function addItem(itemName, itemQuantity) {
-      if (maxItems === undefined ||
-          maxItems !== undefined && items.length < maxItems) {
+      // !maxItems -> maxItems === undefuned
+      // maxItems -> maxItems !== undefuned
+
+
+      if (!maxItems ||
+          maxItems && items.length < maxItems) {
         let item = {
           name: itemName,
           quantity: itemQuantity
