@@ -6,7 +6,17 @@
   angular.module("ShoppingListCheckOff")
     .controller("ToBuyController", ToBuyController);
 
-  function ToBuyController() {
+  ToBuyController.$inject = ["ShoppingListCheckOffService"];
+
+  function ToBuyController(ShoppingListCheckOffService) {
     let toBuyCtrl = this;
+
+    toBuyCtrl.items = ShoppingListCheckOffService.getToBuyItems();
+    toBuyCtrl.onBought = onBought;
+
+    function onBought(itemIndex) {
+      ShoppingListCheckOffService.addToBoughtItems(toBuyCtrl.items[itemIndex]);
+      ShoppingListCheckOffService.bought(itemIndex);
+    }
   }
 })();
