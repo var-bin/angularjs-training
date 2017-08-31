@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Shopping List Check Off</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/bootstrap.min.css">
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.module.js"></script>
+  <script src="js/app.alreadyBoughtController.js"></script>
+  <script src="js/app.toBuyController.js"></script>
+  <script src="js/app.shoppingListCheckOffService.js"></script>
+  <style>
+    .emptyMessage {
+      font-weight: bold;
+      color: red;
+      font-size: 1.2em;
+    }
+
+    li {
+      margin-bottom: 7px;
+      font-size: 1.2em;
+    }
+
+    li>button {
+      margin-left: 6px;
+    }
+
+    button>span {
+      color: green;
+    }
+
+  </style>
+</head>
+<body data-ng-app="ShoppingListCheckOff">
+  <div class="container">
+    <h1>Shopping List Check Off</h1>
+
+    <div class="row">
+
+      <!-- To Buy List -->
+      <div class="col-md-6" data-ng-controller="ToBuyController as toBuyCtrl">
+        <h2>To Buy:</h2>
+        <ol>
+          <li data-ng-repeat="item in toBuyCtrl.items">
+            Buy {{ item.quantity }} {{ item.name }}
+            <button class="btn btn-default" data-ng-click="toBuyCtrl.onBought($index)"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Bought</button>
+          </li>
+        </ol>
+        <div class="emptyMessage" data-ng-if="!toBuyCtrl.items.length">Everything is bought!</div>
+      </div>
+
+      <!-- Already Bought List -->
+      <div class="col-md-6" data-ng-controller="AlreadyBoughtController as alreadyBoughtCtrl">
+        <h2>Already Bought:</h2>
+        <ol>
+          <li data-ng-repeat="item in alreadyBoughtCtrl.items">
+            Buy {{ item.quantity }} {{ item.name }}
+          </li>
+        </ol>
+        <div class="emptyMessage" data-ng-if="!alreadyBoughtCtrl.items.length">Nothing bought yet.</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
