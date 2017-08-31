@@ -13,7 +13,6 @@
 
     list.items = ShoppingListService.getItems();
 
-
     list.addItem = addItem;
     list.removeItem = removeItem;
 
