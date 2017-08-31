@@ -21,8 +21,6 @@
     function addItem(itemName, itemQuantity) {
       // !maxItems -> maxItems === undefuned
       // maxItems -> maxItems !== undefuned
-
-
       if (!maxItems ||
           maxItems && items.length < maxItems) {
         let item = {
