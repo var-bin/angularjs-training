@@ -17,7 +17,7 @@
     service.addItem = addItem;
     service.getItems = getItems;
 
-    function addItem(itemName, itemQuantity) {
+    /* function addItem(itemName, itemQuantity) {
       let promise = WeightLossFilterService.checkName(itemName);
 
       promise.then(response => {
@@ -36,6 +36,25 @@
       }, errorResponse => {
         console.log(errorResponse.message);
       });
+    } */
+    function addItem(itemName, itemQuantity) {
+      let promise = WeightLossFilterService.checkName(itemName);
+
+      promise
+        .then(response => {
+          return WeightLossFilterService.checkQuantity(itemQuantity);
+        })
+        .then(response => {
+          let item = {
+            name: itemName,
+            quantity: itemQuantity
+          };
+
+          items.push(item);
+        })
+        .catch(errorResponse => {
+          console.log(errorResponse.message);
+        });
     }
 
     function getItems() {
