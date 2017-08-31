@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Custom Service</title>
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.module.js"></script>
+  <script src="js/app.shoppingListController.js"></script>
+  <script src="js/app.shoppingListService.js"></script>
+  <script src="js/app.weightLossFilterService.js"></script>
+</head>
+<body data-ng-app="ShoppingListApp">
+  <h1>
+    Shopping List with a Promise
+  </h1>
+
+  <div id="list" data-ng-controller="ShoppingListController as list">
+    <h3>Shopping List</h3>
+
+    <input type="text" data-ng-model="list.itemName" placeholder="Enter item name">
+    <input type="text" data-ng-model="list.itemQuantity" placeholder="Enter quantity">
+
+    <button type="button" data-ng-click="list.addItem()">Add Item</button>
+
+    <ol>
+      <li data-ng-repeat="item in list.items">
+        {{ item.quantity }} of {{ item.name }}
+        <button type="button" data-ng-click="list.removeItem($index)" title="Remove {{ item.name }}">x</button>
+      </li>
+    </ol>
+
+    <div class="error" data-ng-hide="!list.errorMessage">Test: {{ list.errorMessage }}</div>
+  </div>
+</body>
+</html>
