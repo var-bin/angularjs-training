@@ -50,12 +50,12 @@
   function ShoppingListServiceProvider() {
     let provider = this;
 
-    provider.default = {
+    provider.defaults = {
       maxItems: 10
     };
 
     provider.$get = () => {
-      const shoppingList = new ShoppingListService(provider.default.maxItems);
+      const shoppingList = new ShoppingListService(provider.defaults.maxItems);
 
       return shoppingList;
     };
