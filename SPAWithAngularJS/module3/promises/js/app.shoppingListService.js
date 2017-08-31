@@ -37,7 +37,7 @@
         console.log(errorResponse.message);
       });
     } */
-    function addItem(itemName, itemQuantity) {
+    /* function addItem(itemName, itemQuantity) {
       let promise = WeightLossFilterService.checkName(itemName);
 
       promise
@@ -45,6 +45,23 @@
           return WeightLossFilterService.checkQuantity(itemQuantity);
         })
         .then(response => {
+          let item = {
+            name: itemName,
+            quantity: itemQuantity
+          };
+
+          items.push(item);
+        })
+        .catch(errorResponse => {
+          console.log(errorResponse.message);
+        });
+    } */
+    function addItem(itemName, itemQuantity) {
+      const namePromise = WeightLossFilterService.checkName(itemName);
+      const quantityPromise = WeightLossFilterService.checkQuantity(itemQuantity);
+
+      $q.all([namePromise, quantityPromise])
+        .then(responce => {
           let item = {
             name: itemName,
             quantity: itemQuantity
