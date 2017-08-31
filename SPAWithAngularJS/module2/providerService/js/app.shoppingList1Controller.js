@@ -4,7 +4,15 @@
   "use strict";
 
   angular.module("MyApp")
-    .controller("ShoppingListController", ShoppingList1Controller);
+    .controller("ShoppingList1Controller", ShoppingList1Controller)
+    .config(ConfigProvider);
+
+  ConfigProvider.$inject = ["ShoppingListServiceProvider"];
+
+  function ConfigProvider(ShoppingListServiceProvider) {
+    // Set custom config
+    ShoppingListServiceProvider.defaults.maxItems = 2;
+  }
 
   ShoppingList1Controller.$inject = ["ShoppingListService"];
 
@@ -34,6 +42,5 @@
 
       ShoppingListService.removeItem(index);
     }
-  }
   }
 })();
