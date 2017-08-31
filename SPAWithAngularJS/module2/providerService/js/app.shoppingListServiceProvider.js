@@ -16,6 +16,7 @@
     service.addItem = addItem;
     service.getItems = getItems;
     service.removeItem = removeItem;
+    service.getMaxItems = getMaxItems;
 
     function addItem(itemName, itemQuantity) {
       // !maxItems -> maxItems === undefuned
@@ -41,6 +42,10 @@
 
     function removeItem(itemIndex) {
       items.splice(itemIndex, 1);
+    }
+
+    function getMaxItems() {
+      return maxItems;
     }
   }
 
