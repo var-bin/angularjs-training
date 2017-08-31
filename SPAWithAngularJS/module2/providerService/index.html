@@ -39,7 +39,7 @@
       </li>
     </ol>
 
-    <div class="error">{{ list.errorMessage }}</div>
+    <div class="error" data-ng-hide="!list.errorMessage">Test: {{ list.errorMessage }}</div>
   </div>
 
   <!-- Configured List by our self -->
@@ -58,7 +58,7 @@
       </li>
     </ol>
 
-    <div class="error">{{ list1.errorMessage }}</div>
+    <div class="error" data-ng-show="list1.errorMessage">Test: {{ list1.errorMessage }}</div>
   </div>
 </body>
 </html>
