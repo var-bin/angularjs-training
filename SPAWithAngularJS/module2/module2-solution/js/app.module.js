@@ -3,5 +3,5 @@
 (function() {
   "use strict";
 
-  angular.module("MyApp", []);
+  angular.module("ShoppingListCheckOff", []);
 })();
