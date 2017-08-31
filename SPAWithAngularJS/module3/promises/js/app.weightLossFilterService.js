@@ -8,7 +8,7 @@
 
   WeightLossFilterService.$inject = ["$q", "$timeout"];
 
-  function WeightLossFilterService($q, timeout) {
+  function WeightLossFilterService($q, $timeout) {
     let service = this;
 
     service.checkName = checkName;
