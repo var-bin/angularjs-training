@@ -20,6 +20,7 @@
       ShoppingListService.addItem(list.itemName, list.itemQuantity);
 
       list.itemName = "";
+      list.itemQuantity = "";
     }
 
     function removeItem(index) {
