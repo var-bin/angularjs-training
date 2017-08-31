@@ -4,7 +4,7 @@
   "use strict";
 
   angular.module("MyApp")
-    .provider("ShoppingListService", ShoppingListService);
+    .service("ShoppingListService", ShoppingListService);
 
   ShoppingListService.$inject = ["$q", "WeightLossFilterService"];
 
