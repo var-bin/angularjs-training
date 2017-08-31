@@ -8,6 +8,7 @@
   <script src="js/app.module.js"></script>
   <script src="js/app.alreadyBoughtController.js"></script>
   <script src="js/app.toBuyController.js"></script>
+  <script src="js/app.shoppingListCheckOffService.js"></script>
   <style>
     .emptyMessage {
       font-weight: bold;
@@ -39,24 +40,24 @@
       <!-- To Buy List -->
       <div class="col-md-6" data-ng-controller="ToBuyController as toBuyCtrl">
         <h2>To Buy:</h2>
-        <ul>
-          <li>
-            Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Bought</button>
+        <ol>
+          <li data-ng-repeat="item in toBuyCtrl.items">
+            Buy {{ item.quantity }} {{ item.name }}
+            <button class="btn btn-default" data-ng-click="toBuyCtrl.onBought($index)"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Bought</button>
           </li>
-          <li>
-            Buy 10 cookies <button class="btn btn-default"><span class="glyphicon glyphicon-ok" aria-hidden="true"></span> Bought</button>
-          </li>
-        </ul>
-        <div class="emptyMessage">Everything is bought!</div>
+        </ol>
+        <div class="emptyMessage" data-ng-if="!toBuyCtrl.items.length">Everything is bought!</div>
       </div>
 
       <!-- Already Bought List -->
       <div class="col-md-6" data-ng-controller="AlreadyBoughtController as alreadyBoughtCtrl">
         <h2>Already Bought:</h2>
-        <ul>
-          <li>Bought 10 cookies</li>
-        </ul>
-        <div class="emptyMessage">Nothing bought yet.</div>
+        <ol>
+          <li data-ng-repeat="item in alreadyBoughtCtrl.items">
+            Buy {{ item.quantity }} {{ item.name }}
+          </li>
+        </ol>
+        <div class="emptyMessage" data-ng-if="!alreadyBoughtCtrl.items.length">Nothing bought yet.</div>
       </div>
     </div>
   </div>
