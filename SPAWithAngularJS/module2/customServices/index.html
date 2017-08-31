@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Custom Services</title>
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.module.js"></script>
+  <script src="js/app.shoppingListAddController.js"></script>
+  <script src="js/app.shoppingListShowController.js"></script>
+  <script src="js/app.shoppingListService.js"></script>
+</head>
+<body data-ng-app="MyApp">
+  <h1>
+    Custom Services
+  </h1>
+
+  <div data-ng-controller="ShoppingListAddController as AddCtrl">
+    <input type="text" data-ng-model="AddCtrl.itemName" placeholder="Enter item name">
+    <input type="text" data-ng-model="AddCtrl.itemQuantity" placeholder="Enter item quantity">
+
+    <button type="button" data-ng-click="AddCtrl.addItem()">
+      Add item to Shopping List
+    </button>
+  </div>
+
+  <div data-ng-controller="ShoppingListShowController as ShowCtrl">
+    <ol>
+      <li data-ng-repeat="item in ShowCtrl.items">
+        {{ item.quantity }} of {{ item.name }}
+        <button type="button" data-ng-click="ShowCtrl.removeItem($index)" title="Remove {{ item.name }}">x</button>
+      </li>
+    </ol>
+  </div>
+</body>
+</html>
