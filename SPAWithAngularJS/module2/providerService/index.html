@@ -8,6 +8,7 @@
   <script src="js/angular.min.js"></script>
   <script src="js/app.module.js"></script>
   <script src="js/app.shoppingListController.js"></script>
+  <script src="js/app.shoppingList1Controller.js"></script>
   <script src="js/app.shoppingListServiceProvider.js"></script>
 
   <style>
@@ -39,6 +40,25 @@
     </ol>
 
     <div class="error">{{ list.errorMessage }}</div>
+  </div>
+
+  <!-- Configured List by our self -->
+  <div id="list1" data-ng-controller="ShoppingList1Controller as list1">
+    <h3>Shopping List #2</h3>
+
+    <input type="text" data-ng-model="list1.itemName" placeholder="Enter item name">
+    <input type="text" data-ng-model="list1.itemQuantity" placeholder="Enter quantity">
+
+    <button type="button" data-ng-click="list1.addItem()">Add Item</button>
+
+    <ol>
+      <li data-ng-repeat="item in list1.items">
+        {{ item.quantity }} of {{ item.name }}
+        <button type="button" data-ng-click="list1.removeItem($index)" title="Remove {{ item.name }}">x</button>
+      </li>
+    </ol>
+
+    <div class="error">{{ list1.errorMessage }}</div>
   </div>
 </body>
 </html>
