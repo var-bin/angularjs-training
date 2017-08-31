@@ -3,7 +3,7 @@
 (function() {
   "use strict";
 
-  angular.module("MyApp")
+  angular.module("ShoppingListApp")
     .service("ShoppingListService", ShoppingListService);
 
   ShoppingListService.$inject = ["$q", "WeightLossFilterService"];
@@ -15,6 +15,7 @@
     let items = [];
 
     service.addItem = addItem;
+    service.getItems = getItems;
 
     function addItem(itemName, itemQuantity) {
       let promise = WeightLossFilterService.checkName(itemName);
@@ -35,6 +36,10 @@
       }, errorResponse => {
         console.log(errorResponse.message);
       });
+    }
+
+    function getItems() {
+      return items;
     }
   }
 })();
