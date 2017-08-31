@@ -6,7 +6,11 @@
   angular.module("ShoppingListCheckOff")
     .controller("AlreadyBoughtController", AlreadyBoughtController);
 
-  function AlreadyBoughtController() {
+  AlreadyBoughtController.$inject = ["ShoppingListCheckOffService"];
+
+  function AlreadyBoughtController(ShoppingListCheckOffService) {
     let alreadyBoughtCtrl = this;
+
+    alreadyBoughtCtrl.items = ShoppingListCheckOffService.getBoughtItems();
   }
 })();
