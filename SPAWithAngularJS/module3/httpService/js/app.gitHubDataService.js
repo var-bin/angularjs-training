@@ -6,31 +6,41 @@
   angular.module("MenuCategoriesApp")
     .service("GitHubDataService", GitHubDataService);
 
-  GitHubDataService.$inject = ["$http"];
+  GitHubDataService.$inject = ["$http", "$q"];
 
-  function GitHubDataService($http) {
+  function GitHubDataService($http, $q) {
     let service = this;
 
     service.getRepos = getRepos;
     service.getUserName = getUserName;
 
     function getUserName(userName) {
-      return userName;
+      const deferred = $q.defer();
+
+      if (userName) {
+        deferred.resolve(userName);
+      } else {
+        let message = "Please, enter a user name";
+
+        deferred.reject(message);
+      }
+
+      return deferred.promise;
     }
 
     function getRepos(userName) {
-      if (!userName) {
-        return;
-      }
-
-      const GET_MENU_CATEGORIES_URL = `https://api.github.com/users/${userName}/repos`;
+      const REPOS_URL = `https://api.github.com/users/${userName}/repos`;
 
       const request = $http({
         method: "GET",
-        url: GET_MENU_CATEGORIES_URL
+        url: REPOS_URL
       });
 
       return request;
+    }
+
+    function getRepoStatistics() {
+
     }
   }
 })();
