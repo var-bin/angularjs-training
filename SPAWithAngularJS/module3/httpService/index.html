@@ -9,6 +9,7 @@
   <script src="js/app.module.js"></script>
   <script src="js/app.menuCategoriesController.js"></script>
   <script src="js/app.gitHubDataService.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body data-ng-app="MenuCategoriesApp">
   <h1>
@@ -22,6 +23,9 @@
            data-ng-model="::MenuCategoriesCtrl.gitHubUserName"
            data-ng-blur="MenuCategoriesCtrl.getRepos(MenuCategoriesCtrl.gitHubUserName)">
            {{ MenuCategoriesCtrl.userName }}
+    <p class="error" data-ng-show="MenuCategoriesCtrl.error">
+      Error: {{ MenuCategoriesCtrl.error }}
+    </p>
     <ul>
       <li data-ng-repeat="category in MenuCategoriesCtrl.categories" data-ng-if="category.name">
         <strong>Name:</strong> {{ category.name }}
