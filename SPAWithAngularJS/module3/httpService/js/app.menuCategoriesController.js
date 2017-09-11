@@ -6,11 +6,31 @@
   angular.module("MenuCategoriesApp")
     .controller("MenuCategoriesController", MenuCategoriesController);
 
-  MenuCategoriesController.$inject = ["MenuCategoriesService"];
+  MenuCategoriesController.$inject = ["GitHubDataService"];
 
-  function MenuCategoriesController(MenuCategoriesService) {
+  function MenuCategoriesController(GitHubDataService) {
     let vm = this;
 
-    let promise = MenuCategoriesService.getMenuCategories();
+    vm.getRepos = getRepos;
+
+    function getRepos(userName) {
+      vm.userName = GitHubDataService.getUserName(userName);
+
+      if (!vm.userName) {
+        return;
+      }
+
+      let promise = GitHubDataService.getRepos(vm.userName);
+
+      promise
+        .then((response) => {
+          vm.categories = response.data;
+
+          console.log("response.data: ", response.data);
+        })
+        .catch((error) => {
+          console.error("Somethig went terrible wrong", error);
+        });
+    }
   }
 })();
