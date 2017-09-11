@@ -8,7 +8,7 @@
   <script src="js/angular.min.js"></script>
   <script src="js/app.module.js"></script>
   <script src="js/app.menuCategoriesController.js"></script>
-  <script src="js/app.menuCategoriesService.js"></script>
+  <script src="js/app.gitHubDataService.js"></script>
 </head>
 <body data-ng-app="MenuCategoriesApp">
   <h1>
@@ -16,7 +16,18 @@
   </h1>
 
   <div id="list" data-ng-controller="MenuCategoriesController as MenuCategoriesCtrl">
-    <h3>Menu Categories</h3>
+    <h3>{{ MenuCategoriesCtrl.userName }} Repos</h3>
+
+    <input type="text"
+           data-ng-model="::MenuCategoriesCtrl.gitHubUserName"
+           data-ng-blur="MenuCategoriesCtrl.getRepos(MenuCategoriesCtrl.gitHubUserName)">
+           {{ MenuCategoriesCtrl.userName }}
+    <ul>
+      <li data-ng-repeat="category in MenuCategoriesCtrl.categories" data-ng-if="category.name">
+        <strong>Name:</strong> {{ category.name }}
+        <strong>Full Name:</strong> {{ category.full_name }}
+      </li>
+    </ul>
   </div>
 </body>
 </html>
