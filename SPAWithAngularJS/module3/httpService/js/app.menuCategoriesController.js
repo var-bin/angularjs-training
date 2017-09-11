@@ -6,7 +6,11 @@
   angular.module("MenuCategoriesApp")
     .controller("MenuCategoriesController", MenuCategoriesController);
 
-  function MenuCategoriesController() {
+  MenuCategoriesController.$inject = ["MenuCategoriesService"];
+
+  function MenuCategoriesController(MenuCategoriesService) {
     let vm = this;
+
+    let promise = MenuCategoriesService.getMenuCategories();
   }
 })();
