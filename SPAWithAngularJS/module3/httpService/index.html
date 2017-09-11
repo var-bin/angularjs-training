@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>$http Service</title>
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.module.js"></script>
+  <script src="js/app.reposController.js"></script>
+  <script src="js/app.gitHubDataService.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body data-ng-app="MenuCategoriesApp">
+  <h1>
+    $http Service
+  </h1>
+
+  <div id="list" data-ng-controller="ReposController as ReposCtrl">
+    <h3>{{ ReposCtrl.userName }} Repos</h3>
+
+    <input type="text"
+           data-ng-model="::ReposCtrl.gitHubUserName"
+           data-ng-blur="ReposCtrl.getRepos(ReposCtrl.gitHubUserName)">
+           {{ ReposCtrl.userName }}
+    <p class="error" data-ng-show="ReposCtrl.error">
+      Error: {{ ReposCtrl.error }}
+    </p>
+    <ul>
+      <li data-ng-repeat="repo in ReposCtrl.repositories" data-ng-if="repo.name">
+        <strong>Name:</strong> {{ repo.name }}
+        <strong>Full Name:</strong> {{ repo.full_name }}
+        <button type="button" data-ng-click=":: ReposCtrl.getRepoStatistics(ReposCtrl.userName, repo.name, $index)">
+          Get Statistics
+        </button>
+
+        <div class="stat">
+          The Total number of commits authored by the contributor: {{ :: ReposCtrl.repoTotal[$index] }}
+        </div>
+      </li>
+    </ul>
+  </div>
+</body>
+</html>
