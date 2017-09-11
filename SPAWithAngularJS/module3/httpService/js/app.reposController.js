@@ -1,20 +1,21 @@
-// app.menuCategoriesController.js
+// app.reposController.js
 
 (function() {
   "use strict";
 
   angular.module("MenuCategoriesApp")
-    .controller("MenuCategoriesController", MenuCategoriesController);
+    .controller("ReposController", ReposController);
 
-  MenuCategoriesController.$inject = ["GitHubDataService"];
+  ReposController.$inject = ["GitHubDataService"];
 
-  function MenuCategoriesController(GitHubDataService) {
+  function ReposController(GitHubDataService) {
     let vm = this;
 
     vm.getRepos = getRepos;
+    vm.getRepoStatistics = getRepoStatistics;
 
     function getRepos(userName) {
-      let userNamePromise = GitHubDataService.getUserName(userName);
+      const userNamePromise = GitHubDataService.getUserName(userName);
 
       userNamePromise
         .then((response) => {
@@ -27,7 +28,7 @@
 
           promise
             .then((response) => {
-              vm.categories = response.data;
+              vm.repositories = response.data;
 
               console.log("response.data: ", response.data);
               console.log("response: ", response);
@@ -45,6 +46,20 @@
         });
 
       vm.error = "";
+    }
+
+    function getRepoStatistics(userName, repoName, repoId) {
+      const repoStatisticsPromise = GitHubDataService.getRepoStatistics(userName, repoName);
+
+      repoStatisticsPromise
+        .then((response) => {
+          vm.repositories[repoId].total = response.data[0].total;
+
+          console.log("getRepoStatistics: ", response);
+        })
+        .catch((error) => {
+          console.error("Error: ", error);
+        })
     }
   }
 })();
