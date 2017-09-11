@@ -14,23 +14,37 @@
     vm.getRepos = getRepos;
 
     function getRepos(userName) {
-      vm.userName = GitHubDataService.getUserName(userName);
+      let userNamePromise = GitHubDataService.getUserName(userName);
 
-      if (!vm.userName) {
-        return;
-      }
-
-      let promise = GitHubDataService.getRepos(vm.userName);
-
-      promise
+      userNamePromise
         .then((response) => {
-          vm.categories = response.data;
+          vm.userName = response;
 
-          console.log("response.data: ", response.data);
+          return vm.userName;
+        })
+        .then((UserNameResult) => {
+          let promise = GitHubDataService.getRepos(UserNameResult);
+
+          promise
+            .then((response) => {
+              vm.categories = response.data;
+
+              console.log("response.data: ", response.data);
+              console.log("response: ", response);
+            })
+            .catch((error) => {
+              console.error("Somethig went terrible wrong", error);
+            });
+
+          console.log("second then: ", UserNameResult);
         })
         .catch((error) => {
-          console.error("Somethig went terrible wrong", error);
+          vm.error = error;
+
+          console.error(error);
         });
+
+      vm.error = "";
     }
   }
 })();
