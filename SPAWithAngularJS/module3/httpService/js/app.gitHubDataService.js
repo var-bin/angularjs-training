@@ -13,6 +13,7 @@
 
     service.getRepos = getRepos;
     service.getUserName = getUserName;
+    service.getRepoStatistics = getRepoStatistics;
 
     function getUserName(userName) {
       const deferred = $q.defer();
@@ -39,8 +40,15 @@
       return request;
     }
 
-    function getRepoStatistics() {
+    function getRepoStatistics(userName, repoName) {
+      const REPO_URL = `https://api.github.com/repos/${userName}/${repoName}/stats/contributors`;
 
+      const request = $http({
+        method: "GET",
+        url: REPO_URL
+      });
+
+      return request;
     }
   }
 })();
