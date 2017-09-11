@@ -53,9 +53,12 @@
 
       repoStatisticsPromise
         .then((response) => {
-          vm.repositories[repoId].total = response.data[0].total;
 
-          console.log("getRepoStatistics: ", response);
+          let repoTotal = {};
+
+          repoTotal[repoId] = response.data[0].total;
+
+          vm.repoTotal = repoTotal;
         })
         .catch((error) => {
           console.error("Error: ", error);
