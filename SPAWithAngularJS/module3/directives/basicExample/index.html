@@ -35,7 +35,8 @@
     <button type="button" data-ng-click="list.addItem()">Add Item</button>
 
     <ol>
-      <list-item data-ng-repeat="item in list.items"></list-item>
+      <!-- <list-item data-ng-repeat="item in list.items"></list-item> -->
+      <list-Item data-ng-repeat="item in list.items"></list-Item>
     </ol>
 
     <div class="error">{{ list.errorMessage }}</div>
