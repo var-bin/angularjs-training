@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Template Expanding Directives</title>
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.module.js"></script>
+  <script src="js/app.shoppingList1Controller.js"></script>
+  <script src="js/app.shoppingList2Controller.js"></script>
+  <script src="js/app.shoppingListFactory.js"></script>
+  <script src="js/app.listItemDescriptionDirective.js"></script>
+  <script src="js/app.listItemDirective.js"></script>
+
+  <style>
+    .error {
+      color: red;
+      font-weight: 900;
+    }
+  </style>
+</head>
+<body data-ng-app="ShoppingListDirectiveApp">
+  <h1>
+    Template Expanding Directives
+  </h1>
+
+  <!-- LIST #1 - unlimited items -->
+  <div id="list1" data-ng-controller="ShoppingList1Controller as list">
+    <h3>Shopping List #1</h3>
+
+    <input type="text" data-ng-model="list.itemName" placeholder="Enter item name">
+    <input type="text" data-ng-model="list.itemQuantity" placeholder="Enter quantity">
+
+    <button type="button" data-ng-click="list.addItem()">Add Item</button>
+
+    <ol>
+      <!-- <list-item data-ng-repeat="item in list.items"></list-item> -->
+      <list-Item data-ng-repeat="item in list.items"></list-Item>
+    </ol>
+
+    <div class="error">{{ list.errorMessage }}</div>
+  </div>
+
+  <!-- LIST #2 - (limited to 3 items) -->
+  <div id="list2" data-ng-controller="ShoppingList2Controller as list">
+    <h3>Shopping List #2 (limited to 3 items)</h3>
+
+    <input type="text" data-ng-model="list.itemName" placeholder="Enter item name">
+    <input type="text" data-ng-model="list.itemQuantity" placeholder="Enter quantity">
+
+    <button type="button" data-ng-click="list.addItem()">Add Item</button>
+
+    <ol>
+      <list-item data-ng-repeat="item in list.items"></list-item>
+    </ol>
+
+    <div class="error">{{ list.errorMessage }}</div>
+  </div>
+</body>
+</html>
