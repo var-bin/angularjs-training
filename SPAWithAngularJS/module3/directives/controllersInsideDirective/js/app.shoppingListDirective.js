@@ -12,9 +12,11 @@
       restrict: "E",
       templateUrl,
       scope: {
-        list: "=",
+        list: "<",
         title: "@"
-      }
+      },
+      controller: "ShoppingListDirectiveController as l",
+      bindToController: true
     };
 
     return ddo;
