@@ -15,13 +15,12 @@
     const shoppingList = ShoppingListFactory();
 
     list.items = shoppingList.getItems();
-
-
     list.addItem = addItem;
     list.removeItem = removeItem;
 
     function addItem() {
       shoppingList.addItem(list.itemName, list.itemQuantity);
+      setListTitle();
 
       list.itemName = "";
       list.itemQuantity = "";
@@ -29,6 +28,11 @@
 
     function removeItem(index) {
       shoppingList.removeItem(index);
+      setListTitle();
+    }
+
+    function setListTitle() {
+      list.title = `( ${shoppingList.getItemsSize()} items )`;
     }
   }
 })();
