@@ -15,7 +15,9 @@
         list: "<",
         title: "@"
       },
-      controller: "ShoppingListDirectiveController as ShoppingListDirectiveCtrl",
+      //controller: "ShoppingListDirectiveController as ShoppingListDirectiveCtrl",
+      controller: "ShoppingListDirectiveController",
+      controllerAs: "ShoppingListDirectiveCtrl",
       bindToController: true
     };
 
