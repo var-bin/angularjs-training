@@ -14,19 +14,17 @@
     function cookiesInList() {
       const TRIGGERED_WORD = "cookie";
 
-      /* if (list.items.length) {
-        list.items.forEach((item) => {
-          const name = item.name;
+      if (list.list.items.length) {
+        for (let i = 0; i < list.list.items.length; i++) {
+          const name = list.list.items[i].name;
 
           if (name.toLowerCase().indexOf(TRIGGERED_WORD) !== -1) {
             return true;
           }
-        });
+        }
+      }
 
-        return false;
-      } */
-
-      return true;
+      return false;
     }
   }
 })();
