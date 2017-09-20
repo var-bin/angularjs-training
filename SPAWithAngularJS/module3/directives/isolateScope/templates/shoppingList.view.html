@@ -1,0 +1,7 @@
+<!-- shoppingList.view.html -->
+<ol>
+  <li data-ng-repeat="item in list.items">
+    {{ item.quantity }} of {{ item.name }}
+    <button type="button" data-ng-click="list.removeItem($index)" title="Remove {{ item.name }}">x</button>
+  </li>
+</ol>
