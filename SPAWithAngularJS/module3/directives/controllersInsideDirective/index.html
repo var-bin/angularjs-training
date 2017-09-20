@@ -4,13 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Directives with Isolate Scope</title>
+  <title>Directives with Their Own Controllers</title>
   <script src="js/angular.min.js"></script>
   <script src="js/app.module.js"></script>
   <script src="js/app.shoppingList1Controller.js"></script>
   <script src="js/app.shoppingList2Controller.js"></script>
   <script src="js/app.shoppingListFactory.js"></script>
   <script src="js/app.shoppingListDirective.js"></script>
+  <script src="js/app.shoppingListDirectiveController.js"></script>
 
   <style>
     .error {
@@ -21,7 +22,7 @@
 </head>
 <body data-ng-app="ShoppingListDirectiveApp">
   <h1>
-    Directives with Isolate Scope
+    Directives with Their Own Controllers
   </h1>
 
   <!-- LIST #1 - unlimited items -->
@@ -34,8 +35,6 @@
     <button type="button" data-ng-click="list1.addItem()">Add Item</button>
 
     <shopping-list data-list="list1" data-title="{{list1.title}}"></shopping-list>
-
-    <div class="error">{{ list1.errorMessage }}</div>
   </div>
 
   <!-- LIST #2 - (limited to 3 items) -->
