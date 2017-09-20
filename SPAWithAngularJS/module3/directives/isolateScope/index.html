@@ -10,8 +10,7 @@
   <script src="js/app.shoppingList1Controller.js"></script>
   <script src="js/app.shoppingList2Controller.js"></script>
   <script src="js/app.shoppingListFactory.js"></script>
-  <script src="js/app.listItemDescriptionDirective.js"></script>
-  <script src="js/app.listItemDirective.js"></script>
+  <script src="js/app.shoppingListDirective.js"></script>
 
   <style>
     .error {
@@ -34,9 +33,7 @@
 
     <button type="button" data-ng-click="list1.addItem()">Add Item</button>
 
-    <ol>
-      <list-item data-ng-repeat="item in list1.items"></list-Item>
-    </ol>
+    <shopping-list list="list1"></shopping-list>
 
     <div class="error">{{ list1.errorMessage }}</div>
   </div>
@@ -50,9 +47,7 @@
 
     <button type="button" data-ng-click="list2.addItem()">Add Item</button>
 
-    <ol>
-      <list-item data-ng-repeat="item in list2.items"></list-item>
-    </ol>
+    <shopping-list list="list2"></shopping-list>
 
     <div class="error">{{ list2.errorMessage }}</div>
   </div>
