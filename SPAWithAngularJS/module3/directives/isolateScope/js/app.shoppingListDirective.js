@@ -12,7 +12,8 @@
       restrict: "E",
       templateUrl,
       scope: {
-        list: "="
+        list: "=",
+        title: "@"
       }
     };
 
