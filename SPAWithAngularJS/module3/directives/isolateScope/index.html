@@ -33,7 +33,7 @@
 
     <button type="button" data-ng-click="list1.addItem()">Add Item</button>
 
-    <shopping-list list="list1" title="{{list1.title}}"></shopping-list>
+    <shopping-list data-list="list1" data-title="{{list1.title}}"></shopping-list>
 
     <div class="error">{{ list1.errorMessage }}</div>
   </div>
@@ -47,7 +47,7 @@
 
     <button type="button" data-ng-click="list2.addItem()">Add Item</button>
 
-    <shopping-list list="list2" title="(limited to 3 items)"></shopping-list>
+    <shopping-list data-list="list2" data-title="(limited to 3 items)"></shopping-list>
 
     <div class="error">{{ list2.errorMessage }}</div>
   </div>
