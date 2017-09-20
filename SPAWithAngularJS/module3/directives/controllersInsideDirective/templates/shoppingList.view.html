@@ -1,8 +1,10 @@
 <!-- shoppingList.view.html -->
 <ol>
-  <li data-ng-repeat="item in list.items">
+  <li data-ng-repeat="item in l.list.items">
     {{ item.quantity }} of {{ item.name }}
     <button type="button" data-ng-click="list.removeItem($index)" title="Remove {{ item.name }}">x</button>
-    Title: {{ title }}
+    Title: {{ list.title }}
   </li>
 </ol>
+
+<div class="error" data-ng-if="list.cookiesInList()">ERROR</div>
