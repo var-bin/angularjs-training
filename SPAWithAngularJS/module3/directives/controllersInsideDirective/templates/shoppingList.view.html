@@ -1,10 +1,12 @@
 <!-- shoppingList.view.html -->
 <ol>
-  <li data-ng-repeat="item in l.list.items">
+  <li data-ng-repeat="item in ShoppingListDirectiveCtrl.list.items">
     {{ item.quantity }} of {{ item.name }}
     <button type="button" data-ng-click="list.removeItem($index)" title="Remove {{ item.name }}">x</button>
     Title: {{ list.title }}
   </li>
 </ol>
 
-<div class="error" data-ng-if="list.cookiesInList()">ERROR</div>
+<div class="error text-uc" data-ng-if="ShoppingListDirectiveCtrl.cookiesInList()">
+  warning! warning! cookies detected!
+</div>
