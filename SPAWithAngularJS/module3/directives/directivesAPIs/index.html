@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Directives with Their Own Controllers</title>
+  <title>Directives with Isolate Scope and '&amp;'</title>
   <script src="js/angular.min.js"></script>
   <script src="js/app.module.js"></script>
   <script src="js/app.shoppingList1Controller.js"></script>
@@ -26,7 +26,7 @@
 </head>
 <body data-ng-app="ShoppingListDirectiveApp">
   <h1>
-    Directives with Their Own Controllers
+    Directives with Isolate Scope and '&amp;'
   </h1>
 
   <!-- LIST #1 - unlimited items -->
@@ -38,7 +38,11 @@
 
     <button type="button" data-ng-click="list1.addItem()">Add Item</button>
 
-    <shopping-list data-list="list1" data-title="{{list1.title}}"></shopping-list>
+    <shopping-list
+      data-items="list1.items"
+      data-title="{{list1.title}}"
+      data-bad-remove="list1.removeItem"
+      data-on-remove="list1.removeItem(index)"></shopping-list>
   </div>
 
   <!-- LIST #2 - (limited to 3 items) -->
@@ -50,7 +54,9 @@
 
     <button type="button" data-ng-click="list2.addItem()">Add Item</button>
 
-    <shopping-list data-list="list2" data-title="(limited to 3 items)"></shopping-list>
+    <shopping-list
+      data-items="list2.items"
+      data-title="(limited to 3 items)"></shopping-list>
 
     <div class="error">{{ list2.errorMessage }}</div>
   </div>
