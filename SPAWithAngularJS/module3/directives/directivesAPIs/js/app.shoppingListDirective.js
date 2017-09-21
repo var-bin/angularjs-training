@@ -12,8 +12,10 @@
       restrict: "E",
       templateUrl,
       scope: {
-        list: "<",
-        title: "@"
+        items: "<",
+        title: "@",
+        badRemove: "=",
+        onRemove: "&"
       },
       //controller: "ShoppingListDirectiveController as ShoppingListDirectiveCtrl",
       controller: "ShoppingListDirectiveController",
