@@ -15,6 +15,7 @@
     const shoppingList = ShoppingListFactory();
 
     list.items = shoppingList.getItems();
+    list.warning = "cookies detected!";
     list.addItem = addItem;
     list.removeItem = removeItem;
 
