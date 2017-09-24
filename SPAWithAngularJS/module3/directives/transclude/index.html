@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Maipulating The DOM with Directives</title>
+  <title>Directives with Transclude</title>
   <script src="js/angular.min.js"></script>
   <script src="js/app.module.js"></script>
   <script src="js/app.shoppingList1Controller.js"></script>
@@ -26,11 +26,16 @@
     .text-uc {
       text-transform: uppercase;
     }
+
+    .shopping-list-holder {
+      display: flex;
+      justify-content: space-between;
+    }
   </style>
 </head>
 <body data-ng-app="ShoppingListDirectiveApp">
   <h1>
-    Maipulating The DOM with Directives
+      Directives with Transclude
   </h1>
 
   <!-- LIST #1 - unlimited items -->
@@ -42,10 +47,38 @@
 
     <button type="button" data-ng-click="list1.addItem()">Add Item</button>
 
-    <shopping-list
-      data-items="list1.items"
-      data-title="{{list1.title}}"
-      data-on-remove="list1.removeItem(index)"></shopping-list>
+    <div class="shopping-list-holder">
+      <shopping-list
+        id="list1"
+        class="shopping-list list1"
+        data-items="list1.items"
+        data-title="{{list1.title}}"
+        data-on-remove="list1.removeItem(index)">
+
+        <div>
+          warning! warning! {{list1.warning}}
+        </div>
+      </shopping-list>
+
+      <shopping-list
+        id="list2"
+        class="shopping-list list2"
+        data-items="list1.items"
+        data-title="{{list1.title}}"
+        data-on-remove="list1.removeItem(index)">
+
+        <div class="message-error">
+          <header>
+            <h3>warning! warning!</h3>
+          </header>
+
+          <p>
+            {{list1.warning}}
+          </p>
+        </div>
+
+      </shopping-list>
+    </div>
   </div>
 </body>
 </html>
