@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Maipulating The DOM with Directives</title>
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.module.js"></script>
+  <script src="js/app.shoppingList1Controller.js"></script>
+  <script src="js/app.shoppingListFactory.js"></script>
+  <script src="js/app.shoppingListDirective.js"></script>
+  <script src="js/app.shoppingListDirectiveController.js"></script>
+
+  <style>
+    .error.is-active {
+      display: block;
+    }
+
+    .error {
+      color: red;
+      font-weight: 900;
+      display: none;
+    }
+
+    .text-uc {
+      text-transform: uppercase;
+    }
+  </style>
+</head>
+<body data-ng-app="ShoppingListDirectiveApp">
+  <h1>
+    Maipulating The DOM with Directives
+  </h1>
+
+  <!-- LIST #1 - unlimited items -->
+  <div id="list1" data-ng-controller="ShoppingList1Controller as list1">
+    <h3>Shopping List #1 {{ list1.title }}</h3>
+
+    <input type="text" data-ng-model="list1.itemName" placeholder="Enter item name">
+    <input type="text" data-ng-model="list1.itemQuantity" placeholder="Enter quantity">
+
+    <button type="button" data-ng-click="list1.addItem()">Add Item</button>
+
+    <shopping-list
+      data-items="list1.items"
+      data-title="{{list1.title}}"
+      data-on-remove="list1.removeItem(index)"></shopping-list>
+  </div>
+</body>
+</html>
