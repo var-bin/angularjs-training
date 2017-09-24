@@ -13,7 +13,6 @@
 
     function cookiesInList() {
       const TRIGGERED_WORD = "cookie";
-      //console.log(this, list.items);
 
       if (list.items.length) {
         for (let i = 0; i < list.items.length; i++) {
