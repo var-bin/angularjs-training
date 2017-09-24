@@ -13,9 +13,14 @@
   <script src="js/app.shoppingListDirectiveController.js"></script>
 
   <style>
+    .error.is-active {
+      display: block;
+    }
+
     .error {
       color: red;
       font-weight: 900;
+      display: none;
     }
 
     .text-uc {
@@ -40,7 +45,6 @@
     <shopping-list
       data-items="list1.items"
       data-title="{{list1.title}}"
-      data-bad-remove="list1.removeItem"
       data-on-remove="list1.removeItem(index)"></shopping-list>
   </div>
 </body>
