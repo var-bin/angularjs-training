@@ -19,7 +19,8 @@
       controller: "ShoppingListDirectiveController",
       controllerAs: "ShoppingListDirectiveCtrl",
       bindToController: true,
-      link: ShoppingListDirectiveLink
+      link: ShoppingListDirectiveLink,
+      transclude: true
     };
 
     return ddo;
