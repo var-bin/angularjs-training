@@ -2,12 +2,13 @@
 <ol>
   <li data-ng-repeat="item in ShoppingListDirectiveCtrl.items">
     {{ item.quantity }} of {{ item.name }}
-    <button type="button" data-ng-click="ShoppingListDirectiveCtrl.badRemove($index)" title="Remove {{ item.name }}">bad remove x</button>
-    <button type="button" data-ng-click="ShoppingListDirectiveCtrl.onRemove({index: $index})" title="Remove {{ item.name }}">onRemove x</button>
+    <button type="button" data-ng-click="ShoppingListDirectiveCtrl.onRemove({index: $index})" title="Remove {{ item.name }}">
+      onRemove x
+    </button>
     Title: {{ ShoppingListDirectiveCtrl.title }}
   </li>
 </ol>
 
-<div class="error text-uc" data-ng-if="ShoppingListDirectiveCtrl.cookiesInList()">
+<div class="error text-uc">
   warning! warning! cookies detected!
 </div>
