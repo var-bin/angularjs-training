@@ -27,7 +27,7 @@
     }
 
     function removeItem(index) {
-      list.lastRemoved = list.items[index];
+      list.lastRemoved = list.items[index].name;
 
       shoppingList.removeItem(index);
       setListTitle();
