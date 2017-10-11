@@ -6,11 +6,17 @@
   angular.module("ShoppingListComponentApp")
     .controller("ShoppingListComponentController", ShoppingListComponentController);
 
-  function ShoppingListComponentController() {
+  ShoppingListComponentController.$inject = ["$element"];
+
+  function ShoppingListComponentController($element) {
     let $ctrl = this;
 
     $ctrl.cookiesInList = cookiesInList;
     $ctrl.removeItem = removeItem;
+    $ctrl.$onInit = $onInit;
+    $ctrl.$onChanges = $onChanges;
+    $ctrl.$doCheck = $doCheck;
+    $ctrl.$postLink = $postLink;
 
     function cookiesInList() {
       const TRIGGERED_WORD = "cookie";
@@ -30,6 +36,38 @@
       $ctrl.onRemove({
         index: itemIndex
       })
+    }
+
+    function $onInit() {
+      console.log("We are in $onInit()");
+    }
+
+    function $onChanges(changesObj) {
+      console.log("We are in $onChanges()", changesObj);
+
+      console.log("onChanges cookiesInList: ", );
+      console.log("onChanges $element: ", $element);
+
+      const errorHolder = document.querySelector(".error");
+
+      if (cookiesInList()) {
+        errorHolder.classList.add("is-active");
+
+        return;
+      }
+
+      errorHolder.classList.remove("is-active");
+    }
+
+    function $doCheck() {
+      console.log("We are in $doCheck()");
+    }
+
+    function $postLink() {
+      console.log("We are in $postLink()", $element);
+      console.log("scope", $element.scope());
+      console.log("isolateScope", $element.isolateScope());
+      console.log("postLink cookiesInList: ", $ctrl.cookiesInList());
     }
   }
 })();
