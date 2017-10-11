@@ -10,6 +10,7 @@
 
   function ShoppingListComponentController($element) {
     let $ctrl = this;
+    let totalSize;
 
     $ctrl.cookiesInList = cookiesInList;
     $ctrl.removeItem = removeItem;
@@ -17,6 +18,22 @@
     $ctrl.$onChanges = $onChanges;
     $ctrl.$doCheck = $doCheck;
     $ctrl.$postLink = $postLink;
+
+    function showError() {
+      const errorHolder = document.querySelector(".error");
+
+      if (totalSize !== $ctrl.items.length) {
+        totalSize = $ctrl.items.length;
+
+        if (cookiesInList()) {
+          errorHolder.classList.add("is-active");
+
+          return;
+        }
+
+        errorHolder.classList.remove("is-active");
+      }
+    }
 
     function cookiesInList() {
       const TRIGGERED_WORD = "cookie";
@@ -40,6 +57,7 @@
 
     function $onInit() {
       console.log("We are in $onInit()");
+      totalSize = 0;
     }
 
     function $onChanges(changesObj) {
@@ -47,20 +65,11 @@
 
       console.log("onChanges cookiesInList: ", );
       console.log("onChanges $element: ", $element);
-
-      const errorHolder = document.querySelector(".error");
-
-      if (cookiesInList()) {
-        errorHolder.classList.add("is-active");
-
-        return;
-      }
-
-      errorHolder.classList.remove("is-active");
     }
 
     function $doCheck() {
       console.log("We are in $doCheck()");
+      showError();
     }
 
     function $postLink() {
