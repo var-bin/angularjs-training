@@ -5,10 +5,10 @@
     <button type="button" data-ng-click="$ctrl.removeItem($index)" title="Remove {{ item.name }}">
       onRemove x
     </button>
-    Title: {{ $ctrl.title }}
+    Title: {{ :: $ctrl.title }}
   </li>
 </ol>
 
-<div class="error text-uc" data-ng-if="$ctrl.cookiesInList()">
+<div class="error text-uc">
   warning! warning! cookies detected!
 </div>
