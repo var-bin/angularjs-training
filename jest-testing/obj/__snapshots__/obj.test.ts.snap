@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The data object should contain {one: 1, two: 2} 1`] = `
+Object {
+  "one": 1,
+  "three": 3,
+  "two": 2,
+}
+`;
