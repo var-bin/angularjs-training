@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`The data object should contain at least {one: 1, two: 2} 1`] = `
+Object {
+  "arr": Array [
+    1,
+    2,
+    3,
+    4,
+  ],
+  "one": 1,
+  "three": 3,
+  "two": 2,
+}
+`;
