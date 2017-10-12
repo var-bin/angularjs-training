@@ -1,0 +1,20 @@
+{
+  "name": "jest-testing",
+  "version": "1.0.0",
+  "description": "Working with Jest and other awesome tools",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Jest",
+    "testing",
+    "test",
+    "Unit",
+    "tests",
+    "e2e",
+    "test"
+  ],
+  "author": "Vitalii Rybka",
+  "license": "MIT"
+}
