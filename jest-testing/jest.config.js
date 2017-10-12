@@ -21,8 +21,7 @@ const config = {
   transformIgnorePatterns: [
     "/node_modules/",
     "<rootDir>/coverage/"
-  ],
-  automock: true
+  ]
 };
 
 module.exports = config;
