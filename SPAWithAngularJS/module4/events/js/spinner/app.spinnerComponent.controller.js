@@ -11,13 +11,15 @@
   function SpinnerComponentController($rootScope) {
     let $ctrl = this;
     const onOff = false;
+    let cancelHandler;
 
     $ctrl.$doCheck = $doCheck;
+    $ctrl.$onDestroy = $onDestroy;
 
     function showSpinner() {
       const spinnerHolder = document.querySelector(".l-spinner");
 
-      $rootScope.$on("shoppinglist:processing", (event, data) => {
+      cancelHandler = $rootScope.$on("shoppinglist:processing", (event, data) => {
         console.log("Event: ", event);
         console.log("Data: ", data);
 
@@ -33,6 +35,10 @@
 
     function $doCheck() {
       showSpinner();
+    }
+
+    function $onDestroy() {
+      cancelHandler();
     }
   }
 })();
