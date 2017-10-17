@@ -1,0 +1,63 @@
+.error.is-active {
+  display: block;
+}
+
+.error {
+  color: red;
+  font-weight: 900;
+  display: none;
+}
+
+.text-uc {
+  text-transform: uppercase;
+}
+
+.loader {
+  position: relative;
+  margin: 0 auto;
+  visibility: collapse;
+  opacity: 0;
+}
+
+.dot-pink,
+.dot-blue {
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 100%;
+  animation: pink 1.05s ease-in-out infinite;
+}
+
+.dot-pink {
+  background: #ff2e92;
+  left: -2px;
+}
+
+.dot-blue {
+  animation-name: blue;
+  background: #007bdc;
+  right: -2px;
+}
+
+.loader.is-active {
+  width: 40px;
+  height: 20px;
+  opacity: 1;
+  visibility: visible;
+}
+
+@keyframes pink {
+  0% {
+    z-index: 1;
+  }
+  50% {
+    transform: translateX(24px);
+  }
+}
+
+@keyframes blue {
+  50% {
+    transform: translateX(-24px);
+  }
+}
