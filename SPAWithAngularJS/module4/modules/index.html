@@ -5,17 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Shopping List With Modules</title>
-  <script src="js/angular.min.js"></script>
-  <script src="js/app.module.js"></script>
-  <script src="js/app.shoppingList1.controller.js"></script>
-  <script src="js/app.shoppingList.factory.js"></script>
-  <script src="js/app.shoppingList.component.js"></script>
-  <script src="js/app.shoppingListComponent.controller.js"></script>
+  <!-- libs -->
+  <script src="lib/angular.min.js"></script>
+
   <!-- spinner -->
-  <script src="js/spinner/app.spinner.component.js"></script>
-  <script src="js/spinner/app.spinnerComponent.controller.js"></script>
-  <!-- weightLossFilterService -->
-  <script src="js/app.weightLossFilterService.js"></script>
+  <script src="src/spinner/app.spinner.module.js"></script>
+  <script src="src/spinner/app.spinner.component.js"></script>
+  <script src="src/spinner/app.spinnerComponent.controller.js"></script>
+
+  <!-- shoppingList -->
+  <script src="src/shoppingList/app.shoppingList.module.js"></script>
+  <script src="src/shoppingList/app.shoppingList.controller.js"></script>
+  <script src="src/shoppingList/app.shoppingList.factory.js"></script>
+  <script src="src/shoppingList/app.shoppingList.component.js"></script>
+  <script src="src/shoppingList/app.shoppingListComponent.controller.js"></script>
+  <script src="src/shoppingList/app.weightLossFilter.service.js"></script>
+
 </head>
 <body data-ng-app="ShoppingList">
   <h1>
@@ -23,22 +28,22 @@
   </h1>
 
   <!-- LIST #1 - unlimited items -->
-  <div id="list1" data-ng-controller="ShoppingList1Controller as list1">
+  <div id="list1" data-ng-controller="ShoppingListController as list">
     <h3>Shopping List #1</h3>
 
-    <input type="text" data-ng-model="list1.itemName" placeholder="Enter item name">
-    <input type="text" data-ng-model="list1.itemQuantity" placeholder="Enter quantity">
+    <input type="text" data-ng-model="list.itemName" placeholder="Enter item name">
+    <input type="text" data-ng-model="list.itemQuantity" placeholder="Enter quantity">
 
-    <button type="button" data-ng-click="list1.addItem()">
+    <button type="button" data-ng-click="list.addItem()">
       Add Item
     </button>
 
-    <span data-ng-bind="list1.lastRemoved"></span>
+    <span data-ng-bind="list.lastRemoved"></span>
 
     <shopping-list
-      data-items=":: list1.items"
-      data-title="{{ list1.title }}"
-      data-on-remove="list1.removeItem(index)"></shopping-list>
+      data-items=":: list.items"
+      data-title="{{ list.title }}"
+      data-on-remove="list.removeItem(index)"></shopping-list>
   </div>
 
   <shopping-list-spinner></shopping-list-spinner>
