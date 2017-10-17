@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Shopping List With Events</title>
+  <script src="js/angular.min.js"></script>
+  <script src="js/app.module.js"></script>
+  <script src="js/app.shoppingList1.controller.js"></script>
+  <script src="js/app.shoppingList.factory.js"></script>
+  <script src="js/app.shoppingList.component.js"></script>
+  <script src="js/app.shoppingListComponent.controller.js"></script>
+  <!-- spinner -->
+  <script src="js/spinner/app.spinner.component.js"></script>
+  <script src="js/spinner/app.spinnerComponent.controller.js"></script>
+  <!-- weightLossFilterService -->
+  <script src="js/app.weightLossFilterService.js"></script>
+  <style>
+    .error.is-active {
+      display: block;
+    }
+
+    .error {
+      color: red;
+      font-weight: 900;
+      display: none;
+    }
+
+    .text-uc {
+      text-transform: uppercase;
+    }
+
+    .loader {
+      position: relative;
+      margin: 0 auto;
+      visibility: collapse;
+      opacity: 0;
+    }
+
+    .dot-pink,
+    .dot-blue {
+      position: absolute;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      animation: pink 1.05s ease-in-out infinite;
+    }
+
+    .dot-pink {
+      background: #ff2e92;
+      left: -2px;
+    }
+
+    .dot-blue {
+      animation-name: blue;
+      background: #007bdc;
+      right: -2px;
+    }
+
+    .loader.is-active {
+      width: 40px;
+      height: 20px;
+      opacity: 1;
+      visibility: visible;
+    }
+
+    @keyframes pink {
+      0% {
+        z-index: 1;
+      }
+      50% {
+        transform: translateX(24px);
+      }
+    }
+
+    @keyframes blue {
+      50% {
+        transform: translateX(-24px);
+      }
+    }
+  </style>
+</head>
+<body data-ng-app="ShoppingListEventsApp">
+  <h1>
+    Shopping List With Events
+  </h1>
+
+  <!-- LIST #1 - unlimited items -->
+  <div id="list1" data-ng-controller="ShoppingList1Controller as list1">
+    <h3>Shopping List #1</h3>
+
+    <input type="text" data-ng-model="list1.itemName" placeholder="Enter item name">
+    <input type="text" data-ng-model="list1.itemQuantity" placeholder="Enter quantity">
+
+    <button type="button" data-ng-click="list1.addItem()">
+      Add Item
+    </button>
+
+    <span data-ng-bind="list1.lastRemoved"></span>
+
+    <shopping-list
+      data-items=":: list1.items"
+      data-title="{{ list1.title }}"
+      data-on-remove="list1.removeItem(index)"></shopping-list>
+  </div>
+
+  <shopping-list-spinner></shopping-list-spinner>
+</body>
+</html>
