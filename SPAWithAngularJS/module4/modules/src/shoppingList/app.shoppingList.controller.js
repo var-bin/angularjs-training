@@ -1,14 +1,14 @@
-// app.shoppingList1.controller.js
+// app.shoppingList.controller.js
 
 (function() {
   "use strict";
 
   angular.module("ShoppingList")
-    .controller("ShoppingList1Controller", ShoppingList1Controller);
+    .controller("ShoppingListController", ShoppingListController);
 
-  ShoppingList1Controller.$inject = ["ShoppingListFactory"];
+  ShoppingListController.$inject = ["ShoppingListFactory"];
 
-  function ShoppingList1Controller(ShoppingListFactory) {
+  function ShoppingListController(ShoppingListFactory) {
     let list = this;
 
     // Use factory to create new shopping list service
