@@ -33,12 +33,9 @@
 
     .loader {
       position: relative;
-      width: 40px;
-      height: 20px;
-      border-radius: 10px;
-      border: 15px solid transparent;
-      background: #3d3f3c;
       margin: 0 auto;
+      visibility: collapse;
+      opacity: 0;
     }
 
     .dot-pink,
@@ -60,6 +57,13 @@
       animation-name: blue;
       background: #007bdc;
       right: -2px;
+    }
+
+    .loader.is-active {
+      width: 40px;
+      height: 20px;
+      opacity: 1;
+      visibility: visible;
     }
 
     @keyframes pink {
@@ -101,5 +105,7 @@
       data-title="{{ list1.title }}"
       data-on-remove="list1.removeItem(index)"></shopping-list>
   </div>
+
+  <shopping-list-spinner></shopping-list-spinner>
 </body>
 </html>
