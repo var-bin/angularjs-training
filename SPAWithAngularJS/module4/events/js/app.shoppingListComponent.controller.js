@@ -6,43 +6,47 @@
   angular.module("ShoppingListEventsApp")
     .controller("ShoppingListComponentController", ShoppingListComponentController);
 
-  ShoppingListComponentController.$inject = ["$element"];
+  ShoppingListComponentController.$inject = ["$rootScope", "$q", "WeightLossFilterService"];
 
-  function ShoppingListComponentController($element) {
+  function ShoppingListComponentController($rootScope, $q, WeightLossFilterService) {
     let $ctrl = this;
     let totalSize;
 
-    $ctrl.cookiesInList = cookiesInList;
     $ctrl.removeItem = removeItem;
     $ctrl.$onInit = $onInit;
     $ctrl.$doCheck = $doCheck;
 
-    function showError() {
+    function cookiesInList() {
       const errorHolder = document.querySelector(".error");
 
-      if (totalSize !== $ctrl.items.length) {
+      if ($ctrl.items.length !== totalSize) {
         totalSize = $ctrl.items.length;
 
-        if (cookiesInList()) {
-          errorHolder.classList.add("is-active");
+        $rootScope.$broadcast("shoppinglist:processing", {
+          on: true
+        });
 
-          return;
+        let promises = [];
+
+        for (let i = 0; i < $ctrl.items.length; i++) {
+          promises.push(WeightLossFilterService.checkName($ctrl.items[i].name));
         }
 
-        errorHolder.classList.remove("is-active");
+        $q.all(promises)
+          .then((result) => {
+            // Remove cookie warning
+            console.log("result: ", result);
+            errorHolder.classList.remove("is-active");
+          }).catch((error) => {
+            // Show cookie warning
+            $ctrl.cookieErrorMessage = error.message;
+            errorHolder.classList.add("is-active");
+          }).finally(() => {
+            $rootScope.$broadcast("shoppinglist:processing", {
+              on: false
+            });
+          });
       }
-    }
-
-    function cookiesInList() {
-      const TRIGGERED_WORD = "cookie";
-
-      for (let item of $ctrl.items) {
-        if (item.name.toLowerCase().indexOf(TRIGGERED_WORD) !== -1) {
-          return true;
-        }
-      }
-
-      return false;
     }
 
     function removeItem(itemIndex) {
@@ -58,7 +62,7 @@
     }
 
     function $doCheck() {
-      showError();
+      cookiesInList();
     }
   }
 })();
