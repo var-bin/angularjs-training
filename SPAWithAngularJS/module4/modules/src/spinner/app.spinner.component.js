@@ -3,9 +3,9 @@
 (function() {
   "use strict";
 
-  angular.module("ShoppingListEventsApp")
+  angular.module("ShoppingList")
   .component("shoppingListSpinner", {
-    templateUrl: "../../templates/spinner.view.html",
+    templateUrl: "src/spinner/spinner.view.html",
     controller: "SpinnerComponentController"
   });
 })();
