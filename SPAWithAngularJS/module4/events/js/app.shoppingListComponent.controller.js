@@ -15,9 +15,7 @@
     $ctrl.cookiesInList = cookiesInList;
     $ctrl.removeItem = removeItem;
     $ctrl.$onInit = $onInit;
-    $ctrl.$onChanges = $onChanges;
     $ctrl.$doCheck = $doCheck;
-    $ctrl.$postLink = $postLink;
 
     function showError() {
       const errorHolder = document.querySelector(".error");
@@ -56,27 +54,11 @@
     }
 
     function $onInit() {
-      console.log("We are in $onInit()");
       totalSize = 0;
     }
 
-    function $onChanges(changesObj) {
-      console.log("We are in $onChanges()", changesObj);
-
-      console.log("onChanges cookiesInList: ", );
-      console.log("onChanges $element: ", $element);
-    }
-
     function $doCheck() {
-      console.log("We are in $doCheck()");
       showError();
-    }
-
-    function $postLink() {
-      console.log("We are in $postLink()", $element);
-      console.log("scope", $element.scope());
-      console.log("isolateScope", $element.isolateScope());
-      console.log("postLink cookiesInList: ", $ctrl.cookiesInList());
     }
   }
 })();
