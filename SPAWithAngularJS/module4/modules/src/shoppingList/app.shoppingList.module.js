@@ -3,5 +3,11 @@
 (function() {
   "use strict";
 
-  angular.module("ShoppingList", []);
+  angular.module("ShoppingList", ["Spinner"])
+    .config(() => {
+      console.log("ShoppingList Module config");
+    })
+    .run(() => {
+      console.log("ShoppingList Module run");
+    });
 })();
