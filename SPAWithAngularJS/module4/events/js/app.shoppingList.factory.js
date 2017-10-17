@@ -3,7 +3,7 @@
 (function() {
   "use strict";
 
-  angular.module("ShoppingListComponentApp")
+  angular.module("ShoppingListEventsApp")
     .factory("ShoppingListFactory", ShoppingListFactory);
 
   function ShoppingListService(maxItems) {

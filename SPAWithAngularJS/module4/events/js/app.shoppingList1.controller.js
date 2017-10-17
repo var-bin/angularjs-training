@@ -3,7 +3,7 @@
 (function() {
   "use strict";
 
-  angular.module("ShoppingListComponentApp")
+  angular.module("ShoppingListEventsApp")
     .controller("ShoppingList1Controller", ShoppingList1Controller);
 
   ShoppingList1Controller.$inject = ["ShoppingListFactory"];

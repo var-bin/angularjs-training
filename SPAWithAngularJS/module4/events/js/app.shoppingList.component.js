@@ -3,7 +3,7 @@
 (function() {
   "use strict";
 
-  angular.module("ShoppingListComponentApp")
+  angular.module("ShoppingListEventsApp")
     .component("shoppingList", {
       templateUrl: "../templates/shoppingList.view.html",
       controller: "ShoppingListComponentController",
