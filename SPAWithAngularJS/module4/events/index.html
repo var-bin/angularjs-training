@@ -26,6 +26,52 @@
     .text-uc {
       text-transform: uppercase;
     }
+
+    .loader {
+      position: relative;
+      width: 40px;
+      height: 20px;
+      border-radius: 10px;
+      border: 15px solid transparent;
+      background: #3d3f3c;
+      margin: 0 auto;
+    }
+
+    .dot-pink,
+    .dot-blue {
+      position: absolute;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border-radius: 100%;
+      animation: pink 1.05s ease-in-out infinite;
+    }
+
+    .dot-pink {
+      background: #ff2e92;
+      left: -2px;
+    }
+
+    .dot-blue {
+      animation-name: blue;
+      background: #007bdc;
+      right: -2px;
+    }
+
+    @keyframes pink {
+      0% {
+        z-index: 1;
+      }
+      50% {
+        transform: translateX(24px);
+      }
+    }
+
+    @keyframes blue {
+      50% {
+        transform: translateX(-24px);
+      }
+    }
   </style>
 </head>
 <body data-ng-app="ShoppingListEventsApp">
