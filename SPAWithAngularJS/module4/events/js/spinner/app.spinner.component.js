@@ -4,7 +4,7 @@
   "use strict";
 
   angular.module("ShoppingListEventsApp")
-  .component("spinner", {
+  .component("shoppingListSpinner", {
     templateUrl: "../../templates/spinner.view.html",
     controller: "SpinnerComponentController"
   });
