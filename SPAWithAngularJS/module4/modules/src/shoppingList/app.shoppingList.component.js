@@ -5,7 +5,7 @@
 
   angular.module("ShoppingList")
     .component("shoppingList", {
-      templateUrl: ".shoppingList.view.html",
+      templateUrl: "src/shoppingList/shoppingList.view.html",
       controller: "ShoppingListComponentController",
       bindings: {
         items: "<",
