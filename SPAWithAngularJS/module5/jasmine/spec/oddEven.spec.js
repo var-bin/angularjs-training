@@ -5,7 +5,6 @@
 describe("oddEven", () => {
   let randomNumGenerator8;
   let randomNumGenerator3;
-  const getRandomOddEven1to10 = require("../src/oddEven");
 
   beforeEach(() => {
     randomNumGenerator8 = (from, to) => {
