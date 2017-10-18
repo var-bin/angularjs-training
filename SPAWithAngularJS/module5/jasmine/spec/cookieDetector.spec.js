@@ -3,7 +3,7 @@
 describe("cookieDetector", () => {
   let itemsWithoutCookies;
   let itemsWithCookies;
-  let detectCookie;
+  const detectCookie = require("../src/cookieDetector");
 
   beforeEach(() => {
     itemsWithoutCookies = [
@@ -17,8 +17,6 @@ describe("cookieDetector", () => {
       "milk",
       "Cookie"
     ];
-
-    detectCookie = require("../src/cookieDetector");
   });
 
   it("Should be able to detect no cookies", () => {
