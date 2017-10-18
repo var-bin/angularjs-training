@@ -3,7 +3,6 @@
 describe("cookieDetector", () => {
   let itemsWithoutCookies;
   let itemsWithCookies;
-  const detectCookie = require("../src/cookieDetector");
 
   beforeEach(() => {
     itemsWithoutCookies = [
