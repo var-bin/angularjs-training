@@ -3,7 +3,7 @@
 (function() {
   "use strict";
 
-  angular.module("ShoppingList")
+  angular.module("Spinner")
     .controller("SpinnerComponentController", SpinnerComponentController);
 
   SpinnerComponentController.$inject = ["$rootScope"];
