@@ -3,7 +3,7 @@
 "use strick";
 
 describe("MessageController", () => {
-  beforeEach(angular.mock.module("myApp"));
+  beforeEach(module("myApp"));
 
   let $controller;
   let messageController;
