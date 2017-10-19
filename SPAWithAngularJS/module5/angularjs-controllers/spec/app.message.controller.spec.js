@@ -1,6 +1,6 @@
 // app.message.controller.spec.js
 
-"use strick";
+"use strict";
 
 describe("MessageController", () => {
   beforeEach(module("myApp"));
