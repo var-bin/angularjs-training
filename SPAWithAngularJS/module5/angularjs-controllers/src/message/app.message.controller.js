@@ -1,14 +1,12 @@
 // app.message.controller.js
 
-(function() {
-  "use strict";
+"use strict";
 
-  angular.module("myApp")
-    .controller("MessageController", MessageController);
+function MessageController() {
+  let vm = this;
 
-  function MessageController() {
-    let vm = this;
+  vm.name = "Vitalii";
+}
 
-    vm.name = "Vitalii";
-  }
-})();
+angular.module("myApp")
+  .controller("MessageController", MessageController);
