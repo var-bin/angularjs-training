@@ -19,6 +19,11 @@
   "author": "Vitalii Rybka",
   "license": "MIT",
   "devDependencies": {
+    "@types/angular": "^1.6.34",
+    "@types/angular-mocks": "^1.5.11",
+    "@types/jasmine": "^2.6.0",
+    "@types/karma": "^1.7.1",
+    "@types/node": "^8.0.45",
     "angular-mocks": "^1.6.6",
     "browser-sync": "^2.18.13",
     "jasmine": "^2.8.0",
@@ -29,6 +34,9 @@
     "karma-firefox-launcher": "^1.0.1",
     "karma-jasmine": "^1.1.0",
     "karma-spec-reporter": "0.0.31",
-    "puppeteer": "^0.12.0"
+    "karma-typescript": "^3.0.8",
+    "puppeteer": "^0.12.0",
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.3"
   }
 }
