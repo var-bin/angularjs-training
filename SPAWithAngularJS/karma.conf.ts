@@ -1,6 +1,8 @@
 // Karma configuration
 // Generated on Wed Oct 18 2017 16:40:50 GMT+0300 (FLE Daylight Time)
-process.env.CHROME_BIN = require('puppeteer').executablePath()
+process.env.CHROME_BIN = require('puppeteer').executablePath();
+
+const typescriptConfig = require('./tsconfig');
 
 module.exports = function(config) {
   config.set({
@@ -10,7 +12,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine'],
+    frameworks: ['jasmine', 'karma-typescript'],
 
 
     // list of files / patterns to load in the browser
@@ -18,7 +20,9 @@ module.exports = function(config) {
       './module5/angularjs-controllers/lib/angular.min.js',
       './node_modules/angular-mocks/angular-mocks.js',
       './module5/**/spec/**/*.spec.js',
-      './module5/**/src/**/*.js'
+      './module5/**/spec/**/*.spec.ts',
+      './module5/**/src/**/*.js',
+      './module5/**/src/**/*.ts'
     ],
 
 
@@ -30,8 +34,13 @@ module.exports = function(config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
-    preprocessors: {},
+    preprocessors: {
+      '**/*.ts': ['karma-typescript']
+    },
 
+    karmaTypescriptConfig: {
+      tsconfig: "./tsconfig.json"
+    },
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
