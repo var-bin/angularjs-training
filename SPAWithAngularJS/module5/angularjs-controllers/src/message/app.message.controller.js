@@ -1,4 +1,4 @@
-// message.controller.js
+// app.message.controller.js
 
 (function() {
   "use strict";
