@@ -2,8 +2,6 @@
 // Generated on Wed Oct 18 2017 16:40:50 GMT+0300 (FLE Daylight Time)
 process.env.CHROME_BIN = require('puppeteer').executablePath();
 
-const typescriptConfig = require('./tsconfig');
-
 module.exports = function(config) {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
