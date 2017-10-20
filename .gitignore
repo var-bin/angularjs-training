@@ -9,3 +9,6 @@ vendors
 
 # *.map
 *.map
+
+# build
+build
