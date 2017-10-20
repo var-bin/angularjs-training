@@ -1,7 +1,5 @@
 // app.module.js
 
-(function() {
-  "use strict";
+"use strict";
 
-  angular.module("myApp", []);
-})();
+angular.module("myApp", []);
