@@ -2,6 +2,8 @@
 
 "use strict";
 
+import { myApp } from "../app.module";
+
 class Message1Ctrl {
   public name: string = "Vitalii";
 
@@ -10,5 +12,5 @@ class Message1Ctrl {
   }
 }
 
-angular.module("myApp")
+myApp
   .controller("Message1Controller", Message1Ctrl);
