@@ -28,7 +28,9 @@ module.exports = function(config) {
     exclude: [
       'node_modules',
       'angularjs-controllers/lib',
-      'angularjs-controllers/build'
+      'angularjs-controllers/build',
+      'angularjs-controllers/src/app.ts',
+      'angularjs-controllers/src/app.module.ts'
     ],
 
 
