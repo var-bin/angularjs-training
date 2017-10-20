@@ -2,11 +2,13 @@
 
 "use strict";
 
+import { myApp } from "../app.module";
+
 function MessageController() {
   let vm = this;
 
   vm.name = "Vitalii";
 }
 
-angular.module("myApp")
+myApp
   .controller("MessageController", MessageController);
