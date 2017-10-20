@@ -5,7 +5,7 @@ process.env.CHROME_BIN = require('puppeteer').executablePath();
 module.exports = function(config) {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: './module5/',
 
 
     // frameworks to use
@@ -15,29 +15,31 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './module5/angularjs-controllers/lib/angular.min.js',
-      './node_modules/angular-mocks/angular-mocks.js',
-      './module5/**/spec/**/*.spec.js',
-      './module5/**/spec/**/*.spec.ts',
-      './module5/**/src/**/*.js',
-      './module5/**/src/**/*.ts'
+      '../node_modules/angular/angular.js',
+      '../node_modules/angular-mocks/angular-mocks.js',
+      'angularjs-controllers/spec/**/*.spec.js',
+      'angularjs-controllers/spec/**/*.spec.ts',
+      'angularjs-controllers/src/**/*.js',
+      'angularjs-controllers/src/**/*.ts'
     ],
 
 
     // list of files to exclude
     exclude: [
-      'node_modules'
+      'node_modules',
+      'angularjs-controllers/lib',
+      'angularjs-controllers/build'
     ],
 
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      '**/*.ts': ['karma-typescript']
+      'angularjs-controllers/**/*.ts': ['karma-typescript']
     },
 
     karmaTypescriptConfig: {
-      tsconfig: "./tsconfig.json"
+      tsconfig: "../tsconfig.json"
     },
 
     // test results reporter to use
