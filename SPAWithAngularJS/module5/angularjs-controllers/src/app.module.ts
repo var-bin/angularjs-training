@@ -2,4 +2,8 @@
 
 "use strict";
 
-angular.module("myApp", []);
+import { module } from "angular";
+
+const myApp = module("myApp", []);
+
+export { myApp };
