@@ -1,6 +1,6 @@
 import {TweetService} from "../impl/TweetService";
 import {Tweet} from "../../entities/Tweet";
-import * as _ from "lodash";
+import {forEach} from "lodash";
 describe("Service: TweetService", () => {
     var tweetService: TweetService;
     beforeEach(() => {
@@ -10,7 +10,7 @@ describe("Service: TweetService", () => {
         it("should return 5 tweets", () => {
             var res: Array<Tweet> = tweetService.getAll();
             expect(res.length).toBe(5);
-            _.forEach(res, (tweet: Tweet) => {
+            forEach(res, (tweet: Tweet) => {
                 expect((<any>tweet.constructor).name).toEqual("Tweet");
             });
         });
