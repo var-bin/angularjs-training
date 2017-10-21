@@ -2,7 +2,6 @@ import "../../index";
 import * as angular from "angular";
 import "angular-mocks";
 import {ComponentTest} from "../../../../util/ComponentTest";
-import "phantomjs-polyfill";
 import {TweetContentController} from "./TweetContentComponent";
 import {ContentModel} from "../../../core/models/impl/ContentModel";
 

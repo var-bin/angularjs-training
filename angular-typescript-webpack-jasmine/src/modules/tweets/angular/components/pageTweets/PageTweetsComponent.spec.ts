@@ -2,7 +2,6 @@ import "../../index";
 import * as angular from "angular";
 import "angular-mocks";
 import {ComponentTest} from "../../../../util/ComponentTest";
-import "phantomjs-polyfill";
 import {PageTweetsController} from "./PageTweetsComponent";
 import {SharedModel} from "../../../core/models/impl/SharedModel";
 describe("Component PageTweetsComponent", () => {
