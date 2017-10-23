@@ -39,7 +39,7 @@ npm run build
 - [x] Build basic [AngularJS](https://angularjs.org) app with [Webpack](https://webpack.js.org)
 - [x] Simple twitter application
 - [x] [SASS](http://sass-lang.com) support
-- [x] Fully tested with [Jasmine](https://jasmine.github.io/)
+- [x] Fully tested with [Jasmine](https://jasmine.github.io)
 - [x] Coverage report
 - [x] [Typescript](https://www.typescriptlang.org) support:
   - [] [TSLint](https://palantir.github.io/tslint) support
