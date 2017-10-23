@@ -5,7 +5,7 @@ export class TweetSidebarComponent implements ng.IComponentOptions {
         <div ng-class="{'sidebar-collapsed': $ctrl.sharedModel.sidebarCollapsed}">
             <div>
                 <i ng-click="$ctrl.toggleCollapsed()" class="fa dp-collapse dp-collapse-right"
-                ng-class="{'fa-chevron-left': !$ctrl.sharedModel.sidebarCollapsed, 
+                ng-class="{'fa-chevron-left': !$ctrl.sharedModel.sidebarCollapsed,
                 'fa-chevron-right': $ctrl.sharedModel.sidebarCollapsed}"></i>
                 <div class="collapsed-content">
                     <h2>Starred tweets</h2>
