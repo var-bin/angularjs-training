@@ -1,18 +1,19 @@
-var loaders = require("./loaders");
-var preloaders = require("./preloaders");
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var webpack = require('webpack');
+const loaders = require("./loaders");
+const preloaders = require("./preloaders");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
-    entry: ['./src/index.ts'],
+    context: path.join(__dirname, ".."),
+    entry: ["./src/index.ts"],
     output: {
-        filename: 'build.js',
-        path: 'dist'
+        filename: "build.js",
+        path: "dist"
     },
-    devtool: '',
+    devtool: "",
     resolve: {
         root: __dirname,
-        extensions: ['', '.ts', '.js', '.json']
+        extensions: [".ts", ".js", ".json"]
     },
     resolveLoader: {
         modulesDirectories: ["node_modules"]
@@ -26,15 +27,15 @@ module.exports = {
             }
         ),
         new HtmlWebpackPlugin({
-            template: './src/index.html',
-            inject: 'body',
+            template: "./src/index.html",
+            inject: "body",
             hash: true
         }),
         new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-            'window.jquery': 'jquery'
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery",
+            "window.jquery": "jquery"
         })
     ],
     module:{
