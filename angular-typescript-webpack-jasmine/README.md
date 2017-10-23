@@ -1,6 +1,6 @@
 # angular-typescript-webpack
 
-Angular + Typescript + Webpack build with Karma and wallaby tests support.
+AngularJS + Typescript + Webpack build with Karma and wallaby tests support.
 And this all with sourcemaps in production support!!
 
 ### Install
@@ -36,17 +36,22 @@ npm run build
 
 ### Features
 
-- [x] Build basic Angular app with webpack
+- [x] Build basic [AngularJS](https://angularjs.org) app with [Webpack](https://webpack.js.org)
 - [x] Simple twitter application
-- [x] fully tested with Jasmine
-- [x] sass support
+- [x] [SASS](http://sass-lang.com) support
+- [x] Fully tested with [Jasmine](https://jasmine.github.io/)
 - [x] Coverage report
-- [x] Typescript support
-- [x] ES6 modules support
-- [x] Running tests in PhantomJS
-- [x] Wallaby.js support
-- [x] Karma support
-- [x] Optimized build package
+- [x] [Typescript](https://www.typescriptlang.org) support:
+  - [] [TSLint](https://palantir.github.io/tslint) support
+- [] ES6 modules support via TypeScript compiler
+- [x] [Wallaby.js](https://wallabyjs.com) support
+- [x] [Karma](https://karma-runner.github.io) support
+  - [] Running tests in [ChromeHeadless](https://github.com/karma-runner/karma-chrome-launcher), [FirefoxHeadless](https://github.com/karma-runner/karma-firefox-launcher) (optional)
+- [x] Optimized build packages:
+  - [] vendor bundle
+  - [] app bundle
 - [x] Minimal and straightforward setup
-- [x] Watches code and refreshes browser with latest changes automatically
+- [] Scafolding support:
+  - [] [Yeoman](http://yeoman.io) (optional)
+- [x] Watches code and refreshes browser with latest changes automatically via [HRM](https://webpack.js.org/guides/hot-module-replacement/)
 - [x] Sourcemap support in develop AND PRODUCTION!!! (don't deploy the js.map file with your application, but use it to debug your production app)
