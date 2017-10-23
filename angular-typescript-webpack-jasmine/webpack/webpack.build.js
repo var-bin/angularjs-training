@@ -1,14 +1,17 @@
 const loaders = require("./loaders");
-const preloaders = require("./preloaders");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CleanWebpackPlugin = require("clean-webpack-plugin");
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
+const path = require("path");
 
 module.exports = {
     context: path.join(__dirname, ".."),
     entry: ["./src/index.ts"],
     output: {
         filename: "build.js",
-        path: "dist"
+        path: path.resolve("./dist"),
+        publicPath: "/"
     },
     devtool: "",
     resolve: {
@@ -19,34 +22,43 @@ module.exports = {
         ]
     },
     resolveLoader: {
-        modulesDirectories: ["node_modules"]
+        modules: ["node_modules"]
     },
     plugins: [
-        new webpack.optimize.UglifyJsPlugin(
-            {
-                warning: false,
-                mangle: true,
-                comments: false
+        new CleanWebpackPlugin(["dist"], {
+            root: path.join(__dirname, "..")
+        }),
+
+        new UglifyJSPlugin({
+            uglifyOptions: {
+                ecma: 5,
+                compress: {
+                    dead_code: true,
+                    drop_console: true,
+                    toplevel: true,
+                    unsafe_proto: true,
+                    warnings: true
+                },
+                output: {
+                    indent_level: 2,
+                    beautify: false
+                }
             }
-        ),
+        }),
+
+        new webpack.optimize.CommonsChunkPlugin({
+            name: "vendors",
+            filename: "vendors.js",
+            minChunks: Infinity
+        }),
+
         new HtmlWebpackPlugin({
             template: "./src/index.html",
             inject: "body",
             hash: true
-        }),
-        new webpack.ProvidePlugin({
-            $: "jquery",
-            jQuery: "jquery",
-            "window.jQuery": "jquery",
-            "window.jquery": "jquery"
         })
     ],
-    module:{
-        preLoaders:preloaders,
+    module: {
         loaders: loaders
-    },
-    tslint: {
-        emitErrors: true,
-        failOnHint: true
-  }
+    }
 };
