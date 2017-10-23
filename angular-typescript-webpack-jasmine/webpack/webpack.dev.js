@@ -1,5 +1,4 @@
 const loaders = require("./loaders");
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
 module.exports = {
@@ -21,16 +20,6 @@ module.exports = {
             template: './src/index.html',
             inject: 'body',
             hash: true
-        }),
-        new BrowserSyncPlugin({
-            host: 'localhost',
-            port: 8080,
-            server: {
-                baseDir: 'dist'
-            },
-            ui: false,
-            online: false,
-            notify: false
         }),
         new webpack.ProvidePlugin({
             $: 'jquery',
