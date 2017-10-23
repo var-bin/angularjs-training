@@ -1,7 +1,7 @@
-var loaders = require("./loaders");
-var BrowserSyncPlugin = require('browser-sync-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var webpack = require('webpack');
+const loaders = require("./loaders");
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require('webpack');
 module.exports = {
     entry: ['./src/index.ts'],
     output: {
