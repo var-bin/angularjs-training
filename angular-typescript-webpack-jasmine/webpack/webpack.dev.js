@@ -22,7 +22,7 @@ module.exports = {
     },
     devtool: "cheap-eval-source-map",
     devServer: {
-        contentBase: "./dist",
+        contentBase: "dist",
         port: 8080,
         host: "localhost",
         hot: true,
