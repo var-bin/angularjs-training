@@ -2,6 +2,7 @@ const loaders = require("./loaders");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const path = require("path");
+
 module.exports = {
     context: path.join(__dirname, ".."),
     entry: ["./src/index.ts"],
@@ -26,7 +27,9 @@ module.exports = {
         port: 8080,
         host: "localhost",
         hot: true,
-        stats: true
+        stats: {
+            colors: true
+        }
     },
     plugins: [
         new HtmlWebpackPlugin({
