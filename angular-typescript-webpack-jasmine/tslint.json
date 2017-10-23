@@ -20,10 +20,9 @@
     "label-undefined": true,
     "max-line-length": [true, 140],
     "member-access": true,
-    "member-ordering": [true,
-      "public-before-private",
+    "member-ordering": [true, {"order": ["public-before-private",
       "static-before-instance",
-      "variables-before-functions"
+      "variables-before-functions"]}
     ],
     "no-any": false,
     "no-arg": true,
