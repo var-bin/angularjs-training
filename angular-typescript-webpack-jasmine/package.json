@@ -30,7 +30,6 @@
     "@types/jasmine": "~2.6.0",
     "@types/jquery": "~3.2.6",
     "@types/lodash": "~4.14.38",
-    "@types/source-map": "~0.1.29",
     "@types/uglify-js": "~2.6.28",
     "angular-mocks": "~1.5.8",
     "compression-webpack-plugin": "~1.0.1",
