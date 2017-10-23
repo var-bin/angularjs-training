@@ -1,20 +1,20 @@
 const loaders = require("./loaders");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const webpack = require('webpack');
-const path = require('path');
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
+const path = require("path");
 module.exports = {
     context: path.join(__dirname, ".."),
-    entry: ['./src/index.ts'],
+    entry: ["./src/index.ts"],
     output: {
-        filename: 'build.js',
+        filename: "build.js",
         path: path.resolve("./dist"),
         publicPath: "/"
     },
     resolve: {
         extensions: [
-            '.ts',
-            '.js',
-            '.json'
+            ".ts",
+            ".js",
+            ".json"
         ]
     },
     resolveLoader: {
@@ -30,15 +30,15 @@ module.exports = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: './src/index.html',
-            inject: 'body',
+            template: "./src/index.html",
+            inject: "body",
             hash: true
         }),
         new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            'window.jQuery': 'jquery',
-            'window.jquery': 'jquery'
+            $: "jquery",
+            jQuery: "jquery",
+            "window.jQuery": "jquery",
+            "window.jquery": "jquery"
         }),
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
