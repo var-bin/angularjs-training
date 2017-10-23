@@ -1,16 +1,16 @@
-var preloaders = require("./preloaders");
-var loaders = require("./loaders");
-var webpack = require('webpack');
+const preloaders = require("./preloaders");
+const loaders = require("./loaders");
+const webpack = require("webpack");
 
 module.exports = {
-  entry: ['./src/index.ts'],
+  entry: ["./src/index.ts"],
   output: {
-    filename: 'build.js',
-    path: 'tmp'
+    filename: "build.js",
+    path: "tmp"
   },
   resolve: {
     root: __dirname,
-    extensions: ['', '.ts', '.js', '.json']
+    extensions: [".ts", ".js", ".json"]
   },
   resolveLoader: {
     modulesDirectories: ["node_modules"]
@@ -23,13 +23,13 @@ module.exports = {
       {
         test: /^((?!\.spec\.ts).)*.ts$/,
         exclude: /(node_modules|bower_components)/,
-        loader: 'istanbul-instrumenter'
+        loader: "istanbul-instrumenter"
       }
     ]
   },
   tslint: {
-        emitErrors: true,
-        failOnHint: true
+      emitErrors: true,
+      failOnHint: true
   }
 };
 
