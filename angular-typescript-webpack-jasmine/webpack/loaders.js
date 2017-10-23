@@ -3,6 +3,9 @@ module.exports = [
         test: /\.ts(x?)$/,
         loader: "ts-loader"
     }, {
+        test: /\.ts$/,
+        loader: "tslint-loader"
+    }, {
         test: /\.css$/,
         loader: "style-loader!css-loader"
     }, {
