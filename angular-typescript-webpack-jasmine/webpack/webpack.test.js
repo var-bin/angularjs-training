@@ -1,4 +1,3 @@
-const preloaders = require("./preloaders");
 const loaders = require("./loaders");
 const webpack = require("webpack");
 const path = require("path");
