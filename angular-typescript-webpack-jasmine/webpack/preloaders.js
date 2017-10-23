@@ -1,7 +1,7 @@
 module.exports = [
       {
         test: /\.ts$/,
-        loader: 'tslint-loader',
+        loader: "tslint-loader",
         options: {
           emitErrors: true,
           failOnHint: true
