@@ -1,7 +1,6 @@
 'use strict';
 
 var webpackConfig = require('./webpack/webpack.test.js');
-webpackConfig.entry = {};
 process.env.CHROME_BIN = require('puppeteer').executablePath();
 
 module.exports = function (config) {
@@ -14,15 +13,9 @@ module.exports = function (config) {
         autoWatch: false,
         browsers: ['ChromeHeadless'],
         singleRun: true,
-        autoWatchBatchDelay: 300,
         files: [
             './src/test.ts'
         ],
-        babelPreprocessor: {
-            options: {
-                presets: ['es2015']
-            }
-        },
         preprocessors: {
             'src/test.ts': ['webpack'],
             'src/**/!(*.spec)+(.js)': ['coverage']
