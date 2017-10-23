@@ -1,27 +1,27 @@
-'use strict';
+"use strict";
 
-var webpackConfig = require('./webpack/webpack.test.js');
-process.env.CHROME_BIN = require('puppeteer').executablePath();
+var webpackConfig = require("./webpack/webpack.test.js");
+process.env.CHROME_BIN = require("puppeteer").executablePath();
 
 module.exports = function (config) {
     config.set({
-        basePath: '',
-        frameworks: ['jasmine'],
+        basePath: "",
+        frameworks: ["jasmine"],
         port: 9876,
         colors: true,
         logLevel: config.LOG_INFO,
         autoWatch: false,
-        browsers: ['ChromeHeadless'],
+        browsers: ["ChromeHeadless"],
         singleRun: true,
         files: [
-            './src/test.ts'
+            "./src/test.ts"
         ],
         preprocessors: {
-            'src/test.ts': ['webpack'],
-            'src/**/!(*.spec)+(.js)': ['coverage']
+            "src/test.ts": ["webpack"],
+            "src/**/!(*.spec)+(.js)": ["coverage"]
         },
         mime: {
-            'text/x-typescript': ['ts', 'tsx']
+            "text/x-typescript": ["ts", "tsx"]
         },
         webpackMiddleware: {
             stats: {
@@ -31,16 +31,16 @@ module.exports = function (config) {
         },
         webpack: webpackConfig,
         reporters: [
-            'dots',
-            'spec',
-            'coverage'
+            "dots",
+            "spec",
+            "coverage"
         ],
         coverageReporter: {
             reporters: [
                 {
-                    dir: 'reports/coverage/',
-                    subdir: '.',
-                    type: 'html'
+                    dir: "reports/coverage/",
+                    subdir: ".",
+                    type: "html"
                 }
             ]
         }
