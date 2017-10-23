@@ -54,4 +54,7 @@ npm run build
 - [] Scafolding support:
   - [] [Yeoman](http://yeoman.io) (optional)
 - [x] Watches code and refreshes browser with latest changes automatically via [HRM](https://webpack.js.org/guides/hot-module-replacement/)
-- [x] Sourcemap support in develop AND PRODUCTION!!! (don't deploy the js.map file with your application, but use it to debug your production app)
+- [x] Sourcemap support in develop and profile modes
+- [] Inspect bundles:
+  - [] [Bundle Buddy](https://github.com/samccone/bundle-buddy) `npm run bb`
+  - [] Analyzing Build Statistics via [Official Analyse Tool](http://webpack.github.io/analyse/) `npm run analyse`
