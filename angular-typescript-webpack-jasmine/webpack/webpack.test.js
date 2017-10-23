@@ -9,8 +9,11 @@ module.exports = {
     path: "tmp"
   },
   resolve: {
-    root: __dirname,
-    extensions: [".ts", ".js", ".json"]
+    extensions: [
+      ".ts",
+      ".js",
+      ".json"
+    ]
   },
   resolveLoader: {
     modulesDirectories: ["node_modules"]
@@ -22,7 +25,7 @@ module.exports = {
     postLoaders: [
       {
         test: /^((?!\.spec\.ts).)*.ts$/,
-        exclude: /(node_modules|bower_components)/,
+        exclude: /(node_modules)/,
         loader: "istanbul-instrumenter"
       }
     ]
