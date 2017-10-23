@@ -9,7 +9,7 @@ module.exports = {
         filename: 'build.js',
         path: 'dist'
     },
-    devtool: 'source-map',
+    devtool: '',
     resolve: {
         root: __dirname,
         extensions: ['', '.ts', '.js', '.json']
