@@ -4,7 +4,11 @@ module.exports = [
         loader: "ts-loader"
     }, {
         test: /\.ts$/,
-        loader: "tslint-loader"
+        loader: "tslint-loader",
+        options: {
+            emitErrors: true,
+            failOnHint: true
+        }
     }, {
         test: /\.css$/,
         loader: "style-loader!css-loader"
