@@ -6,19 +6,12 @@
     "sourceMap": true,
     "module": "commonjs",
     "experimentalDecorators": true,
-    "outDir": "out",
-    "types": [
-      "angular",
-      "angular-mocks",
-      "jasmine"
-    ]
+    "outDir": "dist"
   },
   "exclude": [
-    "out",
     "node_modules",
     "dist",
     "dev",
     "reports"
-  ],
-  "version": "2.0.6"
+  ]
 }
