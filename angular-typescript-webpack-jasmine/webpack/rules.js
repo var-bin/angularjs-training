@@ -12,7 +12,8 @@ const rules = [
         options: {
             emitErrors: true,
             failOnHint: true
-        }
+        },
+        enforce: "pre"
     },
 
     // CSS
