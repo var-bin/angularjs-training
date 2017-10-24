@@ -15,11 +15,10 @@ module.exports = function (config) {
         browsers: ["ChromeHeadless"],
         singleRun: true,
         files: [
-            "./src/test.ts"
+            "src/test.ts"
         ],
         preprocessors: {
-            "src/test.ts": ["webpack"],
-            "src/**/!(*.spec)+(.js)": ["coverage"]
+            "src/test.ts": ["webpack"]
         },
         mime: {
             "text/x-typescript": ["ts", "tsx"]
@@ -41,7 +40,10 @@ module.exports = function (config) {
                 {
                     dir: "reports/coverage/",
                     subdir: ".",
-                    type: "html"
+                    type: "html",
+                },
+                {
+                    type: "teamcity"
                 }
             ]
         }
