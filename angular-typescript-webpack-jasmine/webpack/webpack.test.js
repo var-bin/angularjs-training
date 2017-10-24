@@ -1,4 +1,4 @@
-const loaders = require("./loaders");
+const rules = require("./rules");
 const webpack = require("webpack");
 const path = require("path");
 
@@ -22,14 +22,7 @@ module.exports = {
   },
   devtool: "source-map-inline",
   module: {
-    loaders: loaders
-    /* postLoaders: [
-      {
-        test: /^((?!\.spec\.ts).)*.ts$/,
-        exclude: /(node_modules)/,
-        loader: "istanbul-instrumenter"
-      }
-    ] */
+    rules: rules
   }
 };
 
