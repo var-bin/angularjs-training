@@ -1,4 +1,4 @@
-const loaders = require("./loaders");
+const rules = require("./rules");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const webpack = require("webpack");
 const path = require("path");
@@ -40,7 +40,7 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
-    module:{
-        loaders: loaders
+    module: {
+        rules: rules
     }
 };
