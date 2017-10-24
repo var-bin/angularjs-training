@@ -1,6 +1,7 @@
 "use strict";
 
-var webpackConfig = require("./webpack/webpack.test.js");
+const webpackConfig = require("./webpack/webpack.test.js");
+
 process.env.CHROME_BIN = require("puppeteer").executablePath();
 
 module.exports = function (config) {
