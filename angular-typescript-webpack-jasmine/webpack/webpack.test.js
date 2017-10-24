@@ -1,5 +1,6 @@
 const rules = require("./rules");
 const webpack = require("webpack");
+const webpackMerge = require("webpack-merge");
 const path = require("path");
 
 module.exports = {
@@ -17,12 +18,21 @@ module.exports = {
       ".json"
     ]
   },
-  resolveLoader: {
-    modules: ["node_modules"]
-  },
-  devtool: "source-map-inline",
-  module: {
+  devtool: "inline-source-map",
+  module: webpackMerge({
     rules: rules
-  }
+  }, {
+    // coverage
+    rules: [
+      {
+        test: /^((?!\.spec\.ts).)*.ts$/,
+        exclude: /node_modules|\.spec\.js$/,
+        loader: "istanbul-instrumenter-loader",
+        enforce: "post",
+        options: {
+            esModules: true
+        }
+    }]
+  })
 };
 
