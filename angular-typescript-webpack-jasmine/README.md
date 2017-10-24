@@ -41,7 +41,7 @@ npm run build
 - [x] [SASS](http://sass-lang.com) support
   - [] In production mode extract styles to it own bundle
 - [x] Fully tested with [Jasmine](https://jasmine.github.io)
-- [x] Coverage report
+- [] Coverage report [Istanbul](https://istanbul.js.org/)
 - [x] [Typescript](https://www.typescriptlang.org) support:
   - [x] [TSLint](https://palantir.github.io/tslint) support
 - [x] ES6 modules support via TypeScript compiler
