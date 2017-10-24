@@ -1,4 +1,4 @@
-const loaders = require("./loaders");
+const rules = require("./rules");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
@@ -47,8 +47,8 @@ module.exports = {
         }),
 
         new webpack.optimize.CommonsChunkPlugin({
-            name: "vendors",
-            filename: "vendors.js",
+            name: "manifest",
+            filename: "manifest.js",
             minChunks: Infinity
         }),
 
@@ -59,6 +59,6 @@ module.exports = {
         })
     ],
     module: {
-        loaders: loaders
+        rules: rules
     }
 };
