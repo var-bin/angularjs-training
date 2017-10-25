@@ -2,7 +2,10 @@ const rules = [
     // TypeScript
     {
         test: /\.ts(x?)$/,
-        loader: "ts-loader"
+        loader: "ts-loader",
+        options: {
+            configFile: "../tsconfig.json"
+        }
     },
 
     // TSLint
@@ -11,7 +14,8 @@ const rules = [
         loader: "tslint-loader",
         options: {
             emitErrors: true,
-            failOnHint: true
+            failOnHint: true,
+            configFile: "./tslint.json"
         },
         enforce: "pre"
     },
