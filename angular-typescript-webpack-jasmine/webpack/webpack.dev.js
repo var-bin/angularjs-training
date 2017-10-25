@@ -18,18 +18,8 @@ module.exports = {
             ".json"
         ]
     },
-    resolveLoader: {
-        modules: ["node_modules"]
-    },
-    devtool: "cheap-eval-source-map",
-    devServer: {
-        contentBase: "dist",
-        port: 8080,
-        host: "localhost",
-        hot: true,
-        stats: {
-            colors: true
-        }
+    module: {
+        rules: rules
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -40,7 +30,14 @@ module.exports = {
         new webpack.NamedModulesPlugin(),
         new webpack.HotModuleReplacementPlugin()
     ],
-    module: {
-        rules: rules
+    devtool: "cheap-module-eval-source-map",
+    devServer: {
+        contentBase: "dist",
+        port: 8080,
+        host: "localhost",
+        hot: true,
+        stats: {
+            colors: true
+        }
     }
 };
