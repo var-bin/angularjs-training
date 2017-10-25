@@ -13,7 +13,7 @@ module.exports = {
         path: path.resolve("./dist"),
         publicPath: "/"
     },
-    devtool: "",
+    devtool: "source-map",
     resolve: {
         extensions: [
             ".ts",
@@ -21,8 +21,8 @@ module.exports = {
             ".json"
         ]
     },
-    resolveLoader: {
-        modules: ["node_modules"]
+    module: {
+        rules: rules
     },
     plugins: [
         new CleanWebpackPlugin(["dist"], {
@@ -57,8 +57,5 @@ module.exports = {
             inject: "body",
             hash: true
         })
-    ],
-    module: {
-        rules: rules
-    }
+    ]
 };
