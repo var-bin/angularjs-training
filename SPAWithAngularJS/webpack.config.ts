@@ -6,6 +6,7 @@ import * as HtmlWebpackPlugin from "html-webpack-plugin";
 import * as UglifyJSPlugin from "uglifyjs-webpack-plugin";
 import * as ManifestPlugin from "webpack-manifest-plugin";
 import * as InlineChunkWebpackPlugin from "html-webpack-inline-chunk-plugin";
+import * as BrowserSyncPlugin from "browser-sync-webpack-plugin";
 
 const config: webpack.Configuration = {
   context: path.resolve(__dirname, "module5/angularjs-controllers"),
@@ -36,6 +37,16 @@ const config: webpack.Configuration = {
       {
         test: /\.tsx?$/,
         loader: "ts-loader"
+      },
+
+      // CSS
+      {
+        test: /\.css$/,
+        use: [{
+          loader: "style-loader"
+        }, {
+          loader: "css-loader"
+        }]
       }
     ]
   },
@@ -64,8 +75,33 @@ const config: webpack.Configuration = {
       inlineChunks: [
         "runtime"
       ]
-    })
-  ]
+    }),
+
+    new BrowserSyncPlugin({
+      host: "localhost",
+      port: 3000,
+      open: false,
+      proxy: "http://localhost:3001/"
+    }, {
+      reload: false
+    }),
+
+    new webpack.NamedModulesPlugin(),
+
+    new webpack.HotModuleReplacementPlugin()
+  ],
+
+  devServer: {
+    contentBase: [
+      path.resolve(__dirname, "build")
+    ],
+    host: "localhost",
+    port: 3001,
+    hot: true,
+    stats: {
+      colors: true
+    }
+  }
 };
 
 export default config;
