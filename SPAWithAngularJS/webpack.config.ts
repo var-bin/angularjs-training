@@ -47,6 +47,16 @@ const config: webpack.Configuration = {
         }, {
           loader: "css-loader"
         }]
+      },
+
+      // HTML
+      {
+        test: /\.html$/,
+        loader: "ng-cache-loader",
+        options: {
+          prefix: "[dir]/[dir]"
+        },
+        include: path.resolve("module5/angularjs-controllers/src")
       }
     ]
   },
