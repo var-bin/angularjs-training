@@ -93,7 +93,7 @@ const config: webpack.Configuration = {
 
   devServer: {
     contentBase: [
-      path.resolve(__dirname, "build")
+      path.resolve(__dirname, "module5/angularjs-controllers/build")
     ],
     host: "localhost",
     port: 3001,
