@@ -19,7 +19,7 @@ const config: webpack.Configuration = {
   },
 
   output: {
-    path: path.resolve(__dirname, "module5/angularjs-controllers/build"),
+    path: path.resolve(__dirname, "module5/angularjs-controllers", "build"),
     filename: "[name].bundle.js"
   },
 
@@ -103,7 +103,7 @@ const config: webpack.Configuration = {
 
   devServer: {
     contentBase: [
-      path.resolve(__dirname, "module5/angularjs-controllers/build")
+      "build"
     ],
     host: "localhost",
     port: 3001,
