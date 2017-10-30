@@ -2,7 +2,7 @@
 
 "use strict";
 
-import { sum } from "../src/sum/sum";
+import { sum } from "./sum";
 
 describe("sum()", () => {
   it("adds 1 + 2 to equal 3", () => {
