@@ -10,17 +10,12 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['jasmine', 'karma-typescript'],
+    frameworks: ['jasmine'],
 
 
     // list of files / patterns to load in the browser
     files: [
-      '../node_modules/angular/angular.js',
-      '../node_modules/angular-mocks/angular-mocks.js',
-      'angularjs-controllers/spec/**/*.spec.js',
-      'angularjs-controllers/spec/**/*.spec.ts',
-      'angularjs-controllers/src/**/*.js',
-      'angularjs-controllers/src/**/*.ts'
+      'angularjs-controllers/src/test.ts',
     ],
 
 
@@ -37,11 +32,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      'angularjs-controllers/**/*.ts': ['karma-typescript']
-    },
-
-    karmaTypescriptConfig: {
-      tsconfig: "../tsconfig.json"
+      'angularjs-controllers/src/test.ts': ['webpack']
     },
 
     // test results reporter to use
@@ -64,20 +55,12 @@ module.exports = function(config) {
 
 
     // enable / disable watching file and executing tests whenever any file changes
-    autoWatch: true,
+    autoWatch: false,
 
 
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['ChromeHeadless', 'FirefoxHeadless'],
-
-    customLaunchers: {
-      FirefoxHeadless: {
-        base: 'Firefox',
-        displayName: 'FirefoxHeadless',
-        flags: ['-headless']
-      }
-    },
+    browsers: ['ChromeHeadless'],
 
 
     // Continuous Integration mode
