@@ -2,8 +2,6 @@
 
 "use strict";
 
-import { myApp } from "../app.module";
-
 class Message1Ctrl {
   public name: string = "Vitalii";
 
@@ -17,5 +15,4 @@ class Message1Component implements ng.IComponentOptions {
   public controller: any = Message1Ctrl;
 }
 
-myApp
-  .component("message1Component", new Message1Component());
+export { Message1Component };
