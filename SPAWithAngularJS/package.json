@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "karma start",
+    "test": "karma start --env=test",
     "browser-sync": "node ./node_modules/browser-sync/bin/browser-sync.js start",
     "bs": "node ./node_modules/browser-sync/bin/browser-sync.js start",
-    "dev": "webpack",
-    "start": "webpack-dev-server --watch"
+    "start": "webpack-dev-server --watch --env=dev",
+    "prod": "webpack --env=production"
   },
   "keywords": [
     "angularjs",
