@@ -69,15 +69,14 @@ const config: webpack.Configuration = {
     }),
 
     new webpack.optimize.CommonsChunkPlugin({
-      name: "vendors",
-      minChunks: Infinity
+      name: "vendors"
     }),
 
     new webpack.optimize.CommonsChunkPlugin({
       name: "runtime"
     }),
 
-    new UglifyJSPlugin(),
+    /*new UglifyJSPlugin(), */
 
     new ManifestPlugin(),
 
