@@ -2,6 +2,8 @@
 // Generated on Wed Oct 18 2017 16:40:50 GMT+0300 (FLE Daylight Time)
 process.env.CHROME_BIN = require('puppeteer').executablePath();
 
+import webpackConfig from "./webpack.test";
+
 module.exports = function(config) {
   config.set({
     // base path that will be used to resolve all patterns (eg. files, exclude)
@@ -34,6 +36,19 @@ module.exports = function(config) {
     preprocessors: {
       'angularjs-controllers/src/test.ts': ['webpack']
     },
+
+    mime: {
+      "text/x-typescript": ["ts", "tsx"]
+    },
+
+    webpackMiddleware: {
+      stats: {
+        chunkModules: false,
+        colors: true
+      }
+    },
+
+    webpack: webpackConfig,
 
     // test results reporter to use
     // possible values: 'dots', 'progress'
