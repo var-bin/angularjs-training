@@ -4,9 +4,11 @@ import * as webpack from "webpack";
 import * as path from "path";
 import * as HtmlWebpackPlugin from "html-webpack-plugin";
 import * as UglifyJSPlugin from "uglifyjs-webpack-plugin";
-import * as ManifestPlugin from "webpack-manifest-plugin";
+//import * as ManifestPlugin from "webpack-manifest-plugin";
 import * as InlineChunkWebpackPlugin from "html-webpack-inline-chunk-plugin";
 import * as ExtractTextPlugin from "extract-text-webpack-plugin";
+import * as ChunkManifestPlugin from "@codemotion/chunk-manifest-webpack-plugin";
+import * as CleanWebpackPlugin from "clean-webpack-plugin";
 
 const config: webpack.Configuration = {
   context: path.resolve(__dirname, "module5/angularjs-controllers"),
@@ -20,7 +22,8 @@ const config: webpack.Configuration = {
 
   output: {
     path: path.resolve(__dirname, "module5/angularjs-controllers", "build"),
-    filename: "[name].[chunkhash].js"
+    filename: "[name].[chunkhash].js",
+    chunkFilename: "[name].[chunkhash].js"
   },
 
   resolve: {
@@ -74,23 +77,28 @@ const config: webpack.Configuration = {
   },
 
   plugins: [
+    new CleanWebpackPlugin([path.resolve(__dirname, "module5/angularjs-controllers", "build")], {
+      root: path.resolve(__dirname, "module5")
+    }),
+
     new HtmlWebpackPlugin({
       title: "Webpack title",
       filename: "index.html",
       template: "./index.html"
     }),
 
+    new webpack.HashedModuleIdsPlugin(),
+
     new webpack.optimize.CommonsChunkPlugin({
-      name: "vendors"
+      name: "vendors",
+      minChunks: Infinity,
+      filename: "[name].[chunkhash].js"
     }),
 
     new webpack.optimize.CommonsChunkPlugin({
-      name: "runtime"
+      name: "runtime",
+      filename: "[name].[chunkhash].js"
     }),
-
-    new UglifyJSPlugin(),
-
-    new ManifestPlugin(),
 
     new InlineChunkWebpackPlugin({
       inlineChunks: [
@@ -98,9 +106,15 @@ const config: webpack.Configuration = {
       ]
     }),
 
-    new ExtractTextPlugin("[contenthash].[id].css"),
+    new UglifyJSPlugin(),
 
-    new webpack.HashedModuleIdsPlugin()
+    new ChunkManifestPlugin({
+      filename: "manifest.json",
+      manifestVariable: "webpackManifest",
+      inlineManifest: false
+    }),
+
+    new ExtractTextPlugin("[chunkhash].css")
   ]
 };
 
