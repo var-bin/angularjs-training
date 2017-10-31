@@ -4,8 +4,7 @@
 
 import * as angular from "angular";
 import "angular-mocks";
-import "./app.message1.controller";
-import "../app.module";
+import "../app";
 
 describe("Message1Ctrl: ", () => {
   let $componentController;
