@@ -4,8 +4,6 @@
 
 import * as path from "path";
 import * as webpack from "webpack";
-import * as commonConfig from "./webpack.config";
-import * as webpackMerge from "webpack-merge";
 
 const rules: webpack.Rule[] = [
   // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
