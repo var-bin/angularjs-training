@@ -3,7 +3,6 @@
 import * as webpack from "webpack";
 import * as path from "path";
 import * as HtmlWebpackPlugin from "html-webpack-plugin";
-import * as UglifyJSPlugin from "uglifyjs-webpack-plugin";
 import * as ManifestPlugin from "webpack-manifest-plugin";
 import * as InlineChunkWebpackPlugin from "html-webpack-inline-chunk-plugin";
 import * as BrowserSyncPlugin from "browser-sync-webpack-plugin";
@@ -75,8 +74,6 @@ const config: webpack.Configuration = {
     new webpack.optimize.CommonsChunkPlugin({
       name: "runtime"
     }),
-
-    /*new UglifyJSPlugin(), */
 
     new ManifestPlugin(),
 

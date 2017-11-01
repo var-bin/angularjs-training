@@ -4,11 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "karma start --env=test",
+    "test": "karma start --env test",
     "browser-sync": "node ./node_modules/browser-sync/bin/browser-sync.js start",
     "bs": "node ./node_modules/browser-sync/bin/browser-sync.js start",
-    "start": "webpack-dev-server --watch --env=dev",
-    "prod": "webpack --env=production"
+    "start": "webpack-dev-server -w --env dev",
+    "prod": "webpack --config webpack.prod.ts --env production"
   },
   "keywords": [
     "angularjs",
@@ -21,6 +21,7 @@
   "author": "Vitalii Rybka",
   "license": "MIT",
   "devDependencies": {
+    "@codemotion/chunk-manifest-webpack-plugin": "^1.1.2",
     "@types/angular": "^1.6.34",
     "@types/angular-mocks": "^1.5.11",
     "@types/angular-ui-router": "^1.1.40",
@@ -33,6 +34,7 @@
     "browser-sync-webpack-plugin": "^1.2.0",
     "clean-webpack-plugin": "^0.1.17",
     "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.2",
     "html-loader": "^0.5.1",
     "html-webpack-inline-chunk-plugin": "^1.1.1",
     "html-webpack-plugin": "^2.30.1",
