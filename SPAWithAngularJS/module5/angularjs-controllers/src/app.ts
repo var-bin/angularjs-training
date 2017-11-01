@@ -3,7 +3,6 @@
 "use strict";
 
 import { bootstrap } from "angular";
-
 import { myApp } from "./app.module";
 import { Message1Component } from "./message1/app.message1.controller";
 import "./sum/sum";
