@@ -7,7 +7,7 @@
     "test": "karma start --env test",
     "browser-sync": "node ./node_modules/browser-sync/bin/browser-sync.js start",
     "bs": "node ./node_modules/browser-sync/bin/browser-sync.js start",
-    "start": "webpack-dev-server -w --env dev",
+    "start": "webpack-dev-server -w --config webpack.config.ts --env dev",
     "prod": "webpack --config webpack.prod.ts --env production"
   },
   "keywords": [
