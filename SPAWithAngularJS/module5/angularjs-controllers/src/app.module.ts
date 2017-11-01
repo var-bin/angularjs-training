@@ -3,7 +3,6 @@
 "use strict";
 
 import { module } from "angular";
-import uiRoute from "@uirouter/angularjs";
 
 routingConfig.$inject = ["$stateProvider"];
 
@@ -23,7 +22,7 @@ function routingConfig($stateProvider: angular.ui.IStateProvider) {
   $stateProvider.state(home);
 }
 
-const myApp = module("myApp", [uiRoute])
+const myApp = module("myApp", ["ui.router"])
   .config(routingConfig);
 
 export { myApp };
