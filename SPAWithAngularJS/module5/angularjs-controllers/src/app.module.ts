@@ -5,9 +5,6 @@
 import { module } from "angular";
 import uiRoute from "@uirouter/angularjs";
 
-const myApp = module("myApp", [uiRoute])
-  .config(routingConfig);
-
 routingConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
 
 function routingConfig(
@@ -22,12 +19,15 @@ function routingConfig(
   const home: angular.ui.IState = {
     name: "home",
     url: "/"
-  }
+  };
 
   $stateProvider.state(message1State);
   $stateProvider.state(home);
 
   $urlRouterProvider.otherwise("home");
 }
+
+const myApp = module("myApp", [uiRoute])
+  .config(routingConfig);
 
 export { myApp };
