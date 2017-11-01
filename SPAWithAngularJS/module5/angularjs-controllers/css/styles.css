@@ -1,3 +1,22 @@
 body {
   font-size: 1.2em;
 }
+
+.link {
+  color: blue;
+  text-decoration: underline;
+}
+
+.link:hover {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.link:visited {
+  color: blueviolet;
+}
+
+.link.active {
+  text-decoration: none;
+  color: red;
+}
