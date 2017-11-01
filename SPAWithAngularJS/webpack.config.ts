@@ -12,7 +12,8 @@ const config: webpack.Configuration = {
 
   entry: {
     vendors: [
-      "angular"
+      "angular",
+      "@uirouter/angularjs"
     ],
     bundle: "./src/app.ts"
   },
