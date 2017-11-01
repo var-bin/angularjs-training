@@ -7,9 +7,9 @@ import "angular-mocks";
 import "../app";
 
 describe("Message1Ctrl: ", () => {
-  let $componentController;
-  let $compile;
-  let $rootScope;
+  let $componentController: ng.IComponentControllerService;
+  let $compile: ng.ICompileService;
+  let $rootScope: ng.IRootScopeService;
 
   beforeEach(angular.mock.module("myApp"));
   beforeEach(inject((_$componentController_, _$compile_, _$rootScope_) => {
@@ -19,14 +19,14 @@ describe("Message1Ctrl: ", () => {
   }));
 
   it("Message1Ctrl.name should be equal Vitalii", () => {
-    const ctrl = $componentController("message1Component", null, null);
-    const result = ctrl.name;
+    const ctrl: ng.IComponentController = $componentController("message1Component", {}, null);
+    const name = ctrl.name;
 
-    expect(result).toBe("Vitalii");
+    expect(name).toBe("Vitalii");
   });
 
   it("Message1Ctrl.sum method should add 1 + 2 to equal 3", () => {
-    const ctrl = $componentController("message1Component", null, null);
+    const ctrl: ng.IComponentController = $componentController("message1Component", {}, null);
     const sum = ctrl.sum;
 
     expect(sum(1, 2)).toBe(3);
@@ -43,10 +43,9 @@ describe("Message1Ctrl: ", () => {
   it("Template should contain <button>", () => {
     const element = $compile("<message-1-component></message-1-component>")($rootScope);
     $rootScope.$digest();
-
-    // console.log(element.find("button")[0].nodeName.toLowerCase());
+    const button = element.find("button")[0].nodeName.toLowerCase();
 
     // Check that the compiled element contains the templated content
-    expect(element.find("button")[0].nodeName.toLowerCase()).toEqual("button");
+    expect(button).toEqual("button");
   });
 });
