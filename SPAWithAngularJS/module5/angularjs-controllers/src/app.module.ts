@@ -4,9 +4,9 @@
 
 import { module } from "angular";
 
-routingConfig.$inject = ["$stateProvider"];
+RoutesConfig.$inject = ["$stateProvider"];
 
-function routingConfig($stateProvider: angular.ui.IStateProvider) {
+function RoutesConfig($stateProvider: angular.ui.IStateProvider) {
   const message1State: angular.ui.IState = {
     name: "message1",
     url: "/message1",
@@ -23,6 +23,6 @@ function routingConfig($stateProvider: angular.ui.IStateProvider) {
 }
 
 const myAppModule = module("myApp", ["ui.router"])
-  .config(routingConfig);
+  .config(RoutesConfig);
 
 export { myAppModule };
