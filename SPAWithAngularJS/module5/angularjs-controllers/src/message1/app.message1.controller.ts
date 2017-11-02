@@ -13,6 +13,9 @@ class Message1Ctrl {
 class Message1Component implements ng.IComponentOptions {
   public template: string = require("./app.message1.view.html");
   public controller: any = Message1Ctrl;
+  public bindings: {
+    myData: "<"
+  }
 }
 
 export { Message1Component };
