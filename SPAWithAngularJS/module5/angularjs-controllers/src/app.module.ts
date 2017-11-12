@@ -13,8 +13,6 @@ function RoutesConfig(
     name: "message1",
     url: "/message1",
     component: "message1Component",
-    //template: "<div>{{$resolve.myData}}</div>",
-    //template: `<message-1-component myData="hdfgdhjsfdsgfhjdsgfk"></message-1-component>`,
     resolve: {
       myData: () => "This data comes from resolve property ui-router"
     }
