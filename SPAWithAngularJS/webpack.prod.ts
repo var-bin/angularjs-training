@@ -14,10 +14,8 @@ const config: webpack.Configuration = {
   context: path.resolve(__dirname, "module5/angularjs-controllers"),
 
   entry: {
-    vendors: [
-      "angular"
-    ],
-    bundle: "./src/app.ts"
+    app: "./src/app.ts",
+    repositories: "./src/repositories/app.repositories.module.ts"
   },
 
   output: {
@@ -50,7 +48,10 @@ const config: webpack.Configuration = {
         use: ExtractTextPlugin.extract({
           fallback: "style-loader",
           use: [{
-            loader: "css-loader"
+            loader: "css-loader",
+            options: {
+              minimize: true
+            }
           }]
         })
       },
@@ -90,9 +91,20 @@ const config: webpack.Configuration = {
     new webpack.HashedModuleIdsPlugin(),
 
     new webpack.optimize.CommonsChunkPlugin({
-      name: "vendors",
-      minChunks: Infinity,
-      filename: "[name].[chunkhash].js"
+      name: "common",
+      filename: "[name].[chunkhash].js",
+      minChunks: (module) => {
+        // this assumes your vendor imports exist in the node_modules directory
+        return module.context && module.context.indexOf("node_modules") !== -1;
+      }
+    }),
+
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "uiRouter",
+      filename: "[name].[chunkhash].js",
+      minChunks: (module, count) => {
+        return module.resource && (/uirouter/).test(module.resource) && count >= 1;
+      }
     }),
 
     new webpack.optimize.CommonsChunkPlugin({
