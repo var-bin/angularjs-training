@@ -2,7 +2,9 @@
 
 "use strict";
 
-import { module } from "angular";
+import * as angular from "angular";
+import { Message1Component } from "./message1/app.message1.controller";
+import "./repositories/app.repositories.module";
 
 RoutesConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
 
@@ -37,7 +39,6 @@ function RoutesConfig(
   $stateProvider.state(repositoriesState);
 }
 
-const myAppModule = module("myApp", ["ui.router"])
+angular.module("myApp", ["ui.router", "myApp.repositories"])
+  .component("message1Component", new Message1Component())
   .config(RoutesConfig);
-
-export { myAppModule };
