@@ -18,16 +18,23 @@ function RoutesConfig(
     }
   };
 
-  const home: angular.ui.IState = {
+  const homeState: angular.ui.IState = {
     name: "home",
     url: "/"
+  };
+
+  const repositoriesState: angular.ui.IState = {
+    name: "repositories",
+    url: "/repositories",
+    component: "repositoriesComponent"
   };
 
   // Redirect to home if no other URL matches
   $urlRouterProvider.otherwise("/");
 
   $stateProvider.state(message1State);
-  $stateProvider.state(home);
+  $stateProvider.state(homeState);
+  $stateProvider.state(repositoriesState);
 }
 
 const myAppModule = module("myApp", ["ui.router"])
