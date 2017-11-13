@@ -1,5 +1,7 @@
 // app.repositories.service.ts
 
+"use strict";
+
 class RepositoriesService {
   static $inject = ["$http"];
 
