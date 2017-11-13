@@ -1,8 +1,8 @@
 // app.repositories.component.ts
 
-import { RepositoriesService } from "./app.repositories.service";
-
 "use strict";
+
+import { RepositoriesService } from "./app.repositories.service";
 
 class RepositoriesCtrl {
   public title: string = "My Repositories";
