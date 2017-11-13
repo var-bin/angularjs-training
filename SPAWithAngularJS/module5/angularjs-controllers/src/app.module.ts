@@ -3,7 +3,9 @@
 "use strict";
 
 import * as angular from "angular";
+import "@uirouter/angularjs";
 import { Message1Component } from "./message1/app.message1.controller";
+
 import "./repositories/app.repositories.module";
 
 RoutesConfig.$inject = ["$stateProvider", "$urlRouterProvider"];
