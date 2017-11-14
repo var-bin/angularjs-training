@@ -1,0 +1,13 @@
+<!-- app.repositories.view.html -->
+
+<section>
+  <h2 data-ng-bind="$ctrl.title"></h2>
+
+  <ul>
+    <li data-ng-repeat="repo in $ctrl.repositories track by $index">
+      <h3>
+        Repo name: <span data-ng-bind="repo.name"></span>
+      </h3>
+    </li>
+  </ul>
+</section>

@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "lib": ["es2015", "dom"],
+    "typeRoots": [
+      "node_modules/@types",
+      "./module5/angularjs-controllers/declarations/require.d.ts"
+    ],
+    "removeComments": true,
+    "sourceMap": true,
+    "module": "commonjs",
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "strictNullChecks": true,
+    "noImplicitThis": false,
+    "noImplicitAny": false,
+    "alwaysStrict": true,
+    "skipLibCheck": true
+  },
+  "exclude": [
+    "node_modules",
+    "bower_components",
+    "build"
+  ]
+}
