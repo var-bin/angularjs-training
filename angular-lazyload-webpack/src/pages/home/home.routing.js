@@ -1,5 +1,7 @@
 "use strict";
 
+const angular = require("angular");
+
 function homeRouting($urlRouterProvider, $stateProvider) {
   $urlRouterProvider.otherwise("/home");
 
@@ -7,24 +9,26 @@ function homeRouting($urlRouterProvider, $stateProvider) {
     .state("home", {
       url: "/home",
       template: require("./views/home.html"), // include small templates into routing configuration
-      controller: "HomeController as vm",
       resolve: {
-        loadHomeController: ($q, $ocLazyLoad) => {
-          return $q((resolve) => {
+        loadHomeModule: ($ocLazyLoad) => {
+          return new Promise((resolve, reject) => {
             require.ensure([], () => {
               // load whole module
               let module = require("./home");
-              $ocLazyLoad.load({name: "home"});
 
-              resolve(module.controller);
+              $ocLazyLoad.load({
+                name: "home"
+              });
+
+              if (module.name) {
+                resolve(module.name);
+              } else {
+                reject("Ooops, somethig went wrong!");
+              }
             });
           });
         }
       }
-    }).state("home.about", {
-      url: "/about",
-      template: require("./views/home.about.html"),
-      controller: "HomeAboutController as vm",
     });
 }
 
