@@ -1,22 +1,31 @@
-const path = require("path");
+"use strict";
 
-var config = {
+const path = require("path");
+const webpack = require("webpack");
+
+const config = {
   entry: {
-    app: ['./src/core/bootstrap.js'],
+    app: "./src/core/bootstrap.js"
   },
   output: {
-    path:     path.resolve(__dirname + '/build/'),
-    filename: 'bundle.js',
+    path: path.resolve(__dirname + "/build/"),
+    filename: "bundle.js"
   },
   resolve: {
-    root: path.resolve(__dirname + '/src/'),
+    root: path.resolve(__dirname + "/src/")
   },
   module: {
-    noParse: [],
-    loaders: [
-      { test: /\.js$/, exclude: /node_modules/, loader: 'ng-annotate!babel' },
-      { test: /\.html$/, loader: 'raw' },
-    ]
+    noParse: [
+      "angular"
+    ],
+    loaders: [{
+      test: /\.js$/,
+      exclude: /node_modules/,
+      loader: "ng-annotate!babel"
+    }, {
+      test: /\.html$/,
+      loader: "raw"
+    }]
   }
 };
 
