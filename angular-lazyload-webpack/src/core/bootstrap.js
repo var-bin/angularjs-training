@@ -1,5 +1,7 @@
-'use strict';
+"use strict";
 
-let appModule = require('../app');
+let appModule = require("../app");
 
-angular.bootstrap(document, [appModule.name], { strictDi: true });
+angular.bootstrap(document, [appModule.name], {
+  strictDi: true
+});
