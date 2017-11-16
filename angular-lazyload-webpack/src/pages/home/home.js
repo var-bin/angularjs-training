@@ -1,7 +1,10 @@
-'use strict';
+"use strict";
+
+import { HOME_CTRL } from "./controllers/home.controller";
+import { HOME_ABOUT_CTRL } from "./controllers/home.about.controller";
 
 export default angular
-  .module('home', [
-    require('./controllers/home.controller').name,
-    require('./controllers/home.about.controller').name
+  .module("home", [
+    HOME_CTRL,
+    HOME_ABOUT_CTRL
   ]);
