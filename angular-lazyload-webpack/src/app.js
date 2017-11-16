@@ -1,7 +1,7 @@
 "use strict";
 
 const angular = require("angular");
-require("angular-ui-router");
+require("@uirouter/angularjs");
 require("oclazyload");
 
 const HOME_ROUTING = require("./pages/home/home.routing");
