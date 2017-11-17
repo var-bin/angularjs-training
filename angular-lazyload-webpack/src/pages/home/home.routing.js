@@ -8,7 +8,8 @@ function homeRouting($urlRouterProvider, $stateProvider) {
   $stateProvider
     .state("home", {
       url: "/home",
-      template: require("./views/home.html"), // include small templates into routing configuration
+      //template: require("./views/home.html"), // include small templates into routing configuration
+      component: "homeComponent",
       lazyLoad: ($transition$) => {
         const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
 
