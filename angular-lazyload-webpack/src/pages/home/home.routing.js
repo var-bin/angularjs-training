@@ -9,7 +9,7 @@ function homeRouting($urlRouterProvider, $stateProvider) {
     .state("home", {
       url: "/home",
       template: require("./views/home.html"), // include small templates into routing configuration
-      resolve: {
+      /* resolve: {
         loadHomeModule: ($ocLazyLoad) => {
           return new Promise((resolve, reject) => {
             require.ensure([], () => {
@@ -28,7 +28,33 @@ function homeRouting($urlRouterProvider, $stateProvider) {
             });
           });
         }
+      } */
+      lazyLoad: ($transition$) => {
+        const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
+
+        return new Promise((resolve, reject) => {
+          require.ensure([], () => {
+            // load whole module
+            const module = require("./home");
+
+            $ocLazyLoad.load({
+              name: "home"
+            });
+
+            if (module.name) {
+              resolve(module.name);
+            } else {
+              reject("Ooops, somethig went wrong!");
+            }
+          });
+        });
       }
+    })
+
+    .state("home.about", {
+      url: "/about",
+      template: require("./views/home.about.html"),
+      controller: "HomeAboutController as vm",
     });
 }
 
