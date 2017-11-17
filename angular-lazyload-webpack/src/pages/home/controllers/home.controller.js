@@ -4,8 +4,13 @@ class HomeController {
   constructor() {}
 }
 
-const HOME_CTRL = angular
-  .module("home.controller", [])
-  .controller("HomeController", HomeController);
+const homeComponent = {
+  template: require("../views/home.html"),
+  controller: HomeController
+};
 
-export { HOME_CTRL };
+const HOME_MODULE = angular
+  .module("home.module", [])
+  .component("homeComponent", homeComponent);
+
+export { HOME_MODULE };
