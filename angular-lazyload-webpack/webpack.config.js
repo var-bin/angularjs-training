@@ -12,18 +12,19 @@ const config = {
     path: path.resolve(__dirname + "/build/"),
     filename: "bundle.js"
   },
-  resolve: {
-    root: path.resolve(__dirname + "/src/")
-  },
   module: {
     loaders: [{
       test: /\.js$/,
       exclude: /node_modules/,
-      loader: "ng-annotate!babel"
+      use: [{
+        loader: "ng-annotate-loader"
+      }, {
+        loader: "babel-loader"
+      }]
     }, {
       test: /\.html$/,
-      loader: "raw",
-      exclude: "index.html"
+      loader: "raw-loader",
+      exclude: path.resolve("./src/index.html")
     }]
   },
   plugins: [
