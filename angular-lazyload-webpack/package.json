@@ -33,6 +33,6 @@
     "phantomjs": "^1.9.17",
     "raw-loader": "^0.5.1",
     "webpack": "^3.8.1",
-    "webpack-dev-server": "^1.9.0"
+    "webpack-dev-server": "^2.9.4"
   }
 }
