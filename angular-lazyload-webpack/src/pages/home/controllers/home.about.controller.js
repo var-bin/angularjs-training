@@ -5,7 +5,7 @@ class HomeAboutController {
 }
 
 const HOME_ABOUT_CTRL = angular
-  .module("home.about.controller", [])
+  .module("home.about.module", [])
   .controller("HomeAboutController", HomeAboutController);
 
 export { HOME_ABOUT_CTRL };
