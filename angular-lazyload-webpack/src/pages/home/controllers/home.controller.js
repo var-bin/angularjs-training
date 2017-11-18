@@ -1,16 +1,20 @@
 "use strict";
 
 class HomeController {
-  constructor() {}
+  constructor() {
+    this.title = "HomeComponent";
+  }
 }
 
-const homeComponent = {
-  template: require("../views/home.html"),
-  controller: HomeController
-};
+class HomeComponent {
+  constructor() {
+    this.template = require("../views/home.html");
+    this.controller = HomeController;
+  }
+}
 
 const HOME_MODULE = angular
   .module("home.module", [])
-  .component("homeComponent", homeComponent);
+  .component("homeComponent", new HomeComponent());
 
 export { HOME_MODULE };
