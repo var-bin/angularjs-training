@@ -4,7 +4,7 @@ const angular = require("angular");
 require("@uirouter/angularjs");
 require("oclazyload");
 
-const HOME_ROUTING = require("./pages/home/home.routing");
+const HOME_ROUTING = require("./pages/home/home.module.routing");
 
 export default angular
   .module("lazyApp", [
