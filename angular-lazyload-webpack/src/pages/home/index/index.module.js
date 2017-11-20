@@ -1,3 +1,5 @@
+// index.module.js
+
 "use strict";
 
 class HomeIndexController {
