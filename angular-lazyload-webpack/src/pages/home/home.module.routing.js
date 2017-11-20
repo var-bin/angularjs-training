@@ -22,8 +22,8 @@ function homeRouting($urlRouterProvider, $stateProvider) {
               name: "homeModule"
             });
 
-            if (module.name) {
-              resolve(module.name);
+            if (module.HOME_MODULE) {
+              resolve(module.HOME_MODULE);
             } else {
               reject("Ooops, somethig went wrong!");
             }
