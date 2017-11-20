@@ -1,12 +1,11 @@
+// home.module.js
+
 "use strict";
 
-import { HOME_INDEX_MODULE } from "./index/index.module";
-import { HOME_ABOUT_MODULE } from "./about/about.module";
+import { homeRouting } from "./home.module.routing";
 
-const HOME_MODULE =  angular
-  .module("homeModule", [
-    HOME_INDEX_MODULE,
-    HOME_ABOUT_MODULE
-  ]);
+const HOME_MODULE = angular
+  .module("homeModule", [])
+  .config(homeRouting);
 
 export { HOME_MODULE };
