@@ -16,10 +16,10 @@ function homeRouting($urlRouterProvider, $stateProvider) {
         return new Promise((resolve, reject) => {
           require.ensure([], () => {
             // load whole module
-            const module = require("./home");
+            const module = require("./home.module");
 
             $ocLazyLoad.load({
-              name: "home"
+              name: "homeModule"
             });
 
             if (module.name) {
@@ -34,11 +34,10 @@ function homeRouting($urlRouterProvider, $stateProvider) {
 
     .state("home.about", {
       url: "/about",
-      template: require("./views/home.about.html"),
-      controller: "HomeAboutController as vm",
+      component: "homeAboutComponent"
     });
 }
 
 export default angular
-  .module("home.routing", [])
+  .module("home.module.routing", [])
   .config(homeRouting);
