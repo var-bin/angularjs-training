@@ -1,7 +1,9 @@
+// bootstrap.js
+
 "use strict";
 
-let appModule = require("../app");
+import { LAZY_APP } from "../app";
 
-angular.bootstrap(document, [appModule.name], {
+angular.bootstrap(document, [LAZY_APP.name], {
   strictDi: true
 });
