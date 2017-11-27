@@ -9,20 +9,8 @@ const homeIndex = {
   lazyLoad: ($transition$) => {
     const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
 
-    return new Promise((resolve, reject) => {
-      require.ensure([], () => {
-        // load whole module
-        const module = require("./index/index.module");
-
-        $ocLazyLoad.load(module.HOME_INDEX_MODULE);
-
-        if (module.HOME_INDEX_MODULE) {
-          resolve(module.HOME_INDEX_MODULE);
-        } else {
-          reject("Ooops, somethig went wrong!");
-        }
-      });
-    });
+    return System.import("./index/index.module")
+      .then(mod => $ocLazyLoad.load(mod.HOME_INDEX_MODULE));
   }
 };
 
@@ -33,20 +21,8 @@ const homeAbout = {
   lazyLoad: ($transition$) => {
     const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
 
-    return new Promise((resolve, reject) => {
-      require.ensure([], () => {
-        // load whole module
-        const module = require("./about/about.module");
-
-        $ocLazyLoad.load(module.HOME_ABOUT_MODULE);
-
-        if (module.HOME_ABOUT_MODULE) {
-          resolve(module.HOME_ABOUT_MODULE);
-        } else {
-          reject("Ooops, somethig went wrong!");
-        }
-      });
-    });
+    return System.import("./about/about.module")
+      .then(mod => $ocLazyLoad.load(mod.HOME_ABOUT_MODULE));
   }
 };
 
