@@ -40,8 +40,17 @@ const config = {
         // this assumes your vendor imports exist in the node_modules directory
         return module.context && module.context.indexOf("node_modules") !== -1;
       }
-    })
-  ]
+    }),
+
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  devServer: {
+    contentBase: path.resolve("build"),
+    hot: true,
+    host: "localhost",
+    port: 8080
+  }
 };
 
 module.exports = config;
