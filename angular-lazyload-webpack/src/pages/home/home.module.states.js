@@ -9,7 +9,7 @@ const homeIndex = {
   lazyLoad: ($transition$) => {
     const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
 
-    return System.import("./index/index.module")
+    return System.import(/* webpackChunkName: "index.module" */ "./index/index.module")
       .then(mod => $ocLazyLoad.load(mod.HOME_INDEX_MODULE));
   }
 };
@@ -21,7 +21,7 @@ const homeAbout = {
   lazyLoad: ($transition$) => {
     const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
 
-    return System.import("./about/about.module")
+    return System.import(/* webpackChunkName: "about.module" */ "./about/about.module")
       .then(mod => $ocLazyLoad.load(mod.HOME_ABOUT_MODULE));
   }
 };
