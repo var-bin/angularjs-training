@@ -7,14 +7,14 @@ import "@uirouter/angularjs";
 import "oclazyload";
 
 import { HOME_MODULE } from "./pages/home/home.module";
-import { BLOG_MODULE } from "./pages/blog/blog.module";
+import { appRouting } from "./app.routing";
 
 const LAZY_APP =  angular
   .module("lazyApp", [
     "ui.router",
     "oc.lazyLoad",
-    "homeModule",
-    BLOG_MODULE.name
-  ]);
+    "homeModule"
+  ])
+  .config(appRouting);
 
 export { LAZY_APP };
