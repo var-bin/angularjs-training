@@ -9,20 +9,8 @@ const appBlog = {
   lazyLoad: ($transition$) => {
     const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
 
-    return new Promise((resolve, reject) => {
-      require.ensure([], () => {
-        // load whole module
-        const module = require("./pages/blog/blog.module");
-
-        $ocLazyLoad.load(module.BLOG_MODULE);
-
-        if (module.BLOG_MODULE) {
-          resolve(module.BLOG_MODULE);
-        } else {
-          reject("Ooops, somethig went wrong!");
-        }
-      });
-    });
+    return System.import("./pages/blog/blog.module")
+      .then(mod => $ocLazyLoad.load(mod.BLOG_MODULE));
   }
 };
 
