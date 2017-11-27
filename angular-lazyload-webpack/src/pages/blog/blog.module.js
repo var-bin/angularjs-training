@@ -8,7 +8,9 @@ class BlogController {
     this.title = "BlogComponent";
     this.BlogService = BlogService;
     this.repos = [];
+  }
 
+  $onInit() {
     this.getArticles();
   }
 
