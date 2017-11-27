@@ -8,7 +8,6 @@ class BlogService {
 
   getData() {
     const REPOS = "users/var-bin/repos";
-    //const BLOG_DATA = "blog.data.json";
     const URL = `${this.API_URL}/${REPOS}`;
 
     return this.$http.get(URL)
