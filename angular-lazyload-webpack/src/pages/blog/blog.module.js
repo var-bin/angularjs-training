@@ -1,6 +1,5 @@
 // blog.module.js
 
-import { blogRouting } from "./blog.module.routing";
 import { BlogService } from "./blog.service";
 
 class BlogController {
@@ -34,7 +33,6 @@ class BlogComponent {
 const BLOG_MODULE = angular
   .module("blog.module", [])
   .component("blogComponent", new BlogComponent())
-  .service("BlogService", BlogService)
-  .config(blogRouting);
+  .service("BlogService", BlogService);
 
 export { BLOG_MODULE };
