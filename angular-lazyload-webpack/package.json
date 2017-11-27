@@ -3,9 +3,8 @@
   "version": "1.0.0",
   "description": "Lazy load AngularJS modules using Webpack and AngularUI Router",
   "scripts": {
-    "start": "hs build",
+    "start": "webpack-dev-server --devtool inline-source-map",
     "build": "webpack -p",
-    "devs": "webpack-dev-server --content-base build --hot --inline --devtool eval",
     "test": "karma start test/karma.config.js"
   },
   "author": "Michal Zalecki <michal@michalzalecki.com>",
