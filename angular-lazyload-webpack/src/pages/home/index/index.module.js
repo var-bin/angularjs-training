@@ -2,6 +2,8 @@
 
 "use strict";
 
+import "./index.styles.css";
+
 class HomeIndexController {
   constructor() {
     this.title = "HomeComponent";
