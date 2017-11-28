@@ -3,6 +3,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 const config = {
   entry: {
@@ -13,17 +14,32 @@ const config = {
     filename: "bundle.js"
   },
   module: {
-    loaders: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      use: [{
-        loader: "babel-loader"
-      }]
-    }, {
-      test: /\.html$/,
-      loader: "raw-loader",
-      exclude: path.resolve("./src/index.html")
-    }]
+    rules: [
+      // js
+      {
+        test: /\.js$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: "babel-loader"
+        }]
+      },
+
+      // html
+      {
+        test: /\.html$/,
+        loader: "raw-loader",
+        exclude: path.resolve("./src/index.html")
+      },
+
+      // css
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          fallback: "style-loader",
+          use: "css-loader"
+        })
+      }
+    ]
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -41,7 +57,9 @@ const config = {
     }),
 
     new webpack.NamedModulesPlugin(),
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
+
+    new ExtractTextPlugin("styles.css")
   ],
   devServer: {
     contentBase: path.resolve("build"),
