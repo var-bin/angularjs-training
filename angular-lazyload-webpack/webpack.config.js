@@ -10,8 +10,9 @@ const config = {
     app: "./src/core/bootstrap.js"
   },
   output: {
-    path: path.resolve(__dirname + "/build/"),
-    filename: "bundle.js"
+    filename: "bundle.js",
+    chunkFilename: "[name].bundle.js",
+    path: path.resolve(__dirname + "build")
   },
   module: {
     rules: [
@@ -59,7 +60,10 @@ const config = {
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
 
-    new ExtractTextPlugin("styles.css")
+    new ExtractTextPlugin({
+      filename: "[name].css",
+      allChunks: true
+    })
   ],
   devServer: {
     contentBase: path.resolve("build"),
