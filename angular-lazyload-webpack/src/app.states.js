@@ -9,7 +9,7 @@ const appBlog = {
   lazyLoad: ($transition$) => {
     const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
 
-    return System.import(/* webpackChunkName: "blog.module" */ "./pages/blog/blog.module")
+    return import(/* webpackChunkName: "blog.module" */ "./pages/blog/blog.module")
       .then(mod => $ocLazyLoad.load(mod.BLOG_MODULE));
   }
 };
