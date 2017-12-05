@@ -12,7 +12,7 @@ class HomeIndexController {
 }
 
 class HomeIndexComponent implements ng.IComponentOptions {
-  public template: string = require("./index.view.html")
+  public template: string = require("./index.view.html");
   public controller: any = HomeIndexController;
   constructor() {}
 }
