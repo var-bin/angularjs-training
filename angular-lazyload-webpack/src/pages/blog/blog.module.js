@@ -1,6 +1,7 @@
 // blog.module.js
 
 import { BlogService } from "./blog.service";
+import * as moment from "moment";
 
 class BlogController {
   constructor(BlogService) {

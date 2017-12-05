@@ -63,7 +63,12 @@ const config = {
     new ExtractTextPlugin({
       filename: "[name].css",
       allChunks: true
-    })
+    }),
+
+    new webpack.ContextReplacementPlugin(
+      /moment[\/\\]locale/,
+      /(en-gb)\.js/
+    )
   ],
   devServer: {
     contentBase: path.resolve("build"),
