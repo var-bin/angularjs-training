@@ -1,5 +1,5 @@
-import webpack from "webpack";
-import path from "path";
+import * as webpack from "webpack";
+import * as path from "path";
 
 // plugins
 import * as CleanWebpackPlugin from "clean-webpack-plugin";
@@ -54,6 +54,15 @@ const config: webpack.Configuration = {
           // set failOnHint to true
           failOnHint: false
         }
+      },
+
+      /*** css ***/
+      {
+        test: /\.css$/,
+        use: [
+          "style-loader",
+          "css-loader"
+        ]
       }
     ]
   },
@@ -69,7 +78,19 @@ const config: webpack.Configuration = {
       filename: "index.html",
       template: "./src/index.html",
       hash: true
-    })
+    }),
+
+    new webpack.optimize.CommonsChunkPlugin({
+      name: "common",
+      filename: "common.js",
+      minChunks: (module) => {
+        // this assumes your vendor imports exist in the node_modules directory
+        return module.context && module.context.indexOf("node_modules") !== -1;
+      }
+    }),
+
+    new webpack.NamedModulesPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ],
 
   devtool: "#@cheap-eval-source-map",
