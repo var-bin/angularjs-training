@@ -63,6 +63,13 @@ const config: webpack.Configuration = {
           "style-loader",
           "css-loader"
         ]
+      },
+
+      /*** html ***/
+      {
+        test: /\.html$/,
+        loader: "ng-cache-loader?prefix=[dir]/[dir]",
+        exclude: path.join(__dirname, "src", "index.html")
       }
     ]
   },
