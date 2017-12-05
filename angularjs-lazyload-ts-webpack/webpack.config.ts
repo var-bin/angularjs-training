@@ -1,6 +1,11 @@
 import webpack from "webpack";
 import path from "path";
 
+// plugins
+import * as CleanWebpackPlugin from "clean-webpack-plugin";
+import * as HtmlWebpackPlugin from "html-webpack-plugin";
+import * as ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+
 const config: webpack.Configuration = {
   entry: {
     app: "./src/core/bootstrap.ts"
@@ -51,6 +56,29 @@ const config: webpack.Configuration = {
         }
       }
     ]
+  },
+
+  plugins: [
+    new CleanWebpackPlugin([path.resolve(__dirname + "dist")], {
+      root: __dirname
+    }),
+
+    new ForkTsCheckerWebpackPlugin(),
+
+    new HtmlWebpackPlugin({
+      filename: "index.html",
+      template: "./src/index.html",
+      hash: true
+    })
+  ],
+
+  devtool: "#@cheap-eval-source-map",
+
+  devServer: {
+    contentBase: path.resolve("dist"),
+    hot: true,
+    host: "localhost",
+    port: 8080
   }
 };
 
