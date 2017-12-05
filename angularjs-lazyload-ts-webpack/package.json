@@ -1,0 +1,17 @@
+{
+  "name": "angularjs-lazyload-ts-webpack",
+  "version": "1.0.0",
+  "description": "Lazy load AngularJS modules using Webpack and AngularUI Router and oc.lazyLoad",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "AngularJS",
+    "Webpack",
+    "lazyLoad",
+    "TypeScript"
+  ],
+  "author": "Vitalii Rybka @var_bincom",
+  "license": "MIT"
+}
