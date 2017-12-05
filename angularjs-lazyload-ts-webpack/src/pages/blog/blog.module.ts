@@ -1,6 +1,6 @@
 // blog.module.js
 
-import angular from "angular";
+import * as angular from "angular";
 import { BlogService } from "./blog.service";
 
 class BlogController {

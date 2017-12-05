@@ -2,7 +2,7 @@
 
 "use strict";
 
-import angular from "angular";
+import * as angular from "angular";
 import { homeIndex, homeAbout } from "./home.module.states";
 import * as uiRouter from "angular-ui-router";
 

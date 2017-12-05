@@ -3,7 +3,7 @@
 "use strict";
 
 import "./index.styles.css";
-import angular from "angular";
+import * as angular from "angular";
 
 class HomeIndexController {
   public title: string = "HomeComponent";

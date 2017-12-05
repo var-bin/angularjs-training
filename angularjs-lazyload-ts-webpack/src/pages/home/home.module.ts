@@ -2,7 +2,7 @@
 
 "use strict";
 
-import angular from "angular";
+import * as angular from "angular";
 import { homeRouting } from "./home.module.routing";
 
 const HOME_MODULE = angular

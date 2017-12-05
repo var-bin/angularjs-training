@@ -2,7 +2,7 @@
 
 "use strict";
 
-import angular from "angular";
+import * as angular from "angular";
 
 class HomeAboutController {
   public title: string = "HomeAboutComponent";
