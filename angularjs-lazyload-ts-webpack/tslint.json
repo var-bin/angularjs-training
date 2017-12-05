@@ -1,0 +1,69 @@
+{
+  "extends": "tslint:recommended",
+  "rules": {
+    "max-line-length": [false, 120],
+    "max-classes-per-file": [true, 3],
+    "new-parens": true,
+    "no-arg": true,
+    "no-bitwise": false,
+    "no-conditional-assignment": true,
+    "no-consecutive-blank-lines": false,
+    "no-console": {
+      "options": [
+        "debug",
+        "log",
+        "time",
+        "timeEnd",
+        "trace"
+      ]
+    },
+    "trailing-comma": {
+      "options": {
+        "multiline": "never",
+        "singleline": "never"
+      }
+    },
+    "triple-equals": false,
+    "object-literal-sort-keys": false,
+    "no-var-keyword": false,
+    "no-any": false,
+    "variable-name": false,
+    "no-magic-numbers": false,
+    "only-arrow-functions": false,
+    "prefer-for-of": false,
+    "no-default-export": false,
+    "jsdoc-format": false,
+    "newline-before-return": false,
+    "member-access": false,
+    "no-empty": false,
+    "whitespace": [false],
+    "typedef-whitespace": false,
+    "no-var-requires": false,
+    "prefer-const": false,
+    "object-literal-shorthand": false,
+    "ordered-imports": false,
+    "one-variable-per-declaration": false,
+    "curly": [
+      true,
+      "ignore-same-line"
+    ],
+    "forin": false,
+    "no-shadowed-variable": false,
+    "no-unused-expression": false,
+    "member-ordering": false,
+    "no-irregular-whitespace": false,
+    "comment-format": false,
+    "space-before-function-paren": false,
+    "adjacent-overload-signatures": false,
+    "object-literal-key-quotes": [
+      false,
+      "as-needed"
+    ],
+    "arrow-parens": false
+  },
+  "jsRules": {
+    "max-line-length": {
+      "options": [120]
+    }
+  }
+}
