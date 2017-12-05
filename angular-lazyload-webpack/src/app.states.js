@@ -8,9 +8,11 @@ const appBlog = {
   component: "blogComponent",
   lazyLoad: ($transition$) => {
     const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
+    const blogModule = () => import(/* webpackChunkName: "blog.module" */ "./pages/blog/blog.module");
 
-    return import(/* webpackChunkName: "blog.module" */ "./pages/blog/blog.module")
-      .then(mod => $ocLazyLoad.load(mod.BLOG_MODULE));
+    return blogModule()
+      .then(mod => $ocLazyLoad.load(mod.BLOG_MODULE))
+      .catch(err => console.error("Ooops... ", err));
   }
 };
 
