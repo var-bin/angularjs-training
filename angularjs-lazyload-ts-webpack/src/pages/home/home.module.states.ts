@@ -1,4 +1,4 @@
-// home.module.states.js
+// home.module.states.ts
 
 "use scrict";
 

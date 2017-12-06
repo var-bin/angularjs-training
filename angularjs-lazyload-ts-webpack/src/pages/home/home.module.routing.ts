@@ -1,4 +1,4 @@
-// home.module.routing.js
+// home.module.routing.ts
 
 "use strict";
 
