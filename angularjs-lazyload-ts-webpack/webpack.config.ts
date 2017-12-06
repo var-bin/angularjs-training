@@ -18,12 +18,12 @@ const SourceMapDevToolPluginOptions = {
   filename: "[name].js.map"
 };
 
-interface IEnv {
+interface IWebpackEnv {
   development: boolean;
   production: boolean;
 }
 
-const config = (env: IEnv) => {
+const config = (env: IWebpackEnv) => {
   const options: webpack.Configuration | any = {
     entry: {
       app: "./src/core/bootstrap.ts"
