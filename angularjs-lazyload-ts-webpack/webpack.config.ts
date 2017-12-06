@@ -89,6 +89,11 @@ const config = (env: IWebpackEnv) => {
           loader: "ng-cache-loader?prefix=[dir]/[dir]",
           exclude: path.join(__dirname, "src", "index.html")
         }
+      ],
+
+      noParse: [
+        /pdfmake.min.js/,
+        /vfs_fonts.js/
       ]
     },
 
