@@ -2,6 +2,8 @@
 
 "use scrict";
 
+import { UILazyLoad } from "../../core/helpers/uiLazyLoad";
+
 const homeIndex = {
   name: "home",
   url: "/home",
@@ -10,19 +12,30 @@ const homeIndex = {
   lazyLoad: ($transition$) => {
     const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
 
-
     return new Promise((resolve, reject) => {
-      require.ensure(["./index/index.module"], () => {
-        const mod: ng.IModule = require("./index/index.module");
+      require.ensure(["./index/index.module"], (require) => {
+        const module: ng.IModule = require("./index/index.module");
+        // AngularJS module name
+        let moduleName: string | undefined;
 
-        $ocLazyLoad.load({
-          name: "home.module"
-        });
+        for (const key in module) {
+          // AngularJS module constant has already in key
+          if (module.hasOwnProperty(key)) {
+            // AngularJS module name
+            moduleName = module[key].name;
+          }
+        }
 
-        if (mod) {
-          resolve(mod);
+        if (moduleName) {
+          $ocLazyLoad.load({
+            name: moduleName
+          });
+        }
+
+        if (module) {
+          resolve(module);
         } else {
-          reject("Ooops, ther was something wrong...");
+          reject("Ooops, ther was something wrong! Could you check AngularJS module name");
         }
       }, "index.module");
     });
