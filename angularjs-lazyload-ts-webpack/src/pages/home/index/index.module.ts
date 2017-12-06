@@ -5,6 +5,7 @@
 import "./index.styles.css";
 import * as angular from "angular";
 import "angular-drag-and-drop-lists";
+import { DndListComponent } from "./dndList/index.dndList.component";
 
 class HomeIndexController {
   public title: string = "HomeComponent";
@@ -22,6 +23,7 @@ const HOME_INDEX_MODULE = angular
   .module("home.module", [
     "dndLists"
   ])
-  .component("homeComponent", new HomeIndexComponent());
+  .component("homeComponent", new HomeIndexComponent())
+  .component("homeDndListComponent", new DndListComponent());
 
 export { HOME_INDEX_MODULE };
