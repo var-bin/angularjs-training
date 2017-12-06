@@ -4,6 +4,7 @@
 
 import "./index.styles.css";
 import * as angular from "angular";
+import "angular-drag-and-drop-lists";
 
 class HomeIndexController {
   public title: string = "HomeComponent";
@@ -18,7 +19,9 @@ class HomeIndexComponent implements ng.IComponentOptions {
 }
 
 const HOME_INDEX_MODULE = angular
-  .module("home.module", [])
+  .module("home.module", [
+    "dndLists"
+  ])
   .component("homeComponent", new HomeIndexComponent());
 
 export { HOME_INDEX_MODULE };
