@@ -1,4 +1,4 @@
-// blog.module.js
+// blog.module.ts
 
 import * as angular from "angular";
 import { BlogService } from "./blog.service";
@@ -27,8 +27,7 @@ class BlogComponent implements ng.IComponentOptions {
   public template: string = require("./blog.view.html");
   public controller: any = BlogController;
 
-  constructor() {
-    this.template = }
+  constructor() {}
 }
 
 const BLOG_MODULE = angular
