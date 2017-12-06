@@ -5,7 +5,8 @@
 const homeIndex = {
   name: "home",
   url: "/home",
-  component: "homeComponent",
+  //component: "homeComponent",
+  template: "<home-component></home-component>",
   lazyLoad: ($transition$) => {
     const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
 
@@ -31,7 +32,8 @@ const homeIndex = {
 const homeAbout = {
   name: "home.about",
   url: "/about",
-  component: "homeAboutComponent",
+  //component: "homeAboutComponent",
+  template: "<home-about-component></home-about-component>",
   lazyLoad: ($transition$) => {
     const $ocLazyLoad = $transition$.injector().get("$ocLazyLoad");
 
