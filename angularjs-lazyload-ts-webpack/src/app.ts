@@ -1,4 +1,4 @@
-// app.js
+// app.ts
 
 "use strict";
 
@@ -6,12 +6,14 @@ import * as angular from "angular";
 import "@uirouter/angularjs";
 import "oclazyload";
 import "./pages/home/home.module";
+import { appRouting } from "./app.routing";
 
 const LAZY_APP =  angular
   .module("lazyApp", [
     "ui.router",
     "oc.lazyLoad",
     "homeModule"
-  ]);
+  ])
+  .config(appRouting);
 
 export { LAZY_APP };
