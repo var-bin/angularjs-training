@@ -1,6 +1,7 @@
 "use strict";
 
 class DndListController {
+  public title: string = "index.dndList.view.html";
   public models: any = {
     selected: null,
     lists: {
