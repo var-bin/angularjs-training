@@ -1,4 +1,17 @@
 <!-- index.dndList.view.html -->
-<h3>
-  index.dndList.view.html
-</h3>
+<h3 data-ng-bind="$ctrl.title"></h3>
+
+<div data-ng-repeat="(listName, list) in $ctrl.models.lists">
+  <h4 data-ng-bind="'List ' + listName"></h4>
+
+  <ul data-dnd-list="list">
+    <li data-ng-repeat="item in list"
+        data-dnd-draggable="item"
+        data-dnd-moved="list.splice($index, 1)"
+        data-dnd-effect-allowed="move"
+        data-dnd-selected="models.selected = item"
+        data-ng-class="{'selected': models.selected === item}"
+        data-ng-bind="item.label">
+    </li>
+  </ul>
+</div>
