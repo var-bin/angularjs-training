@@ -8,6 +8,10 @@ class HomeAboutController {
   public title: string = "HomeAboutComponent";
 
   constructor() {}
+
+  testMethod() {
+    return "testMethod string";
+  }
 }
 
 class HomeAboutComponent implements ng.IComponentOptions {
