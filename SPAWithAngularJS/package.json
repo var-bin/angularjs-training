@@ -47,6 +47,7 @@
     "karma-spec-reporter": "0.0.31",
     "karma-webpack": "^2.0.5",
     "ng-cache-loader": "0.0.26",
+    "oclazyload": "^1.1.0",
     "puppeteer": "^0.12.0",
     "style-loader": "^0.19.0",
     "ts-loader": "^3.1.0",
