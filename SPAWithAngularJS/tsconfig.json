@@ -8,14 +8,15 @@
     ],
     "removeComments": true,
     "sourceMap": true,
-    "module": "commonjs",
+    "module": "esnext",
     "allowJs": true,
     "experimentalDecorators": true,
     "strictNullChecks": true,
     "noImplicitThis": false,
     "noImplicitAny": false,
     "alwaysStrict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "moduleResolution": "node"
   },
   "exclude": [
     "node_modules",
