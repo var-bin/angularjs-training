@@ -1,18 +1,20 @@
 // webpack.config.ts
 
-import * as webpack from "webpack";
-import * as path from "path";
-import * as HtmlWebpackPlugin from "html-webpack-plugin";
-import * as ManifestPlugin from "webpack-manifest-plugin";
-import * as InlineChunkWebpackPlugin from "html-webpack-inline-chunk-plugin";
-import * as BrowserSyncPlugin from "browser-sync-webpack-plugin";
+const webpack = require("webpack");
+const path = require("path");
 
-const config: webpack.Configuration = {
+import { Configuration } from "webpack";
+
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ManifestPlugin = require("webpack-manifest-plugin");
+const InlineChunkWebpackPlugin = require("html-webpack-inline-chunk-plugin");
+const BrowserSyncPlugin = require("browser-sync-webpack-plugin");
+
+const config: Configuration = {
   context: path.resolve(__dirname, "module5/angularjs-controllers"),
 
   entry: {
-    app: "./src/app.ts",
-    repositories: "./src/repositories/app.repositories.module.ts"
+    app: "./src/app.ts"
   },
 
   output: {
@@ -120,4 +122,4 @@ const config: webpack.Configuration = {
   }
 };
 
-export default config;
+module.exports = config;
